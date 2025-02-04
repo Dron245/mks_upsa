@@ -33,14 +33,25 @@
 	}
 	// .menu__list
 	&__list {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 32, 10, 0, 1140,768);
 		@media (max-width: $mobile) {
 		}
 	}
 	// .menu__item
 	&__item {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(8);
 	}
 	// .menu__link
 	&__link {
+		font-size: 16px;
+
+		/* line-height: 20px; */
+		line-height: 125%;
+		text-transform: uppercase;
 		@media (max-width: $mobile) {
 		}
 	}

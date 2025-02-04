@@ -1,0 +1,51 @@
+.header {
+	outline: 1px solid red;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 24px;
+	}
+
+	&__logo {
+		@media (max-width:$tablet) and (min-width:$mobile){
+			width: 180px;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	&__menu {
+	}
+}
+.menu {
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+
+	&__sub-list {
+		display: none;
+	}
+
+	&__sub-item {
+	}
+
+	&__sub-link {
+	}
+}
+.icon-menu {
+}
+
