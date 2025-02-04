@@ -1,0 +1,43 @@
+// Заголовки, общие БЄМ блоки и прочее...
+.title {
+	font-size: 2.5rem;
+	line-height: 120%;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+}
+
+.button {
+	display: inline-flex;
+	background: #2a5199;
+	border-radius: 3.125rem;
+	color: #fff;
+	font-size: toRem(16);
+	justify-content: center;
+	align-items: center;
+	padding: toRem(12) toRem(20);
+	line-height: 140%;
+	text-transform: uppercase;
+	// font-family: TitilliumWeb;
+	transition: background-color 0.3s color 0.3s;
+	&:hover {
+		background: #fff;
+		color: $secondColor;
+	}
+}
+
+.heading {
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 162%;
+}
+.text {
+	font-size: 1rem;
+	line-height: 162%;
+	@media (max-width:$mobile){
+		  line-height: 150%;
+	}
+	@media (max-width:$mobileSmall){
+		  font-size: toRem(14);
+	}
+}
