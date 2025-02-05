@@ -20,24 +20,116 @@
 	text-transform: uppercase;
 	// font-family: TitilliumWeb;
 	transition: background-color 0.3s color 0.3s;
+
 	&:hover {
 		background: #fff;
 		color: $secondColor;
 	}
 }
 
-.heading {
-	font-weight: 700;
-	font-size: 1rem;
-	line-height: 162%;
-}
+
 .text {
 	font-size: 1rem;
 	line-height: 162%;
+
+	&_underline {
+		text-decoration: underline;
+	}
+
+	span {
+		font-weight: 700;
+	}
+
+	@media (max-width:$mobile) {
+		line-height: 150%;
+	}
+
+	@media (max-width:$mobileSmall) {
+		font-size: toRem(14);
+	}
+}
+
+.description-title {
+	font-weight: 600;
+	font-size: 2.375rem;
+	line-height: 126%;
+	color: #484848;
 	@media (max-width:$mobile){
-		  line-height: 150%;
+		 font-size: toRem(20); 
 	}
-	@media (max-width:$mobileSmall){
-		  font-size: toRem(14);
-	}
+}
+
+//====FIRST====================================================================================================================================================
+
+.page {
+
+	&__first {}
+}
+
+.first {
+
+	&__breadcrumbs {}
+
+	&__container {}
+
+	&__title {}
+
+	&__subtitle {}
+}
+
+.breadcrumbs {
+
+	&__list {}
+
+	&__item {}
+
+	&__link {}
+
+	&__current {}
+}
+
+.title {}
+
+//===SLOGAN=====================================================================================================================================================
+
+.page {
+
+	&__slogan {}
+}
+
+.slogan {
+
+	&__container {}
+
+	&__text {}
+}
+
+//==WARNING======================================================================================================================================================
+
+.page {
+
+	&__warning {}
+}
+
+.warning {
+
+	&__container {}
+
+	&__text {}
+}
+
+//====NOTE====================================================================================================================================================
+
+.page {
+
+	&__note {}
+}
+
+.note {
+
+	&__container {}
+
+	&__list {}
+
+	&__list-item {}
 }

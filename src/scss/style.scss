@@ -24,6 +24,7 @@ $fontSize: toRem(14); // где 14(px) - размер шрифта по умол
 $mainColor: #7a7a7a; // Цвет шрифта по умолчанию
 $secondColor: #2a5199;
 $therdColor: #00a5e2;
+$fourColor: #6db9c2;
 // Палитра цветов
 // @import "base/colors-palette";
 
@@ -159,5 +160,7 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "main";
+@import "home";
 @import "symptoms";
+@import "temperature";
+@import "temperatureInChildren";
