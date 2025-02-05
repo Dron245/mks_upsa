@@ -10,7 +10,7 @@
 	&__logo {
 		position: relative;
 		z-index: 6;
-		@media (max-width:$tablet) and (min-width:$mobile){
+		@media (max-width:$tablet) {
 			width: 180px;
 			img{
 				width: 100%;
@@ -74,15 +74,20 @@
 
 	&__sub-list {
 		@media (min-width:$mobile){
+			position: absolute;
 		}
-		position: absolute;
 		left: 0;
 		top: 100%;
 		padding-top: 1.25rem;
 		visibility: hidden;
 		opacity: 0;
-		
 		min-width: 100%;
+		@media (max-width:$mobile){
+			display: none;
+			._active & {
+				display: block;
+			}
+		}
 	}
 	
 	&__sub-item {
@@ -100,7 +105,15 @@
 
 	&__sub-link {
 		text-transform: uppercase;
-		text-wrap: nowrap;
+		@media (min-width:$mobile){
+			  
+			text-wrap: nowrap;
+		}
+		@media (max-width:$mobile){
+			 color: $therdColor;
+			 line-height: 1.5;
+			 @include adaptiveValue("font-size", 24, 16,0,768, 360);
+		}
 	}
 }
 .icon-menu {
