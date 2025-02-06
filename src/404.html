@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+	@@include('html/_head.htm',{ "title":"404" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__notfound notfound">
+					<div class="notfound__container">
+						<h1 class="notfound__title title">Упс!</h1>
+						<p class="notfound__text">Страница, которую вы ищете, не существует.</p>
+						<a href="home.html" class="notfound__link button">на главную</a>
+					</div>
+				</section>
+				@@include('html/_warning.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

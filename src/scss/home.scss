@@ -5,6 +5,10 @@
 	}
 }
 .main {
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 //===PRODUCTS=====================================================================================================================================================
@@ -12,6 +16,7 @@
 .page {
 
 	&__products {
+		@include adaptiveValue("margin-top", -135, -40,0, 1140, 360);
 	}
 }
 .products {
@@ -20,6 +25,7 @@
 	}
 
 	&__swiper-shell {
+		position: relative;
 	}
 
 	&__slider {
@@ -32,12 +38,32 @@
 	}
 
 	&__arrow {
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		background: #F4F5F6;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 5;
+		cursor: pointer;
+		@media (max-width:$mobile){
+			display: none;
+		}
 	}
 
 	&__arrow-prew {
+		left: 0;
 	}
 
 	&__arrow-next {
+		img {
+			rotate: 180deg;
+
+		}
+		right: 0;
 	}
 }
 .swiper {
@@ -47,17 +73,44 @@
 .product {
 
 	&__img {
+		display: flex;
+		justify-content: center;
+		img {
+			height: auto;
+			@include adaptiveValue("width", 364, 190, 0, 768, 360);
+		}
 	}
 
 	&__content {
+		text-align: center;
 	}
 
 	&__title {
+		margin-top: toRem(40);
+		margin-bottom: toRem(24);
+		@media (max-width:$mobile){
+			 margin-top: toRem(10);
+			 margin-bottom: toRem(16); 
+		}
+		@include adaptiveValue("font-size", 30, 20,0,768,360); 
 	}
 
 	&__info {
+		margin:auto;
+		max-width: 87.719298%; /* 1000/1140 */
+		p {
+			line-height: 1.62;
+			@media (max-width:$mobileSmall){
+				 font-size: toRem(14); 
+			}
+			&:not(:last-child) {margin-bottom: toRem(24);}
+
+		}
 	}
 
+	&__advantages {
+		line-height: 3;
+	}
 	&__link {
 	}
 }
@@ -68,6 +121,21 @@
 .button {
 }
 .swiper-pagination {
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+
+	.swiper-pagination-bullet {
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background-color: #F4F5F6;
+		transition: background-color 0.8s;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: $secondColor
+	}
 }
 //==INFO======================================================================================================================================================
 

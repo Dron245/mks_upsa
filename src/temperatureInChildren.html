@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
-	@@include('html/_head.htm',{ "title":"Главная" })
+<html lang="ru">
+	@@include('html/_head.htm',{ "title":";жар У детей" })
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
-				<section style="display:none" class="page__first first">
+				<section style="display: none" class="page__first first">
 					<nav class="first__breadcrumbs breadcrumbs">
 						<ul class="breadcrumbs__list">
 							<li class="breadcrumbs__item">
@@ -15,7 +15,9 @@
 								<a href="temperature.html" class="breadcrumbs__link">Лихорадка / жар</a>
 							</li>
 							<li class="breadcrumbs__item">
-								<span class="breadcrumbs__current">Лихорадка / жар у детей: что делать и когда стоит беспокоиться</span>
+								<span class="breadcrumbs__current"
+									>Лихорадка / жар у детей: что делать и когда стоит беспокоиться</span
+								>
 							</li>
 						</ul>
 					</nav>
@@ -23,9 +25,72 @@
 						<h1 class="first__title title">О Лихорадке / жаре</h1>
 					</div>
 				</section>
+				<section class="page__bg-fever bg-fever">
+					<div class="bg-fever__container">
+						<div class="bg-fever__img">
+							<img src="@img/fever/01.png" alt="жар у ребёнка" />
+						</div>
+					</div>
+				</section>
+				<section class="page__fever fever">
+					<div class="fever__container">
+						<h2 class="description-title">
+							Лихорадка / жар у детей: что делать и когда стоит беспокоиться
+						</h2>
+						<p class="fever__text">
+							Лихорадка / жар у детей — это повышение температуры тела выше 38°C. Это механизм
+							иммунной системы, защищающий организм от патогенов, таких как вирусы и бактерии. Когда
+							организм обнаруживает эти патогены, он повышает внутреннюю температуру, чтобы
+							предотвратить их размножение. Причиной лихорадки может быть почти любая инфекция.
+						</p>
+						<div class="fever__block">
+							<h3 class="fever__title">Причины лихорадки / жара</h3>
+							<p class="fever__text">
+								Практически любая инфекция может вызвать лихорадку. У детей в большинстве случаев
+								это связано с обычными простудами, вызванными безвредными вирусами, которые обычно
+								проходят за несколько дней. Задача врача — убедиться, что лихорадка не является
+								признаком заболеваний, требующих тщательного обследования или специфического лечения
+								(стрептококковый тонзиллит, инфекции мочевых путей, пневмония и т.д.). <br />
+								Таким образом, лихорадка у детей обычно является признаком активной работы иммунной
+								системы. Если лихорадка возникает у детей младше 3 месяцев, нужно обратиться за
+								медицинской помощью, поскольку их иммунная система еще не полностью развита.
+							</p>
+						</div>
+						<div class="fever__block">
+							<h3 class="fever__title">Уход дома</h3>
+							<p class="fever__text">
+								Важно обеспечить ребенку достаточное количество жидкости, дать отдохнуть и
+								ограничить посещение школы или детского сада. Также:
+							</p>
+						</div>
 
-				@@include('html/_slogan.htm',{})
-				@@include('html/_warning.htm',{})
+						<ul class="fever__list">
+							<li class="fever__item">
+								<p>
+									Позвольте ребенку самому решать, как ему одеваться и какая температура должна быть
+									в комнате. Поскольку температура тела повышается, он может ощущать холод.
+								</p>
+							</li>
+							<li class="fever__item">
+								<p>
+									Не заставляйте ребенка есть, если он не хочет, но обеспечьте его большим
+									количеством жидкости — водой, супами, чаем.
+								</p>
+							</li>
+							<li class="fever__item">
+								<p>
+									Избегайте газированных, кислых напитков и напитков с кофеином, они могут усугубить
+									обезвоживание.
+								</p>
+							</li>
+						</ul>
+						<p class="fever__text">
+							Эти простые меры помогут облегчить дискомфорт от лихорадки, но не излечат ее. При
+							длительных или ухудшающихся симптомах обязательно проконсультируйтесь с врачом.
+						</p>
+					</div>
+				</section>
+				@@include('html/_slogan.htm',{}) @@include('html/_warning.htm',{})
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

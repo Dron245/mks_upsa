@@ -1,103 +1,112 @@
 .header {
-	outline: 1px solid red;
+
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-block: 24px;
+		padding-block: 1.5rem;
 	}
 
 	&__logo {
 		position: relative;
 		z-index: 6;
+		width: 16.25rem;
+		margin-right: 1rem;
+		img {
+			width: 100%;
+		}
 		@media (max-width:$tablet) {
-			width: 180px;
-			img{
-				width: 100%;
-			}
+			width: 11.25rem;
 		}
 	}
 
-	&__menu {
-	}
+	&__menu {}
 }
+
 .menu {
 
-	&__icon {
-	}
+	&__icon {}
 
-	&__body {
-	}
+	&__body {}
 
-	&__list {
-	}
+	&__list {}
 
 	&__item {
 		position: relative;
 		cursor: pointer;
+
 		svg {
-			@media (max-width:$mobile){
-				 path{
-					 fill: #fff;
-				 } 
+			@media (max-width:$mobile) {
+				path {
+					fill: #fff;
+				}
 			}
 		}
-		&:hover{
-			.menu__sub-list{
+
+		&:hover {
+			.menu__sub-list {
 				visibility: visible;
 				opacity: 1;
 			}
+
 			svg {
 				transition: transform 0.3s ease 0s;
+
 				path {
-					@media (min-width:$mobile){
-						fill: $therdColor;
+					@media (min-width:$mobile) {
+						// fill: $therdColor;
 					}
-					
+
 				}
-				@media (max-width:$mobile){
-					 transform: rotate(180deg); 
+
+				@media (max-width:$mobile) {
+					transform: rotate(180deg);
 				}
 			}
-			.menu__link{
-				@media (min-width:$mobile){
-					color: $therdColor;
-					  
+
+			.menu__link {
+				@media (min-width:$mobile) {
+					// color: $therdColor;
 				}
+
 				font-weight: 700;
 			}
 		}
 	}
 
-	&__link {
-	}
+	&__link {}
 
 	&__sub-list {
-		@media (min-width:$mobile){
+		@media (min-width:$mobile) {
 			position: absolute;
 		}
+
 		left: 0;
 		top: 100%;
 		padding-top: 1.25rem;
 		visibility: hidden;
 		opacity: 0;
 		min-width: 100%;
-		@media (max-width:$mobile){
+
+		@media (max-width:$mobile) {
 			display: none;
+
 			._active & {
 				display: block;
 			}
 		}
 	}
-	
+
 	&__sub-item {
-		padding: 16px 24px;
+		padding: 1rem 1.5rem;
 		background-color: #fff;
 		cursor: pointer;
-		font-size: toRem(16);
-		&:hover{
+
+		// font-size: toRem(16);
+		&:hover {
 			background-color: $therdColor;
-			.menu__sub-link{
+
+			.menu__sub-link {
 				color: #fff;
 			}
 		}
@@ -105,17 +114,19 @@
 
 	&__sub-link {
 		text-transform: uppercase;
-		@media (min-width:$mobile){
-			  
+		color: $therdColor;
+
+		@media (min-width:$mobile) {
+
 			text-wrap: nowrap;
 		}
-		@media (max-width:$mobile){
-			 color: $therdColor;
-			 line-height: 1.5;
-			 @include adaptiveValue("font-size", 24, 16,0,768, 360);
+
+		@media (max-width:$mobile) {
+
+			line-height: 1.5;
+			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);
 		}
 	}
 }
-.icon-menu {
-}
 
+.icon-menu {}

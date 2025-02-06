@@ -18,13 +18,14 @@
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
 $fontFamily: "NotoSans";
-$fontSize: toRem(14); // где 14(px) - размер шрифта по умолчанию из макета
+$fontSize: toRem(16); // где 16(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
 $mainColor: #7a7a7a; // Цвет шрифта по умолчанию
 $secondColor: #2a5199;
 $therdColor: #00a5e2;
-$fourColor: #6db9c2;
+$fourColor: #954d86;
+$fiveColor: #6db9c2;
 // Палитра цветов
 // @import "base/colors-palette";
 
@@ -164,3 +165,7 @@ body {
 @import "symptoms";
 @import "temperature";
 @import "temperatureInChildren";
+@import "recommendations";
+@import "aboutCold";
+@import "aboutUs";
+@import "404";

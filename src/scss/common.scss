@@ -12,7 +12,7 @@
 	background: #2a5199;
 	border-radius: 3.125rem;
 	color: #fff;
-	font-size: toRem(16);
+	// font-size: toRem(16);
 	justify-content: center;
 	align-items: center;
 	padding: toRem(12) toRem(20);
@@ -28,9 +28,9 @@
 }
 
 
-.text {
-	font-size: 1rem;
-	line-height: 162%;
+p {
+	// font-size: 1rem;
+	// line-height: 1.5;
 
 	&_underline {
 		text-decoration: underline;
@@ -63,7 +63,15 @@
 
 .page {
 
-	&__first {}
+	&__first {
+		background-color: $secondColor;
+		.cold & {
+			background-color: $fourColor;
+		}
+		.about & {
+			background-color: $fiveColor;
+		}
+	}
 }
 
 .first {
@@ -98,7 +106,13 @@
 }
 
 .slogan {
-
+	background-color: $secondColor;
+	.cold & {
+		background-color: $fourColor;
+	}
+	.about & {
+		background-color: $fiveColor;
+	}
 	&__container {}
 
 	&__text {}
