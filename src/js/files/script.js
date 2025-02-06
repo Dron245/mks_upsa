@@ -27,5 +27,14 @@ window.addEventListener('DOMContentLoaded', () => {
 				item.classList.remove('_active');
 			});
 		}
+
+
+		//работа с селектами
+		if (targetElement.closest('.selects__item')) {
+			const select = targetElement.closest('.selects__item');
+			select.classList.toggle('_select-open');
+		}
+
+		
 	}
 });

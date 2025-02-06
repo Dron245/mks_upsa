@@ -1,10 +1,14 @@
 // Заголовки, общие БЄМ блоки и прочее...
 .title {
-	font-size: 2.5rem;
+	// font-size: 2.5rem;
 	line-height: 120%;
 	text-transform: uppercase;
 	text-align: center;
 	color: #fff;
+	@media (max-width:$mobile){
+		 line-height: 1.42; 
+	}
+	@include adaptiveValue("font-size", 40, 24, 0, 768, 360);
 }
 
 .button {
@@ -19,11 +23,12 @@
 	line-height: 140%;
 	text-transform: uppercase;
 	// font-family: TitilliumWeb;
-	transition: background-color 0.3s color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
 
 	&:hover {
-		background: #fff;
+		background-color: #fff;
 		color: $secondColor;
+		outline: 1px solid $secondColor;
 	}
 }
 
@@ -102,7 +107,9 @@ p {
 
 .page {
 
-	&__slogan {}
+	&__slogan {
+		padding-block: 2.5rem;	
+	}
 }
 
 .slogan {
@@ -115,35 +122,59 @@ p {
 	}
 	&__container {}
 
-	&__text {}
+	&__text {
+		max-width: 480px;
+		margin: auto;
+		// text-wrap: balance;
+	}
 }
 
 //==WARNING======================================================================================================================================================
 
 .page {
 
-	&__warning {}
+	&__warning {
+		background: #f4f5f6;
+	}
 }
 
 .warning {
 
-	&__container {}
+	&__container {
 
-	&__text {}
+	}
+
+	&__text {
+		margin:auto;
+		max-width: 57rem;
+		text-align: center;
+		color: $secondColor;
+		line-height: 1.36;
+		@include adaptiveValue("font-size", 28, 20,0, 768, 360);
+		@include adaptiveValue("padding-block", 80, 54,0, 768, 360);
+	}
 }
 
 //====NOTE====================================================================================================================================================
 
 .page {
 
-	&__note {}
+	&__note {
+		margin-block: 2.5rem;
+		
+	}
 }
 
 .note {
 
 	&__container {}
 
-	&__list {}
+	&__list {
+		padding-left: toRem(16);
+	}
 
-	&__list-item {}
+	&__list-item {
+		@include adaptiveValue("font-size", 14, 12,0, 768, 360);
+		line-height: 1.57;
+	}
 }
