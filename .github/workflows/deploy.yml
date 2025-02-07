@@ -29,4 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build  # Папка со статическими файлами после сборки
-          branch: gh-pages
+          publish_branch: gh-pages
+
