@@ -9,9 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
 		console.log(targetElement);
 
 		 // Проверяем, был ли клик по пункту меню
-		 if (targetElement.closest('.menu__link')) {
+		 if (targetElement.closest('.menu__top') && isMobile.any()) {
 			const menuItem = targetElement.closest('.menu__item');
- 
+			console.log(123);
 			// Переключаем активность текущего пункта, но не закрываем другие
 			menuItem.classList.toggle('_active');
 	  }

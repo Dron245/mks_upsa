@@ -1,78 +1,54 @@
-.checkbox {
-	position: relative;
+.custom-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1rem;
+	cursor: pointer;
+	user-select: none;
 	&:not(:last-child) {
 		margin-bottom: toRem(12);
 	}
-	// .checkbox__input
-	&__input {
-		position: absolute;
-		width: 0;
-		height: 0;
-		opacity: 0;
-		&:checked + .checkbox__label {
-			& .checkbox__body {
-				background-color: $secondColor;
-			}
-			& .checkbox__body::after {
-				opacity: 1;
-			}
-		}
-	}
+}
 
-	// .checkbox__label
-	&__label {
-		cursor: pointer;
-		display: inline-flex;
-		position: relative;
-		gap: 8px;
-	}
+/* Скрываем стандартный чекбокс */
+.custom-checkbox input {
+	display: none;
+}
 
-	&__body {
-		position: relative;
-		align-self: center;
-		flex: 0 0 20px;
-		width: 20px;
-		height: 20px;
-		border: 1px solid $secondColor;
-		border-radius: 4px;
-		
-		&::after{
-			content:'';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 13px;
-			height: 11px;
-			transition: opacity 0.1s ease;
-			//transform: scale(0);
-			opacity: 0;
-			background: url('@img/symptoms/check.svg') 0 0 / cover no-repeat;
-		}
+/* Кастомный чекбокс */
+.checkmark {
+	width: 1.25rem;
+	height: 1.25rem;
+	border: 0.0625rem solid $secondColor;
+	border-radius: 0.25rem;
+	position: relative;
+	display: inline-block;
+	background-color: white;
+	transition: background-color 0.3s, border-color 0.3s;
+}
 
-		
-		@media (max-width:$mobile){
-				align-self: flex-start;
-				transform: translateY(1px);
-		}
-	}
-	// .checkbox__label
-	// &__label {
-	// 	cursor: pointer;
-	// 	display: inline-flex;
-	// 	position: relative;
-	// 	gap: 10px;
-	// 	&:before {
-	// 		content: "";
-	// 		align-self: flex-start;
-	// 		flex: 0 0 20px;
-	// 		width: 20px;
-	// 		height: 20px;
-	// 		border: 1px solid #a7a9ac;
-	// 	}
-	// }
-	// .checkbox__text
-	&__text {
-		align-self: center;
-	}
+/* Галочка как изображение */
+.checkmark::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0.8125rem;
+	height: 0.6875rem;
+	background: url('@img/symptoms/check.svg') no-repeat center;
+	background-size: contain;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+/* Когда чекбокс активен */
+.custom-checkbox input:checked+.checkmark {
+	background: $secondColor;
+	border-color: $secondColor;
+}
+
+/* Отображаем изображение-галочку */
+.custom-checkbox input:checked+.checkmark::after {
+	opacity: 1;
 }

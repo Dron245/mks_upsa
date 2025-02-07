@@ -70,6 +70,8 @@ p {
 
 	&__first {
 		background-color: $secondColor;
+		padding-block: 1rem;
+		
 		.cold & {
 			background-color: $fourColor;
 		}
@@ -81,28 +83,73 @@ p {
 
 .first {
 
-	&__breadcrumbs {}
+	&__breadcrumbs {
+		padding-inline: 0.625rem;
+		padding-top: toRem(16);
+		&:not(:last-child) {margin-bottom: toRem(33);}
+		@include adaptiveValue("margin-bottom", 70, 40,0,768,360);
+
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+	}
 
 	&__container {}
 
-	&__title {}
+	&__title {
+		@include adaptiveValue("font-size", 40, 30,0,768,360);
+		&:not(:last-child) {margin-bottom: toRem(16);}
+		@media (max-width:$mobileSmall){
+			 &:not(:last-child) {margin-bottom: toRem(8);} 
+		}
+	}
 
-	&__subtitle {}
-}
+	&__subtitle {
+		text-align: center;
+		margin-bottom: -20px;
+		@include adaptiveValue("font-size", 20, 16,768,360);
+		@media (max-width:$mobile){
+			 line-height: 1.37; 
+		
+	}
+}}
 
 .breadcrumbs {
 
-	&__list {}
+	&__list {
+		display: flex;
+		gap: toRem(20);
+		align-items: center;
+	}
 
-	&__item {}
+	&__item {
+		&:not(:last-child) {
+			position: relative;
+			&::after{
+				content:'';
+				position: absolute;
+				right: -0.75rem;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 0.25rem;
+				height: 0.25rem;
+				background-color: #fff;
+			}
+		}
+	}
 
-	&__link {}
+	&__link {
+		font-size: 12px;
+line-height: 175%;
+color: #fff;
+	}
 
-	&__current {}
+	&__current {
+		font-size: 12px;
+line-height: 175%;
+color: #fff;
+	}
 }
-
-.title {}
-
 //===SLOGAN=====================================================================================================================================================
 
 .page {
