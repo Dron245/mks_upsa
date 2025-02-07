@@ -14,7 +14,9 @@
 
 .page {
 	&__products {
-		@include adaptiveValue("margin-top", -135, -40, 0, 1140, 360);
+		@include adaptiveValue("margin-top", -135, -76, 0, 1140, 768);
+		@include adaptiveValue("margin-top", -76, -40, 0, 768, 360);
+
 	}
 }
 .products {

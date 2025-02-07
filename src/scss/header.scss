@@ -34,7 +34,12 @@
 	&__item {
 		position: relative;
 		cursor: pointer;
-
+		// @media (max-width:$mobile){
+		// 	:focus, :focus-visible , :focus-within, :hover{
+		// 		outline: none;
+		// 		box-shadow: none;
+		// 	}
+		// }
 		svg {
 			@media (max-width:$mobile) {
 				path {
@@ -44,33 +49,27 @@
 		}
 
 		&:hover {
-			.menu__sub-list {
-				visibility: visible;
-				opacity: 1;
-			}
-
-			svg {
-				transition: transform 0.3s ease 0s;
-
-				path {
-					@media (min-width:$mobile) {
-						// fill: $therdColor;
+			// @media (min-width:$mobile){
+				.menu__sub-list {
+					visibility: visible;
+					opacity: 1;
+				}
+				svg {
+					transition: transform 0.3s ease 0s;
+					path {
+						@media (min-width:$mobile) {
+						}
 					}
-
+					@media (max-width:$mobile) {
+						transform: rotate(180deg);
+					}
 				}
-
-				@media (max-width:$mobile) {
-					transform: rotate(180deg);
+	
+				.menu__link {
+					font-weight: 700;
 				}
-			}
-
-			.menu__link {
-				@media (min-width:$mobile) {
-					// color: $therdColor;
-				}
-
-				font-weight: 700;
-			}
+			// }
+			
 		}
 	}
 
@@ -104,7 +103,10 @@
 
 		// font-size: toRem(16);
 		&:hover {
-			background-color: $therdColor;
+			@media (min-width:$mobile){
+				  
+				background-color: $therdColor;
+			}
 
 			.menu__sub-link {
 				color: #fff;
