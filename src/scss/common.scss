@@ -5,8 +5,8 @@
 	text-transform: uppercase;
 	text-align: center;
 	color: #fff;
-	@media (max-width:$mobile){
-		 line-height: 1.42; 
+	@media (max-width: $mobile) {
+		line-height: 1.42;
 	}
 	@include adaptiveValue("font-size", 40, 24, 0, 768, 360);
 }
@@ -23,7 +23,9 @@
 	line-height: 140%;
 	text-transform: uppercase;
 	// font-family: TitilliumWeb;
-	transition: background-color 0.3s, color 0.3s;
+	transition:
+		background-color 0.3s,
+		color 0.3s;
 
 	&:hover {
 		background-color: #fff;
@@ -31,7 +33,6 @@
 		outline: 0.0625rem solid $secondColor;
 	}
 }
-
 
 p {
 	// font-size: 1rem;
@@ -45,11 +46,11 @@ p {
 		font-weight: 700;
 	}
 
-	@media (max-width:$mobile) {
+	@media (max-width: $mobile) {
 		line-height: 150%;
 	}
 
-	@media (max-width:$mobileSmall) {
+	@media (max-width: $mobileSmall) {
 		font-size: toRem(14);
 	}
 }
@@ -59,19 +60,17 @@ p {
 	font-size: 2.375rem;
 	line-height: 126%;
 	color: #484848;
-	@media (max-width:$mobile){
-		 font-size: toRem(20); 
+	@media (max-width: $mobile) {
+		font-size: toRem(20);
 	}
 }
 
 //====FIRST====================================================================================================================================================
 
 .page {
-
 	&__first {
 		background-color: $secondColor;
-		padding-block: 1rem;
-		
+
 		.cold & {
 			background-color: $fourColor;
 		}
@@ -82,80 +81,88 @@ p {
 }
 
 .first {
-
 	&__breadcrumbs {
 		padding-inline: 0.625rem;
 		padding-top: toRem(16);
-		&:not(:last-child) {margin-bottom: toRem(33);}
-		@include adaptiveValue("margin-bottom", 70, 40,0,768,360);
+		&:not(:last-child) {
+			margin-bottom: toRem(33);
+		}
+		@include adaptiveValue("margin-bottom", 70, 40, 0, 768, 360);
 
-		@media (max-width:$mobile){
-			 display: none; 
+		@media (max-width: $mobile) {
+			display: none;
 		}
 	}
 
-	&__container {}
+	&__container {
+		@include adaptiveValue("padding-bottom", 70, 40, 0, 768, 360);
+	}
 
 	&__title {
-		@include adaptiveValue("font-size", 40, 30,0,768,360);
-		&:not(:last-child) {margin-bottom: toRem(16);}
-		@media (max-width:$mobileSmall){
-			 &:not(:last-child) {margin-bottom: toRem(8);} 
+		@include adaptiveValue("font-size", 40, 30, 0, 768, 360);
+		&:not(:last-child) {
+			margin-bottom: toRem(16);
+		}
+		@media (max-width: $mobileSmall) {
+			&:not(:last-child) {
+				margin-bottom: toRem(8);
+			}
 		}
 	}
 
 	&__subtitle {
 		text-align: center;
+		color: #fff;
 		margin-bottom: -20px;
-		@include adaptiveValue("font-size", 20, 16,768,360);
-		@media (max-width:$mobile){
-			 line-height: 1.37; 
-		
+		@include adaptiveValue("font-size", 20, 16, 768, 360);
+		@media (max-width: $mobile) {
+			line-height: 1.37;
+		}
 	}
-}}
+}
 
 .breadcrumbs {
-
 	&__list {
 		display: flex;
-		gap: toRem(20);
+		gap: toRem(24);
 		align-items: center;
 	}
 
 	&__item {
 		&:not(:last-child) {
 			position: relative;
-			&::after{
-				content:'';
+			&::after {
+				content: "—";
 				position: absolute;
-				right: -0.75rem;
+				// right: -0.75rem;
 				top: 50%;
-				transform: translateY(-50%);
-				width: 0.25rem;
-				height: 0.25rem;
-				background-color: #fff;
+				right:  -20px;
+				color: #fff;
+				transform: translateY(-45%);
+				// width: 4px;
+				// height: 4px;
+				// background-color: #fff;
 			}
 		}
 	}
 
 	&__link {
 		font-size: 12px;
-line-height: 175%;
-color: #fff;
+		line-height: 175%;
+		color: #fff;
 	}
 
 	&__current {
 		font-size: 12px;
-line-height: 175%;
-color: #fff;
+		line-height: 175%;
+		color: #fff;
 	}
 }
 //===SLOGAN=====================================================================================================================================================
 
 .page {
-
 	&__slogan {
-		padding-block: 2.5rem;	
+		padding-block: 2.5rem;
 	}
 }
 
@@ -167,7 +174,8 @@ color: #fff;
 	.about & {
 		background-color: $fiveColor;
 	}
-	&__container {}
+	&__container {
+	}
 
 	&__text {
 		max-width: 30rem;
@@ -179,49 +187,44 @@ color: #fff;
 //==WARNING======================================================================================================================================================
 
 .page {
-
 	&__warning {
 		background: #f4f5f6;
 	}
 }
 
 .warning {
-
 	&__container {
-
 	}
 
 	&__text {
-		margin:auto;
+		margin: auto;
 		max-width: 57rem;
 		text-align: center;
 		color: $secondColor;
 		line-height: 1.36;
-		@include adaptiveValue("font-size", 28, 20,0, 768, 360);
-		@include adaptiveValue("padding-block", 80, 54,0, 768, 360);
+		@include adaptiveValue("font-size", 28, 20, 0, 768, 360);
+		@include adaptiveValue("padding-block", 80, 54, 0, 768, 360);
 	}
 }
 
 //====NOTE====================================================================================================================================================
 
 .page {
-
 	&__note {
 		margin-block: 2.5rem;
-		
 	}
 }
 
 .note {
-
-	&__container {}
+	&__container {
+	}
 
 	&__list {
 		padding-left: toRem(16);
 	}
 
 	&__list-item {
-		@include adaptiveValue("font-size", 14, 12,0, 768, 360);
+		@include adaptiveValue("font-size", 14, 12, 0, 768, 360);
 		line-height: 1.57;
 	}
 }
