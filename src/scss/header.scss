@@ -1,0 +1,134 @@
+.header {
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 1.5rem;
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 6;
+		width: 16.25rem;
+		margin-right: 1rem;
+		img {
+			width: 100%;
+		}
+		@media (max-width:$tablet) {
+			width: 11.25rem;
+		}
+	}
+
+	&__menu {}
+}
+
+.menu {
+
+	&__icon {}
+
+	&__body {}
+
+	&__list {}
+
+	&__item {
+		position: relative;
+		cursor: pointer;
+		// @media (max-width:$mobile){
+		// 	:focus, :focus-visible , :focus-within, :hover{
+		// 		outline: none;
+		// 		box-shadow: none;
+		// 	}
+		// }
+		svg {
+			@media (max-width:$mobile) {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+
+		&:hover {
+			// @media (min-width:$mobile){
+				.menu__sub-list {
+					visibility: visible;
+					opacity: 1;
+				}
+				svg {
+					transition: transform 0.3s ease 0s;
+					path {
+						@media (min-width:$mobile) {
+						}
+					}
+					@media (max-width:$mobile) {
+						transform: rotate(180deg);
+					}
+				}
+	
+				.menu__link {
+					font-weight: 700;
+				}
+			// }
+			
+		}
+	}
+
+	&__link {}
+
+	&__sub-list {
+		@media (min-width:$mobile) {
+			position: absolute;
+		}
+
+		left: 0;
+		top: 100%;
+		padding-top: 1.25rem;
+		visibility: hidden;
+		opacity: 0;
+		min-width: 100%;
+
+		@media (max-width:$mobile) {
+			display: none;
+
+			._active & {
+				display: block;
+			}
+		}
+	}
+
+	&__sub-item {
+		padding: 1rem 1.5rem;
+		background-color: #fff;
+		cursor: pointer;
+
+		// font-size: toRem(16);
+		&:hover {
+			@media (min-width:$mobile){
+				  
+				background-color: $therdColor;
+			}
+
+			.menu__sub-link {
+				color: #fff;
+			}
+		}
+	}
+
+	&__sub-link {
+		text-transform: uppercase;
+		color: $therdColor;
+
+		@media (min-width:$mobile) {
+
+			text-wrap: nowrap;
+		}
+
+		@media (max-width:$mobile) {
+
+			line-height: 1.5;
+			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);
+		}
+	}
+}
+
+.icon-menu {}

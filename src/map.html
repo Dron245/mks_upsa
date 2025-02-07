@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+	@@include('html/_head.htm',{ "title":"Карта сайта" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__map map">
+					<div class="map__container">
+						<h1 class="map__title title">Карта сайта</h1>
+						<div class="map__content">
+							<ul class="map__list">
+								<li class="map__item">
+									Фервекс от простуды и гриппа
+									<ul class="map__sub-list">
+										<li class="map__item">
+											<a target="_blank" href="./symptoms.html" class="map__link"
+												>Препараты Фервекс от простуды и гриппа</a
+											>
+										</li>
+									</ul>
+								</li>
+								<li class="map__item">
+									О простуде и гриппе
+									<ul class="map__sub-list">
+										<li class="map__item">
+											<a target="_blank" href="./temperature.html" class="map__link">Лихорадка / жар</a>
+										</li>
+										<li class="map__item">
+											<a target="_blank" href="./aboutCold.html" class="map__link">Простуда / грипп</a>
+										</li>
+									</ul>
+								</li>
+								<li class="map__item">
+									<a target="_blank" href="./aboutUs.html" class="map__link">О нас</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				@@include('html/_warning.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
