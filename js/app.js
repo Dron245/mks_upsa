@@ -1,5 +1,25 @@
 (() => {
     "use strict";
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        }
+    };
     function functions_getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
@@ -4026,8 +4046,9 @@
         function documentActions(e) {
             const targetElement = e.target;
             console.log(targetElement);
-            if (targetElement.closest(".menu__link")) {
+            if (targetElement.closest(".menu__top") && isMobile.any()) {
                 const menuItem = targetElement.closest(".menu__item");
+                console.log(123);
                 menuItem.classList.toggle("_active");
             }
             if (targetElement.closest(".selects__item")) {

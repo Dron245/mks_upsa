@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250207081240">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250207121635">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<p class="menu__link">
+								<p class="menu__top">
 									<span>Фервекс от простуды и гриппа</span>
 									<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M1.0293 0H9.5625C10.1602 0 10.459 0.730469 10.0273 1.16211L5.77734 5.41211C5.51172 5.67773 5.08008 5.67773 4.81445 5.41211L0.564453 1.16211C0.132812 0.730469 0.431641 0 1.0293 0Z" fill="#7A7A7A" />
@@ -38,7 +38,7 @@
 								</ul>
 							</li>
 							<li class="menu__item">
-								<p class="menu__link">
+								<p class="menu__top">
 									<span>о простуде и гриппе</span>
 									<svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M1.0293 0H9.5625C10.1602 0 10.459 0.730469 10.0273 1.16211L5.77734 5.41211C5.51172 5.67773 5.08008 5.67773 4.81445 5.41211L0.564453 1.16211C0.132812 0.730469 0.431641 0 1.0293 0Z" fill="#7A7A7A" />
@@ -54,7 +54,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="menu__item"><a target="_blank" href="./aboutUs.html" class="menu__link">О нас</a></li>
+							<li class="menu__item"><a target="_blank" href="./aboutUs.html" class="menu__top">О нас</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -86,14 +86,16 @@
 							<span class="selects_arrow"><img src="img/symptoms/arrow-select.svg" alt="" /></span>
 							<ul class="selects__list">
 								<li class="selects__item-list">
-									<div class="checkbox">
+									<label for="c_1_1" class="custom-checkbox">
 										<input id="c_1_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1_1" name="form[]" />
-										<label for="c_1_1" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">Старше 15 лет</span></label>
-									</div>
-									<div class="checkbox">
+										<span class="checkmark"></span>
+										Старше 15 лет
+									</label>
+									<label for="c_1_2" class="custom-checkbox">
 										<input id="c_1_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1_2" name="form[]" />
-										<label for="c_1_2" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">Для детей от 6 до 15 лет</span></label>
-									</div>
+										<span class="checkmark"></span>
+										Для детей от 6 до 15 лет
+									</label>
 								</li>
 							</ul>
 						</div>
@@ -102,14 +104,16 @@
 							<span class="selects_arrow"><img src="img/symptoms/arrow-select.svg" alt="" /></span>
 							<ul class="selects__list">
 								<li class="selects__item-list">
-									<div class="checkbox">
+									<label for="c_2_1" class="custom-checkbox">
 										<input id="c_2_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="2_1" name="form[]" />
-										<label for="c_2_1" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">Лимон</span></label>
-									</div>
-									<div class="checkbox">
+										<span class="checkmark"></span>
+										Лимон
+									</label>
+									<label for="c_2_2" class="custom-checkbox">
 										<input id="c_2_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="2_2" name="form[]" />
-										<label for="c_2_2" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">Малина</span></label>
-									</div>
+										<span class="checkmark"></span>
+										Малина
+									</label>
 								</li>
 							</ul>
 						</div>
@@ -118,19 +122,22 @@
 							<span class="selects_arrow"><img src="img/symptoms/arrow-select.svg" alt="" /></span>
 							<ul class="selects__list">
 								<li class="selects__item-list">
-									<div class="checkbox">
+									<label for="c_3_1" class="custom-checkbox">
 										<input id="c_3_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="3_1" name="form[]" />
-										<label for="c_3_1" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">C сахаром</span></label>
-									</div>
-									<div class="checkbox">
+										<span class="checkmark"></span>
+										С сахаром
+									</label>
+									<label for="c_3_2" class="custom-checkbox">
 										<input id="c_3_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="3_2" name="form[]" />
-										<label for="c_3_2" class="checkbox__label"><span class="checkbox__body"></span><span class="checkbox__text">Без сахара</span></label>
-									</div>
+										<span class="checkmark"></span>
+										Без сахара
+									</label>
+
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div style="display: none;" class="selects__results">
+					<div style="display: none" class="selects__results">
 						<article class="selects__result item">
 							<div class="item__img">
 								<img src="img/home/slider/01.webp" alt="Фервекс Лимонный без сахара (8, 12 пакетиков)" />
@@ -753,7 +760,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20250207081240"></script>
+	<script src="js/app.min.js?_v=20250207121635"></script>
 </body>
 
 </html>

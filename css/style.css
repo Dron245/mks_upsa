@@ -148,54 +148,52 @@ h6 {
   min-width: 0;
   grid-column: 3/4
 }
-.checkbox {
-  position: relative
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
 }
-.checkbox:not(:last-child) {
+.custom-checkbox:not(:last-child) {
   margin-bottom: .75rem
 }
-.checkbox__input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0
+.custom-checkbox input {
+  display: none
 }
-.checkbox__input:checked+.checkbox__label .checkbox__body {
-  background-color: #2a5199
-}
-.checkbox__input:checked+.checkbox__label .checkbox__body::after {
-  opacity: 1
-}
-.checkbox__label {
-  cursor: pointer;
-  display: inline-flex;
+.checkmark {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: .0625rem solid #2a5199;
+  border-radius: .25rem;
   position: relative;
-  gap: 8px
+  display: inline-block;
+  background-color: #fff;
+  transition: background-color .3s,border-color .3s
 }
-.checkbox__body {
-  position: relative;
-  align-self: center;
-  flex: 0 0 20px;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #2a5199;
-  border-radius: 4px
-}
-.checkbox__body::after {
+.checkmark::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 13px;
-  height: 11px;
-  transition: opacity .1s ease;
+  width: .8125rem;
+  height: .6875rem;
+  background: url(../img/symptoms/check.svg) no-repeat center;
+  background-size: contain;
   opacity: 0;
-  background: url(../img/symptoms/check.svg) 0 0/cover no-repeat
+  transition: opacity .2s
 }
-.checkbox__text {
-  align-self: center
+.custom-checkbox input:checked+.checkmark {
+  background: #2a5199;
+  border-color: #2a5199
+}
+.custom-checkbox input:checked+.checkmark::after {
+  opacity: 1
 }
 .menu__list {
   display: flex;
@@ -209,14 +207,14 @@ h6 {
   -moz-column-gap: .5rem;
   column-gap: .5rem
 }
-.menu__link {
+.menu__top {
   line-height: 125%;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: .5rem
 }
-.menu__link span {
+.menu__top span {
   font-weight: 400
 }
 .icon-menu {
@@ -284,13 +282,57 @@ p span {
   color: #484848
 }
 .page__first {
-  background-color: #2a5199
+  background-color: #2a5199;
+  padding-block: 1rem
 }
 .cold .page__first {
   background-color: #954d86
 }
 .about .page__first {
   background-color: #6db9c2
+}
+.first__breadcrumbs {
+  padding-inline: .625rem;
+  padding-top: 1rem
+}
+.first__breadcrumbs:not(:last-child) {
+  margin-bottom: 2.0625rem
+}
+.first__title:not(:last-child) {
+  margin-bottom: 1rem
+}
+.first__subtitle {
+  text-align: center;
+  margin-bottom: -20px
+}
+.breadcrumbs__list {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center
+}
+.breadcrumbs__item:not(:last-child) {
+  position: relative
+}
+.breadcrumbs__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -.75rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: .25rem;
+  height: .25rem;
+  background-color: #fff
+}
+.breadcrumbs__link {
+  font-size: 12px;
+  line-height: 175%;
+  color: #fff
+}
+.breadcrumbs__current {
+  font-size: 12px;
+  line-height: 175%;
+  color: #fff
 }
 .page__slogan {
   padding-block: 2.5rem
@@ -350,7 +392,7 @@ p span {
   visibility: visible;
   opacity: 1
 }
-.menu__item:hover .menu__link {
+.menu__item:hover .menu__top {
   font-weight: 700
 }
 .menu__item svg {
@@ -668,6 +710,11 @@ p span {
 .swiper-button-lock {
   display: none!important
 }
+@media (min-width:22.5em) {
+  .first__subtitle {
+    font-size: 1.25rem
+  }
+}
 @media (min-width:29.99875em) {
   .menu-footer__link {
     border-right: 1px solid #7a7a7a;
@@ -732,6 +779,12 @@ p span {
   .title {
     font-size: 2.5rem
   }
+  .first__breadcrumbs {
+    margin-bottom: 4.375rem
+  }
+  .first__title {
+    font-size: 2.5rem
+  }
   .warning__text {
     font-size: 1.75rem
   }
@@ -774,17 +827,17 @@ p span {
     gap: 1.25rem
   }
 }
+@media (max-width:20em) {
+  .first__subtitle {
+    font-size: 1rem
+  }
+}
 @media (max-width:61.99875em) {
   .header__logo {
     width: 11.25rem
   }
 }
 @media (max-width:47.99875em) {
-  .checkbox__body {
-    align-self: flex-start;
-    -webkit-transform: translateY(1px);
-    transform: translateY(1px)
-  }
   .menu__body {
     position: fixed;
     width: 100%;
@@ -828,7 +881,7 @@ p span {
     flex-direction: column;
     align-items: flex-start
   }
-  .menu__link {
+  .menu__top {
     margin-left: 1rem;
     font-size: 1.5rem;
     line-height: 125%;
@@ -893,6 +946,12 @@ p span {
   .description-title {
     font-size: 1.25rem
   }
+  .first__breadcrumbs {
+    display: none
+  }
+  .first__subtitle {
+    line-height: 1.37
+  }
   .menu__item svg path {
     fill: #fff
   }
@@ -924,7 +983,7 @@ p span {
   }
 }
 @media (max-width:47.99875em)and (max-width:22.5em) {
-  .menu__link {
+  .menu__top {
     font-size: 1rem
   }
   .menu__sub-link {
@@ -968,6 +1027,9 @@ p span {
   p {
     font-size: .875rem
   }
+  .first__title:not(:last-child) {
+    margin-bottom: .5rem
+  }
   .footer__contraindications {
     padding: 1rem 1.25rem
   }
@@ -981,6 +1043,12 @@ p span {
 @media (max-width:22.5em) {
   .title {
     font-size: 1.5rem
+  }
+  .first__breadcrumbs {
+    margin-bottom: 2.5rem
+  }
+  .first__title {
+    font-size: 1.875rem
   }
   .warning__text {
     font-size: 1.25rem
@@ -1034,7 +1102,7 @@ p span {
   }
 }
 @media (max-width:47.99875em)and (min-width:48em) {
-  .menu__link {
+  .menu__top {
     font-size: 1.5rem
   }
   .menu__sub-link {
@@ -1062,7 +1130,7 @@ p span {
   }
 }
 @media (max-width:47.99875em)and (min-width:22.5em)and (max-width:48em) {
-  .menu__link {
+  .menu__top {
     font-size: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
   }
   .menu__sub-link {
@@ -1093,6 +1161,12 @@ p span {
   .title {
     font-size: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
   }
+  .first__breadcrumbs {
+    margin-bottom: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
+  }
+  .first__title {
+    font-size: clamp(1.875rem ,1.3235294118rem + 2.4509803922vw ,2.5rem)
+  }
   .warning__text {
     font-size: clamp(1.25rem ,.8088235294rem + 1.9607843137vw ,1.75rem)
   }
@@ -1122,6 +1196,11 @@ p span {
   }
   .symptoms {
     padding-block: clamp(2.5rem ,.2941176471rem + 9.8039215686vw ,5rem)
+  }
+}
+@media (min-width:20em)and (max-width:22.5em) {
+  .first__subtitle {
+    font-size: clamp(1rem ,-1rem + 10vw ,1.25rem)
   }
 }
 @media (min-width:22.5em)and (max-width:71.25em) {
