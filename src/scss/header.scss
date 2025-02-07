@@ -12,9 +12,11 @@
 		z-index: 6;
 		width: 16.25rem;
 		margin-right: 1rem;
+
 		img {
 			width: 100%;
 		}
+
 		@media (max-width:$tablet) {
 			width: 11.25rem;
 		}
@@ -34,12 +36,6 @@
 	&__item {
 		position: relative;
 		cursor: pointer;
-		// @media (max-width:$mobile){
-		// 	:focus, :focus-visible , :focus-within, :hover{
-		// 		outline: none;
-		// 		box-shadow: none;
-		// 	}
-		// }
 		svg {
 			@media (max-width:$mobile) {
 				path {
@@ -48,44 +44,57 @@
 			}
 		}
 
-		&:hover {
-			// @media (min-width:$mobile){
+		// @media (any-hover: hover) {
+			&:hover {
 				.menu__sub-list {
 					visibility: visible;
 					opacity: 1;
-				}
-				svg {
-					transition: transform 0.3s ease 0s;
-					path {
-						@media (min-width:$mobile) {
-						}
-					}
-					@media (max-width:$mobile) {
-						transform: rotate(180deg);
+					@media (max-width:$mobile){
+						 
 					}
 				}
-	
+
+				
 				.menu__link {
 					font-weight: 700;
 				}
-			// }
-			
+			}
+		// }
+		& svg {
+			transition: transform 0.3s ease 0s;
+		}
+		&._active {
+			svg {
+
+				@media (max-width:$mobile) {
+					transform: rotate(180deg);
+				}
+			}
 		}
 	}
 
 	&__link {}
 
 	&__sub-list {
+		padding-top: 1.25rem;
 		@media (min-width:$mobile) {
 			position: absolute;
-		}
-
-		left: 0;
+			left: 0;
 		top: 100%;
-		padding-top: 1.25rem;
 		visibility: hidden;
 		opacity: 0;
 		min-width: 100%;
+		}
+		._active & {
+			width: 100vh; 
+		// 	left: 0;
+		// top: 100%;
+		// padding-top: 1.25rem;
+		// visibility: hidden;
+		// opacity: 0;
+		// min-width: 100%;
+		}
+		
 
 		@media (max-width:$mobile) {
 			display: none;
@@ -103,8 +112,7 @@
 
 		// font-size: toRem(16);
 		&:hover {
-			@media (min-width:$mobile){
-				  
+			@media (min-width:$mobile) {
 				background-color: $therdColor;
 			}
 
