@@ -350,21 +350,19 @@ p span {
   visibility: visible;
   opacity: 1
 }
-.menu__item:hover svg {
+.menu__item:hover .menu__link {
+  font-weight: 700
+}
+.menu__item svg {
   transition: -webkit-transform .3s ease 0s;
   transition: transform .3s ease 0s;
   transition: transform .3s ease 0s,-webkit-transform .3s ease 0s
 }
-.menu__item:hover .menu__link {
-  font-weight: 700
-}
 .menu__sub-list {
-  left: 0;
-  top: 100%;
-  padding-top: 1.25rem;
-  visibility: hidden;
-  opacity: 0;
-  min-width: 100%
+  padding-top: 1.25rem
+}
+._active .menu__sub-list {
+  width: 100vh
 }
 .menu__sub-item {
   padding: 1rem 1.5rem;
@@ -681,7 +679,12 @@ p span {
     display: none
   }
   .menu__sub-list {
-    position: absolute
+    position: absolute;
+    left: 0;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 100%
   }
   .menu__sub-item:hover {
     background-color: #00a5e2
@@ -815,7 +818,7 @@ p span {
     margin-inline: -1rem;
     flex-direction: column;
     row-gap: 3.25rem;
-    align-items: stretch;
+    align-items: flex-start;
     position: relative
   }
   .menu__list {
@@ -893,7 +896,7 @@ p span {
   .menu__item svg path {
     fill: #fff
   }
-  .menu__item:hover svg {
+  .menu__item._active svg {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg)
   }

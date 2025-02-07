@@ -4028,13 +4028,8 @@
             console.log(targetElement);
             if (targetElement.closest(".menu__link")) {
                 const menuItem = targetElement.closest(".menu__item");
-                document.querySelectorAll(".menu__item._active").forEach((item => {
-                    if (item !== menuItem) item.classList.remove("_active");
-                }));
                 menuItem.classList.toggle("_active");
-            } else document.querySelectorAll(".menu__item._active").forEach((item => {
-                item.classList.remove("_active");
-            }));
+            }
             if (targetElement.closest(".selects__item")) {
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
