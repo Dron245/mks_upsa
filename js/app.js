@@ -4056,6 +4056,10 @@
                 select.classList.toggle("_select-open");
             }
         }
+        const conditions = document.querySelector(".footer__contraindications");
+        const footerContainer = document.querySelector(".footer__container");
+        footerContainer.style.paddingBottom = `${conditions.offsetHeight + 50}px`;
+        console.log(conditions.offsetHeight);
     }));
     window["FLS"] = true;
     menuInit();
