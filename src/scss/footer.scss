@@ -1,5 +1,5 @@
 .footer {
-	border-top: 2px solid #f4f5f6;
+	border-top: 0.125rem solid #f4f5f6;
 	@include adaptiveValue("padding-top", 80, 40, 0, 768, 360);
 
 	&__container {
@@ -82,9 +82,9 @@
 	&__link {
 		display: block;
 		line-height: 1.57;
-		padding-inline: 10px;
+		padding-inline: 0.625rem;
 		@media (min-width:$mobileSmall){
-			border-right: 1px solid $mainColor;
+			border-right: 0.0625rem solid $mainColor;
 			line-height: 1;
 			  
 		}
