@@ -1119,6 +1119,14 @@ h6 {
   }
 }
 @media (any-hover:hover)and (min-width:47.99875em) {
+  .menu__item:hover .menu__link span {
+    font-weight: 700;
+    color: #00a5e2
+  }
+  .menu__item:hover .menu__sub-list {
+    visibility: visible;
+    opacity: 1
+  }
   .menu__sub-item:hover {
     background-color: #00a5e2
   }
@@ -2133,14 +2141,6 @@ h6 {
   }
 }
 @media (any-hover:hover) {
-  .menu__item:hover .menu__link span {
-    font-weight: 700;
-    color: #00a5e2
-  }
-  .menu__item:hover .menu__sub-list {
-    visibility: visible;
-    opacity: 1
-  }
   .menu__sub-item:hover .menu__sub-link {
     color: #fff
   }
