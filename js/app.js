@@ -1,25 +1,5 @@
 (() => {
     "use strict";
-    let isMobile = {
-        Android: function() {
-            return navigator.userAgent.match(/Android/i);
-        },
-        BlackBerry: function() {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function() {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-        Windows: function() {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function() {
-            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-        }
-    };
     function functions_getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
@@ -4046,11 +4026,6 @@
         function documentActions(e) {
             const targetElement = e.target;
             console.log(targetElement);
-            if (targetElement.closest(".menu__top") && isMobile.any()) {
-                const menuItem = targetElement.closest(".menu__item");
-                console.log(123);
-                menuItem.classList.toggle("_active");
-            }
             if (targetElement.closest(".selects__item")) {
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
@@ -4059,7 +4034,29 @@
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
         footerContainer.style.paddingBottom = `${conditions.offsetHeight + 50}px`;
-        console.log(conditions.offsetHeight);
+        function toggleSubmenu(submenu, item) {
+            if (!submenu.style.maxHeight || submenu.style.maxHeight === "0px") {
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+                item.classList.add("_active");
+            } else {
+                submenu.style.maxHeight = "0px";
+                item.classList.remove("_active");
+            }
+        }
+        document.querySelectorAll(".menu__item").forEach((item => {
+            const link = item.querySelector(".menu__link");
+            const submenu = item.querySelector(".menu__sub-list");
+            if (submenu) {
+                submenu.style.overflow = "hidden";
+                submenu.style.maxHeight = "0px";
+                link.addEventListener("click", (e => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        toggleSubmenu(submenu, item);
+                    }
+                }));
+            }
+        }));
     }));
     window["FLS"] = true;
     menuInit();
