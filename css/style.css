@@ -398,11 +398,10 @@ h6 {
 }
 .menu__sub-item {
   padding: 1rem 1.5rem;
-  background-color: #fff;
   cursor: pointer
 }
-.menu__sub-item:hover .menu__sub-link {
-  color: #fff
+._active .menu__sub-item {
+  background-color: #fff
 }
 .menu__sub-link {
   text-transform: uppercase;
@@ -1091,8 +1090,8 @@ h6 {
     overflow: initial!important;
     max-height: initial!important
   }
-  .menu__sub-item:hover {
-    background-color: #00a5e2
+  .menu__sub-item {
+    background-color: #fff
   }
   .menu__sub-link {
     text-wrap: nowrap
@@ -1117,6 +1116,11 @@ h6 {
   }
   .contacts__body {
     margin-inline: 60px
+  }
+}
+@media (any-hover:hover)and (min-width:47.99875em) {
+  .menu__sub-item:hover {
+    background-color: #00a5e2
   }
 }
 @media (min-width:56.25em) {
@@ -2136,5 +2140,13 @@ h6 {
   .menu__item:hover .menu__sub-list {
     visibility: visible;
     opacity: 1
+  }
+  .menu__sub-item:hover .menu__sub-link {
+    color: #fff
+  }
+}
+@media (hover:noту) {
+  .menu__sub-item:active {
+    color: #fff
   }
 }
