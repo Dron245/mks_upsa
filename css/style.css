@@ -2145,7 +2145,7 @@ h6 {
     color: #fff
   }
 }
-@media (hover:noту) {
+@media (hover:none) {
   .menu__sub-item:active {
     color: #fff
   }
