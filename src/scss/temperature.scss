@@ -1,74 +1,128 @@
 .wrapper {
 }
 .page {
+	&__articles {
+		margin-top: toRem(40);
 
-		&__first {
-		}
-
-		&__description {
-		}
-
-		&__articles {
-		}
+	}
 }
-.first {
 
-		&__breadcrumbs {
-		}
-
-		&__container {
-		}
-
-		&__title {
-		}
-}
-.breadcrumbs {
-
-		&__list {
-		}
-
-		&__item {
-		}
-
-		&__link {
-		}
-
-		&__current {
-		}
-}
 .title {
 }
 .description {
+	@include adaptiveValue("padding-top", 80, 40, 0, 1140, 768);
+	@include adaptiveValue("padding-bottom", 50, 40, 0, 1140, 768);
 
-		&__container {
-		}
+	&:not(:last-child) {
+	}
+	background: url("@img/fever/bg-fever.jpg") 0 0 / cover no-repeat;
+	&__container {
+	}
 
-		&__main {
-		}
+	&__main {
+		border-radius: 2.5rem;
+		padding: 2rem 2.5rem;
+		background-color: $secondColor;
+		color: #fff;
+		@include adaptiveValue("margin-bottom", 32, 24, 0, 1140, 768);
+	}
 
-		&__main-text {
-		}
+	&__main-text {
+	}
 
-		&__item {
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: toRem(20);
+		@media (max-width: $mobile) {
+			flex-direction: column;
 		}
+	}
 
-		&__text {
+	&__item {
+		flex: 0 1 50%;
+		display: flex;
+		align-items: flex-start;
+		gap: toRem(20);
+		@media (max-width: $mobile) {
+			gap: toRem(10);
 		}
+		img {
+			width: 100%;
+			transform: translateY(0.375rem);
+			flex: 0 0 13px;
+		}
+	}
+
+	&__text {
+		color: $secondColor;
+		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
+	}
 }
 .articles {
-
-		&__container {
+	margin-bottom: toRem(40);
+	&__container {
+		&.container-full {
+			max-width: 1420px;
 		}
+	}
 
-		&__item {
+	&__item {
+		border-radius: 2rem;
+		background: #f4f5f6;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20, 0, 1140, 768);
 		}
+		@media (max-width: $mobile) {
+			border-radius: 1.5rem;
+		}
+	}
 
-		&__img {
+	&__content {
+		@include adaptiveValue("padding-inline", 80, 16, 0, 1140, 480);
+		@include adaptiveValue("padding-block", 60, 16, 0, 1140, 480);
+	}
+	&__img {
+		img {
+			width: 100%;
+			height: auto;
 		}
+	}
 
-		&__text {
+	&__text {
+		padding-block: 1.5rem;
+		.fever & {
+			padding: 32px 0 0px 0;
 		}
+	}
 
-		&__link {
+	&__link {
+	}
+}
+
+.articles {
+
+	&__sub-content {
+		@include adaptiveValue("margin-top", 32, 24, 0, 768, 360);
+	}
+
+	&__sub-title {
+		color: #484848;
+		@include adaptiveValue("font-size", 28, 16, 0, 768, 360);
+		font-weight: 600;
+	}
+
+	&__text {
+		.fever & {
+			padding-top: 16px;
 		}
+	}
+
+	&__list {
+		margin-top: toRem(10);
+	}
+
+	&__list-item {
+		@extend .punkt__list-item;
+	}
 }

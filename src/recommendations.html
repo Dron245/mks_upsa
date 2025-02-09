@@ -4,15 +4,17 @@
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
-			<main class="page">
-				<section style="display: none" class="page__first first">
+			<main class="page fever">
+				<section class="page__first first">
 					<nav class="first__breadcrumbs breadcrumbs">
 						<ul class="breadcrumbs__list">
 							<li class="breadcrumbs__item">
 								<a target="_blank" href="home.html" class="breadcrumbs__link">Главная</a>
 							</li>
 							<li class="breadcrumbs__item">
-								<a target="_blank" href="temperature.html" class="breadcrumbs__link">Лихорадка / жар</a>
+								<a target="_blank" href="temperature.html" class="breadcrumbs__link"
+									>Лихорадка / жар</a
+								>
 							</li>
 							<li class="breadcrumbs__item">
 								<span class="breadcrumbs__current"
@@ -25,19 +27,100 @@
 						<h1 class="first__title title">О Лихорадке / жаре</h1>
 					</div>
 				</section>
-				<section class="page__bg-fever bg-fever">
-					<div class="bg-fever__container">
-						<div class="bg-fever__img">
-							<img src="@img/fever/02.png" alt="лихорадка советы" />
-						</div>
+
+				<section class="page__articles articles">
+					<div class="articles__container container-full">
+						<article class="articles__item">
+							<div class="articles__img">
+								<img src="@img/fever/02.png" alt="Лихорадка / жар" />
+							</div>
+							<div class="articles__content">
+								<h3 class="description-title">Как справиться с лихорадкой: советы и лечение</h3>
+								<div class="articles__sub-content">
+									<h3 class="articles__sub-title">Определение лихорадки</h3>
+									<p class="articles__text">
+										Лихорадка представляет собой повышение температуры тела выше нормального уровня,
+										более 38°C. Это не болезнь сама по себе, а симптом широкого спектра заболеваний.
+										Она часто возникает как иммунный ответ на инфекции или как побочный эффект
+										некоторых лекарств и вакцин.
+									</p>
+									<p class="articles__text">
+										Хотя лихорадка может быть неприятной, она обычно не представляет опасности для
+										здоровья взрослых или подростков. Но у младенцев даже небольшое повышение
+										температуры может сигнализировать о серьезной инфекции и требует консультации с
+										врачом.
+									</p>
+								</div>
+								<div class="articles__sub-content">
+									<h3 class="articles__sub-title">Сопутствующие симптомы</h3>
+									<p class="articles__text">
+										Помимо повышения температуры тела, лихорадка / жар может сопровождаться:
+									</p>
+									<ul class="articles__list">
+										<li class="articles__list-item"><p>Потливостью, ознобом</p></li>
+										<li class="articles__list-item"><p>Головной болью, мышечными болями</p></li>
+										<li class="articles__list-item"><p>Чувством усталости</p></li>
+										<li class="articles__list-item"><p>Потерей аппетита</p></li>
+										<li class="articles__list-item">
+											<p>Раздражительностью, повышенной чувствительностью</p>
+										</li>
+										<li class="articles__list-item"><p>Обезвоживанием</p></li>
+									</ul>
+								</div>
+								<div class="articles__sub-content">
+									<h3 class="articles__sub-title">Частые причины</h3>
+									<p class="articles__text">
+										Лихорадка / жар может иметь несколько потенциальных причин:
+									</p>
+									<ul class="articles__list">
+										<li class="articles__list-item">
+											<p>Бактериальные или вирусные инфекции (грипп, COVID-19)</p>
+										</li>
+										<li class="articles__list-item">
+											<p>Инфекции желудочно-кишечного тракта и мочевыводящих путей</p>
+										</li>
+										<li class="articles__list-item"><p>Инфекции кожи</p></li>
+										<li class="articles__list-item"><p>Побочные реакции на лекарства</p></li>
+										<li class="articles__list-item"><p>Аутоиммунные заболевания</p></li>
+									</ul>
+								</div>
+								<div class="articles__sub-content">
+									<h3 class="articles__sub-title">Уход за собой</h3>
+									<p class="articles__text">Для облегчения дискомфорта при лихорадке / жаре:</p>
+									<ul class="articles__list">
+										<li class="articles__list-item">
+											<p>Употребляйте много жидкости (вода, супы)</p>
+										</li>
+										<li class="articles__list-item">
+											<p>Отдыхайте и избегайте физической нагрузки</p>
+										</li>
+										<li class="articles__list-item">
+											<p>Носите свободную одежду и поддерживайте прохладу в комнате</p>
+										</li>
+										<li class="articles__list-item">
+											<p>Если температура превышает 38.3°C, принимайте жаропонижающие препараты</p>
+										</li>
+									</ul>
+								</div>
+								<div class="articles__sub-content">
+									<h3 class="articles__sub-title">Риски и осложнения</h3>
+									<p class="articles__text">
+										Лихорадка / жар обычно длится 3-4 дня при инфекциях, но может продолжаться
+										дольше. Температура выше 41°C без лечения может привестик дисфункции органов.
+										Даже умеренная лихорадка представляет риск для людей с заболеваниями легких или
+										сердца.
+									</p>
+								</div>
+							</div>
+						</article>
 					</div>
 				</section>
-				<section class="page__fever fever">
-					<div class="fever__container">
+				<section style="display: none" class="page__articles articles">
+					<div class="articles__container">
 						<h2 class="description-title">Как справиться с лихорадкой: советы и лечение</h2>
-						<div class="fever__block">
-							<h3 class="fever__title">Определение лихорадки</h3>
-							<p class="fever__text">
+						<div class="articles__block">
+							<h3 class="articles__title">Определение лихорадки</h3>
+							<p class="articles__text">
 								Лихорадка представляет собой повышение температуры тела выше нормального уровня,
 								более 38°C. Это не болезнь сама по себе, а симптом широкого спектра заболеваний. Она
 								часто возникает как иммунный ответ на инфекции или как побочный эффект некоторых
@@ -48,58 +131,60 @@
 								врачом.
 							</p>
 						</div>
-						<div class="fever__block">
-							<h3 class="fever__title">Сопутствующие симптомы</h3>
-							<p class="fever__text">
+						<div class="articles__block">
+							<h3 class="articles__title">Сопутствующие симптомы</h3>
+							<p class="articles__text">
 								Помимо повышения температуры тела, лихорадка / жар может сопровождаться:
 							</p>
-							<ul class="fever__list">
-								<li class="fever__item"><p>Потливостью, ознобом</p></li>
-								<li class="fever__item"><p>Головной болью, мышечными болями</p></li>
-								<li class="fever__item"><p>Чувством усталости</p></li>
-								<li class="fever__item"><p>Потерей аппетита</p></li>
-								<li class="fever__item">
+							<ul class="articles__list">
+								<li class="articles__item"><p>Потливостью, ознобом</p></li>
+								<li class="articles__item"><p>Головной болью, мышечными болями</p></li>
+								<li class="articles__item"><p>Чувством усталости</p></li>
+								<li class="articles__item"><p>Потерей аппетита</p></li>
+								<li class="articles__item">
 									<p>Раздражительностью, повышенной чувствительностью</p>
 								</li>
-								<li class="fever__item"><p>Обезвоживанием</p></li>
+								<li class="articles__item"><p>Обезвоживанием</p></li>
 							</ul>
 						</div>
-						<div class="fever__block">
-							<h3 class="fever__title">Частые причины</h3>
-							<p class="fever__text">Лихорадка / жар может иметь несколько потенциальных причин:</p>
-							<ul class="fever__list">
-								<li class="fever__item">
+						<div class="articles__block">
+							<h3 class="articles__title">Частые причины</h3>
+							<p class="articles__text">
+								Лихорадка / жар может иметь несколько потенциальных причин:
+							</p>
+							<ul class="articles__list">
+								<li class="articles__item">
 									<p>Бактериальные или вирусные инфекции (грипп, COVID-19)</p>
 								</li>
-								<li class="fever__item">
+								<li class="articles__item">
 									<p>Инфекции желудочно-кишечного тракта и мочевыводящих путей</p>
 								</li>
-								<li class="fever__item"><p>Инфекции кожи</p></li>
-								<li class="fever__item"><p>Побочные реакции на лекарства</p></li>
-								<li class="fever__item"><p>Аутоиммунные заболевания</p></li>
+								<li class="articles__item"><p>Инфекции кожи</p></li>
+								<li class="articles__item"><p>Побочные реакции на лекарства</p></li>
+								<li class="articles__item"><p>Аутоиммунные заболевания</p></li>
 							</ul>
 						</div>
-						<div class="fever__block">
-							<h3 class="fever__title">Уход за собой</h3>
-							<p class="fever__text">Для облегчения дискомфорта при лихорадке / жаре:</p>
-							<ul class="fever__list">
-								<li class="fever__item">
+						<div class="articles__block">
+							<h3 class="articles__title">Уход за собой</h3>
+							<p class="articles__text">Для облегчения дискомфорта при лихорадке / жаре:</p>
+							<ul class="articles__list">
+								<li class="articles__item">
 									<p>Употребляйте много жидкости (вода, супы)</p>
 								</li>
-								<li class="fever__item">
+								<li class="articles__item">
 									<p>Отдыхайте и избегайте физической нагрузки</p>
 								</li>
-								<li class="fever__item">
+								<li class="articles__item">
 									<p>Носите свободную одежду и поддерживайте прохладу в комнате</p>
 								</li>
-								<li class="fever__item">
+								<li class="articles__item">
 									<p>Если температура превышает 38.3°C, принимайте жаропонижающие препараты</p>
 								</li>
 							</ul>
 						</div>
-						<div class="fever__block">
-							<h3 class="fever__title">Риски и осложнения</h3>
-							<p class="fever__text">
+						<div class="articles__block">
+							<h3 class="articles__title">Риски и осложнения</h3>
+							<p class="articles__text">
 								Лихорадка / жар обычно длится 3-4 дня при инфекциях, но может продолжаться дольше.
 								Температура выше 41°C без лечения может привести к дисфункции органов. Даже
 								умеренная лихорадка представляет риск для людей с заболеваниями легких или сердца.

@@ -60,12 +60,9 @@ p {
 }
 .description-title {
 	font-weight: 600;
-	font-size: 2.375rem;
 	line-height: 126%;
 	color: #484848;
-	@media (max-width: $mobile) {
-		font-size: toRem(20);
-	}
+	@include adaptiveValue("font-size", 38, 20, 0, 768, 360);
 }
 
 //====FIRST====================================================================================================================================================

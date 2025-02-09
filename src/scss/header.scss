@@ -1,5 +1,4 @@
 .header {
-
 	&__container {
 		display: flex;
 		justify-content: space-between;
@@ -17,91 +16,71 @@
 			width: 100%;
 		}
 
-		@media (max-width:$tablet) {
+		@media (max-width: $tablet) {
 			width: 11.25rem;
 		}
 	}
 
-	&__menu {}
+	&__menu {
+	}
 }
 
 .menu {
-
-	&__icon {}
-
-	&__body {}
-
-	&__list {}
-
 	&__item {
 		position: relative;
 		cursor: pointer;
 		svg {
-			@media (max-width:$mobile) {
+			@media (max-width: $mobile) {
 				path {
 					fill: #fff;
 				}
 			}
 		}
-
-		// @media (any-hover: hover) {
+		@media (any-hover: hover) {
 			&:hover {
 				.menu__sub-list {
 					visibility: visible;
 					opacity: 1;
-					@media (max-width:$mobile){
-						 
-					}
-				}
-
-				
-				.menu__top {
-					font-weight: 700;
 				}
 			}
-		// }
+		}
+
 		& svg {
 			transition: transform 0.3s ease 0s;
 		}
 		&._active {
 			svg {
-
-				@media (max-width:$mobile) {
+				@media (max-width: $mobile) {
 					transform: rotate(180deg);
 				}
 			}
 		}
 	}
 
-	&__link {}
+	&__link {
+	}
 
 	&__sub-list {
 		padding-top: 1.25rem;
-		@media (min-width:$mobile) {
+		@media (min-width: $mobile) {
 			position: absolute;
 			left: 0;
-		top: 100%;
-		visibility: hidden;
-		opacity: 0;
-		min-width: 100%;
+			top: 100%;
+			visibility: hidden;
+			opacity: 0;
+			z-index: 2;
+			overflow: initial !important;
+			max-height: initial !important;
+			// min-width: 100%;
+		}
+		@media (max-width: $mobile) {
+			width: 100vw;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-in-out;
 		}
 		._active & {
-			width: 100vh; 
-		// 	left: 0;
-		// top: 100%;
-		// padding-top: 1.25rem;
-		// visibility: hidden;
-		// opacity: 0;
-		// min-width: 100%;
-		}
-		
-
-		@media (max-width:$mobile) {
-			display: none;
-
-			._active & {
-				display: block;
-			}
+			max-height: 6.25rem; /* Укажите максимальную высоту */
 		}
 	}
 
@@ -112,7 +91,7 @@
 
 		// font-size: toRem(16);
 		&:hover {
-			@media (min-width:$mobile) {
+			@media (min-width: $mobile) {
 				background-color: $therdColor;
 			}
 
@@ -126,17 +105,13 @@
 		text-transform: uppercase;
 		color: $therdColor;
 
-		@media (min-width:$mobile) {
-
+		@media (min-width: $mobile) {
 			text-wrap: nowrap;
 		}
 
-		@media (max-width:$mobile) {
-
+		@media (max-width: $mobile) {
 			line-height: 1.5;
 			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);
 		}
 	}
 }
-
-.icon-menu {}
