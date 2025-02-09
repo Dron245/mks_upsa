@@ -37,17 +37,20 @@
 			}
 		}
 		@media (any-hover: hover) {
-			&:hover {
-				.menu__link span {
-					font-weight: 700;
-					color: $therdColor;
-				}
-
-				.menu__sub-list {
-					visibility: visible;
-					opacity: 1;
+			@media (min-width:$mobile){
+				&:hover {
+					.menu__link span {
+						font-weight: 700;
+						color: $therdColor;
+					}
+	
+					.menu__sub-list {
+						visibility: visible;
+						opacity: 1;
+					}
 				}
 			}
+			
 		}
 
 		& svg {
