@@ -38,6 +38,11 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
+				.menu__link span {
+					font-weight: 700;
+					color: $therdColor;
+				}
+
 				.menu__sub-list {
 					visibility: visible;
 					opacity: 1;
@@ -65,7 +70,7 @@
 		@media (min-width: $mobile) {
 			position: absolute;
 			left: 0;
-			top: 100%;
+			top: 50%;
 			visibility: hidden;
 			opacity: 0;
 			z-index: 2;

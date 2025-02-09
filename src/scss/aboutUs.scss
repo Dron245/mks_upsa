@@ -1,139 +1,203 @@
-.wrapper {
-}
-.page {
-
-		&__first {
-		}
-
-		&__advantages {
-		}
-
-		&__aspirations {
-		}
-
-		&__contacts {
-		}
-}
-.about {
-}
-.first {
-
-		&__breadcrumbs {
-		}
-
-		&__container {
-		}
-
-		&__title {
-		}
-
-		&__subtitle {
-		}
-}
-.breadcrumbs {
-
-		&__list {
-		}
-
-		&__item {
-		}
-
-		&__link {
-		}
-
-		&__current {
-		}
-}
-.title {
-}
 .advantages {
-
-		&__container {
+	background-color: $fiveColor;
+	@include adaptiveValue("padding-bottom", 40, 32, 0, 1140, 768);
+	&__container {
+		color: #fff;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 6.491228%; /* 74/1140 */
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
 		}
+	}
 
-		&__item {
-		}
+	&__item {
+	}
 }
 .advantage {
-
-		&_one {
+	&:nth-last-child(2) {
+		@media (max-width:$mobile){
+			 border-bottom: 2px solid #5fa7af !important; 
 		}
-
-		&_two {
+	}
+	text-align: center;
+	& > * {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 13, 24, 0, 768, 360);
 		}
+	}
+	@include adaptiveValue("padding-block", 60, 40, 0, 1140, 768);
+	border-bottom: 2px solid #5fa7af;
 
-		&__decimal {
-		}
+	&_one {
+	}
 
-		&__title {
-		}
+	&_two {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
-		&__text {
-		}
+	&__decimal {
+		font-weight: 700;
+		line-height: 1;
+		@include adaptiveValue("font-size", 120, 80, 0, 768, 360);
+	}
 
-		&__galery {
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1.2;
+		@media (max-width: $mobile) {
+			line-height: 1.5;
 		}
+		@include adaptiveValue("font-size", 30, 20, 0, 768, 360);
+	}
 
-		&__img {
-		}
+	&__text {
+		@include adaptiveValue("font-size", 22, 16, 0, 768, 360);
+	}
+
+	&__galery {
+	}
+
+	&__img {
+	}
 }
 .galery {
-
-		&_advantage {
-		}
+	&_advantage {
+	}
 }
-.galery_advantage {
-
-		&__item {
+.galery-advantage {
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-wrap: nowrap;
+		position: relative;
+		@media (min-width:$mobile){
+			  
+			margin-inline: 17.5px;
 		}
+		img {
+			@include adaptiveValue("width", 106, 70, 0, 1140, 360);
+			aspect-ratio: 1/1;
+			&:not(:first-child) {
+				margin-left: -8px;
+				@media (max-width:$mobile){
+					 margin-left: -6px; 
+				}
+			}
+			&:nth-child(even) {
+				// transform: translateY(60%);
+				margin-top: 14%;
+				@media (max-width:$mobile){
+					 margin-top: 45px; 
+				}
+			}
+		}
+	}
 }
 .aspirations {
+	@include adaptiveValue("margin-block", 80, 40,0, 1140, 768);
+	text-align: center;
+	&__container {
+	}
 
-		&__container {
-		}
-
-		&__item {
-		}
+	&__item {
+	}
 }
 .aspiration {
-
-		&__img {
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 80, 40,0,768,360);
+	}
+	&__img {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 24,0,768,360);
 		}
-
-		&__content {
+		@include adaptiveValue("width", 256, 160,0,768,360);
+		margin:auto;
+		img {
+			width: 100%;
 		}
+	}
 
-		&__top-text {
+	&__content {
+		&>* {
+			&:not(:last-child) {
+				margin-bottom: toRem(16);
+			}
 		}
+	}
+	
+	&__text {
+		max-width: 600px;
+		margin:auto;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: toRem(20);
+		&:not(:last-child) {margin-bottom: toRem(16);}
+	}
 
-		&__main-text {
+	&__main-text {
+		text-transform: uppercase;
+		line-height: 1.2;
+		@media (max-width:$mobile){
+			 line-height: 1; 
 		}
+		font-weight: 700;
+		@include adaptiveValue("font-size", 80, 40,0,768,360);
+	}
 
-		&__bottom-text {
-		}
+	&__bottom-text {
+	}
 }
 .contacts {
+	border-top: 2px solid #f4f5f6;
+	&__container {
+		@include adaptiveValue("padding-block", 80, 40,0, 1140, 768);
+		
+	}
 
-		&__container {
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		@media (min-width:$mobile){
+			margin-inline: 60px;
+			  
 		}
+		@media (max-width:$mobile){
+			 flex-direction: column; 
+		}
+	}
+	
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size",30 ,20,0,768,360);
+		@media (max-width:$mobile){
+			 @include adaptiveValue("margin-bottom", 40, 24, 0, 768, 360); 
+		}
+	}
 
-		&__name {
-		}
-
-		&__title {
-		}
-
-		&__items {
-		}
+	&__items {
+	}
 }
 .items-contacts {
-
-		&__item {
+	
+	&__item {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 32, 16,0,768,360);
 		}
+	}
 
-		&__link {
-		}
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: toRem(16);
+	}
 
-		&__text {
-		}
+	&__text {
+		color: $secondColor;
+		@include adaptiveValue("font-size", 22, 16,0,768,360);
+	}
 }

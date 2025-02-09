@@ -8,22 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
 		const targetElement = e.target;
 		console.log(targetElement);
 
-		// Проверяем, был ли клик по пункту меню
-		// if (targetElement.closest(".menu__link") && isMobile.any()) {
-		// 	const menuItem = targetElement.closest(".menu__item");
-		// 	// Переключаем активность текущего пункта, но не закрываем другие
-		// 	console.log(1);
-			
-		// 	// menuItem.classList.toggle("_active");
-		// } else {
-		// 	// Закрываем все открытые пункты меню, если клик был вне меню
-		// 	document.querySelectorAll(".menu__item._active").forEach((item) => {
-		// 		console.log(2);
-				
-		// 		item.classList.remove("_active");
-		// 	});
-		// }
-
 		//работа с селектами
 		if (targetElement.closest(".selects__item")) {
 			const select = targetElement.closest(".selects__item");
@@ -38,28 +22,36 @@ window.addEventListener("DOMContentLoaded", () => {
 	// плавное открытие саб меню в мобилке
 	function toggleSubmenu(submenu, item) {
 		if (!submenu.style.maxHeight || submenu.style.maxHeight === "0px") {
-			 submenu.style.maxHeight = submenu.scrollHeight + "px";
-			 item.classList.add("_active");
+			submenu.style.maxHeight = submenu.scrollHeight + "px";
+			item.classList.add("_active");
 		} else {
-			 submenu.style.maxHeight = "0px";
-			 item.classList.remove("_active");
+			submenu.style.maxHeight = "0px";
+			item.classList.remove("_active");
 		}
-  }
-  
-  document.querySelectorAll(".menu__item").forEach(item => {
-	const link = item.querySelector(".menu__link");
-	const submenu = item.querySelector(".menu__sub-list");
+	}
 
-	if (submenu ) {
-		 submenu.style.overflow = "hidden"; // Исключаем появление скролла
-		 submenu.style.maxHeight = "0px"; // Начальное состояние
-		 
-		 link.addEventListener("click", (e) => {
-			  if (window.innerWidth <= 768) {
+	document.querySelectorAll(".menu__item").forEach((item) => {
+		const link = item.querySelector(".menu__link");
+		const submenu = item.querySelector(".menu__sub-list");
+
+		if (submenu) {
+			submenu.style.overflow = "hidden"; // Исключаем появление скролла
+			submenu.style.maxHeight = "0px"; // Начальное состояние
+
+			link.addEventListener("click", (e) => {
+				if (window.innerWidth <= 768) {
 					e.preventDefault();
 					toggleSubmenu(submenu, item);
-			  }
-		 });
-	}
-});
+				}
+			});
+		}
+	});
+
+	const advantages = document.querySelectorAll(".advantage");
+	 // Преобразуем NodeList в массив
+	 const advantagesArray = Array.from(advantages);
+
+	 if (advantagesArray.length >= 2) {
+		advantagesArray.slice(-2).forEach(el => el.style.borderBottom = "none");
+	 }
 });
