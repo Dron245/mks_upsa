@@ -91,16 +91,28 @@
 
 	&__sub-item {
 		padding: 1rem 1.5rem;
-		background-color: #fff;
 		cursor: pointer;
-
-		// font-size: toRem(16);
-		&:hover {
-			@media (min-width: $mobile) {
-				background-color: $therdColor;
+		@media (min-width:$mobile){
+			 background-color: #fff; 
+		}
+		._active & {
+			background-color: #fff;
+			
+		}
+		@media (any-hover: hover){
+			&:hover {
+				@media (min-width: $mobile) {
+					background-color: $therdColor;
+				}
+	
+				.menu__sub-link {
+					color: #fff;
+				}
 			}
-
-			.menu__sub-link {
+		}
+		@media (hover: noту){
+			&:active {
+				
 				color: #fff;
 			}
 		}
