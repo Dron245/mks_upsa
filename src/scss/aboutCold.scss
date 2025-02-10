@@ -82,7 +82,10 @@
 	background-color: $fourColor;
 	&__container {
 		position: relative;
-		@include adaptiveValue("padding-block", 80, 24, 0, 1140, 360);
+		@media (min-width:$mobile){
+			  
+			@include adaptiveValue("padding-block", 80, 24, 0, 1140, 360);
+		}
 		@media (max-width: toEm(700)) {
 			padding-bottom: toRem(0);
 			display: flex;

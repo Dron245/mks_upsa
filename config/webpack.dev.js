@@ -47,13 +47,14 @@ const config = {
 		publicPath: '/'
 	},
 	devServer: {
+		host: '192.168.0.59', // Принимает подключения со всех IP
+		// host: 'local-ip', // localhost
 		historyApiFallback: true,
 		static: paths.build,
 		open: true,
 		compress: true,
 		port: 'auto',
 		hot: true,
-		host: 'local-ip', // localhost
 		//В режиме разработчика папка
 		// результатом (dist) будет создаваться на диске)
 		//devMiddleware: {
