@@ -6,20 +6,27 @@
 		}
 }
 .notfound {
-
+margin-top: 8.125rem;
+@include adaptiveValue("margin-bottom", 207, 188, 0, 768, 360);
 		&__container {
 		}
 
 		&__title {
+			color: #484848;
+			font-weight: 600;
+			@include adaptiveValue("font-size", 100, 64, 0, 768, 360);
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 8, 16, 0, 768, 360);
+			}
 		}
 
 		&__text {
+			color: #484848;
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 40, 32, 0, 768, 360);
+			}
 		}
 
 		&__link {
 		}
-}
-.title {
-}
-.button {
 }

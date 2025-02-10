@@ -136,7 +136,7 @@
 	}
 }
 .link-item {
-	background: #f4f5f6;
+	background-color: #f4f5f6;
 	border-radius: 0.75rem;
 	padding: toRem(9) toRem(22);
 	display: inline-flex;
@@ -146,6 +146,45 @@
 	color: $secondColor;
 	line-height: 1.13;
 	text-align: center;
+	transition: background-color 0.3s, color 0.3s;
+
+	& svg path {
+		transition: fill 0.3s;
+	}
+	@media (hover: hover){
+		&:hover{
+			background-color: $secondColor;
+		color: #fff;
+
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
+		}
+	}
+	@media (hover: none) {
+		&:active {
+			background-color: $secondColor;
+			color: #fff;
+
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+	&:hover{
+		// background-color: $secondColor;
+		// color: #fff;
+
+		// svg {
+		// 	path {
+		// 		fill: #fff;
+		// 	}
+		// }
+	}
 	&__img {
 	}
 

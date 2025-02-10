@@ -106,11 +106,12 @@
 			&:hover {
 				@media (min-width: $mobile) {
 					background-color: $therdColor;
+					.menu__sub-link {
+						color: #fff;
+					}
 				}
 	
-				.menu__sub-link {
-					color: #fff;
-				}
+				
 			}
 		}
 		@media (hover: none) {
