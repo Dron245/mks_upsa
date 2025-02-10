@@ -1529,6 +1529,7 @@ h6 {
     transition: max-height .3s ease-in-out
   }
   .menu__sub-link {
+    width: 100%;
     line-height: 1.5
   }
   .footer__contraindications {
