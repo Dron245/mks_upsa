@@ -1182,6 +1182,11 @@ h6 {
     color: #fff
   }
 }
+@media (min-width:47.99875em)and (min-width:71.25em) {
+  .doctor__container {
+    padding-block: 5rem
+  }
+}
 @media (min-width:56.25em) {
   .doctor__title {
     max-width: 65.964912%
@@ -1226,9 +1231,6 @@ h6 {
   }
   .articles__content {
     padding-block: 3.75rem
-  }
-  .doctor__container {
-    padding-block: 5rem
   }
   .doctor__img {
     width: 22.75rem
@@ -1877,9 +1879,6 @@ h6 {
   .definition__item:not(:last-child) {
     margin-bottom: 1rem
   }
-  .doctor__container {
-    padding-block: 1.5rem
-  }
   .doctor__title {
     font-size: 1.875rem
   }
@@ -2259,9 +2258,6 @@ h6 {
   .selects__body {
     margin-bottom: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
   }
-  .doctor__container {
-    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
-  }
   .recomendation__title {
     font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
   }
@@ -2288,6 +2284,16 @@ h6 {
   }
   .articles__content {
     padding-block: clamp(1rem ,-1rem + 6.6666666667vw ,3.75rem)
+  }
+}
+@media (min-width:47.99875em)and (min-width:22.5em)and (max-width:71.25em) {
+  .doctor__container {
+    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
+  }
+}
+@media (min-width:47.99875em)and (max-width:22.5em) {
+  .doctor__container {
+    padding-block: 1.5rem
   }
 }
 @media (max-width:42.5em)and (min-width:42.5em) {
