@@ -4060,6 +4060,7 @@
         const advantages = document.querySelectorAll(".advantage");
         const advantagesArray = Array.from(advantages);
         if (advantagesArray.length >= 2) advantagesArray.slice(-2).forEach((el => el.style.borderBottom = "none"));
+        document.addEventListener("touchend", (function() {}), false);
     }));
     window["FLS"] = true;
     menuInit();
