@@ -130,6 +130,7 @@
 		}
 
 		@media (max-width: $mobile) {
+			width: 100%;
 			line-height: 1.5;
 			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);
 		}
