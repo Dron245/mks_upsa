@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			select.classList.toggle('_select-open');
 		}
 	}
-
+	//учёт высоты предупреждения для отступа у самого нижнего блока на странице 
 	const conditions = document.querySelector('.footer__contraindications');
 	const footerContainer = document.querySelector('.footer__container');
 	footerContainer.style.paddingBottom = `${conditions.offsetHeight + 50}px`;
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			item.classList.remove('_active');
 		}
 	}
-
+	// Показываем/скрываем саб меню
 	document.querySelectorAll('.menu__item').forEach((item) => {
 		const link = item.querySelector('.menu__link');
 		const submenu = item.querySelector('.menu__sub-list');
@@ -47,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	// Убираем границу у двух последних блоков
 	const advantages = document.querySelectorAll('.advantage');
 	// Преобразуем NodeList в массив
 	const advantagesArray = Array.from(advantages);

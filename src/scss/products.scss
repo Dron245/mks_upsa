@@ -20,6 +20,7 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
+		flex-wrap: wrap;
 		@include adaptiveValue("margin-bottom", 80, 24, 0, 1140, 360);
 		@include adaptiveValue("gap", 40, 20, 0, 1140, 768);
 
@@ -120,8 +121,6 @@
 	&__title {
 		font-weight: 700;
 		font-size: 1.125rem;
-
-		/* line-height: 1.5rem; */
 		line-height: 133%;
 
 		&:not(:last-child) {
@@ -191,17 +190,6 @@
 		}
 	}
 
-	&:hover {
-		// background-color: $secondColor;
-		// color: #fff;
-
-		// svg {
-		// 	path {
-		// 		fill: #fff;
-		// 	}
-		// }
-	}
-
 	&__img {}
 
 	&__text {
@@ -239,7 +227,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: toRem(40);
-
+		column-gap: 100px;
 		@media (max-width: $tablet) and (min-width: $mobile) {
 			max-width: 43.75rem;
 		}
@@ -250,6 +238,10 @@
 	}
 
 	&__title {
+		img {
+			width: 100%;
+			height: auto;
+		}
 		&:not(:last-child) {
 			position: relative;
 			z-index: 2;
@@ -270,21 +262,10 @@
 	&__closed {
 		position: relative;
 		z-index: 2;
-
-		._tab-active & {
-			// display: none;
-		}
-
-		:not(._tab-active) & {
-			// display: inline-block;
-		}
 	}
 
 	&__active {
-		._tab-active & {
-			// display: inline-block;
-		}
-
+		
 		:not(._tab-active) & {
 			display: none;
 		}
@@ -309,10 +290,8 @@
 	&__content {
 		position: sticky;
 		top: 0;
-		/* Если нужен отступ сверху */
 		left: 0;
 		z-index: 10;
-		/* Повышение слоя, чтобы блок был выше других элементов */
 	}
 
 	&__body {}
@@ -321,7 +300,6 @@
 		font-weight: 600;
 		@include adaptiveValue("font-size", 34, 24, 0, 768, 360);
 
-		/* line-height: 3.1875rem; */
 		line-height: 150%;
 		text-transform: uppercase;
 		text-align: center;
@@ -333,7 +311,6 @@
 		@include adaptiveValue("font-size", 28, 18, 0, 768, 360);
 		max-width: 40.625rem;
 		margin: auto;
-		/* line-height: 2.1875rem; */
 		line-height: 125%;
 		text-align: center;
 		color: #fff;
