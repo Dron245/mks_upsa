@@ -3985,7 +3985,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".products__slider")) new swiper_core_Swiper(".products__slider", {
+        if (document.querySelector(".goods__slider")) new swiper_core_Swiper(".goods__slider", {
             modules: [ Navigation, Pagination, Autoplay ],
             observer: true,
             observeParents: true,
@@ -4003,8 +4003,8 @@
                 clickable: true
             },
             navigation: {
-                prevEl: ".products__arrow-prew",
-                nextEl: ".products__arrow-next"
+                prevEl: ".goods__arrow-prew",
+                nextEl: ".goods__arrow-next"
             },
             on: {}
         });

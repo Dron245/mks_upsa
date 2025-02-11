@@ -183,7 +183,7 @@ h6 {
   transform: translate(-50%,-50%);
   width: .8125rem;
   height: .6875rem;
-  background: url(../img/symptoms/check.svg) no-repeat center;
+  background: url(../img/products/check.svg) no-repeat center;
   background-size: contain;
   opacity: 0;
   transition: opacity .2s
@@ -474,10 +474,13 @@ h6 {
   width: 100%;
   height: auto
 }
-.products__swiper-shell {
+.goods__swiper-shell {
   position: relative
 }
-.products__arrow {
+.goods__slide {
+  cursor: pointer
+}
+.goods__arrow {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
@@ -491,13 +494,13 @@ h6 {
   z-index: 5;
   cursor: pointer
 }
-.products__arrow-prew {
+.goods__arrow-prew {
   left: 0
 }
-.products__arrow-next {
+.goods__arrow-next {
   right: 0
 }
-.products__arrow-next img {
+.goods__arrow-next img {
   rotate: 180deg
 }
 .product__img {
@@ -700,10 +703,10 @@ h6 {
 .link-item__text {
   font-weight: 700
 }
-.symptoms {
+.products {
   background-color: #2a5199
 }
-.symptoms__title {
+.products__title {
   margin-bottom: 2.5rem
 }
 .tabs {
@@ -1199,7 +1202,7 @@ h6 {
   .footer__contraindications p {
     font-size: 1.5rem
   }
-  .page__products {
+  .page__goods {
     margin-top: -8.4375rem
   }
   .selects {
@@ -1291,7 +1294,7 @@ h6 {
   .footer {
     padding-top: 5rem
   }
-  .page__products {
+  .page__goods {
     margin-top: -4.75rem
   }
   .product__img img {
@@ -1306,7 +1309,7 @@ h6 {
   .info__container {
     margin-bottom: 6.25rem
   }
-  .symptoms {
+  .products {
     padding-block: 5rem
   }
   .tabs__text {
@@ -1431,7 +1434,7 @@ h6 {
   .menu__list {
     gap: .625rem
   }
-  .page__products {
+  .page__goods {
     margin-top: -4.75rem
   }
   .selects__body {
@@ -1624,7 +1627,7 @@ h6 {
   .footer__contraindications {
     padding: 1.25rem 1.5rem
   }
-  .products__arrow {
+  .goods__arrow {
     display: none
   }
   .product__title {
@@ -1819,7 +1822,7 @@ h6 {
   .footer__contraindications p {
     font-size: .875rem
   }
-  .page__products {
+  .page__goods {
     margin-top: -2.5rem
   }
   .product__img img {
@@ -1840,7 +1843,7 @@ h6 {
   .selects__body {
     margin-bottom: 1.5rem
   }
-  .symptoms {
+  .products {
     padding-block: 2.5rem
   }
   .tabs__text {
@@ -1974,7 +1977,7 @@ h6 {
   .menu__list {
     gap: clamp(.625rem ,-2.2137096774rem + 5.9139784946vw ,2rem)
   }
-  .page__products {
+  .page__goods {
     margin-top: clamp(-8.4375rem ,2.8629032258rem + -15.8602150538vw ,-4.75rem)
   }
   .selects__body {
@@ -2107,7 +2110,7 @@ h6 {
   .footer {
     padding-top: clamp(2.5rem ,.2941176471rem + 9.8039215686vw ,5rem)
   }
-  .page__products {
+  .page__goods {
     margin-top: clamp(-4.75rem ,-.5147058824rem + -8.8235294118vw ,-2.5rem)
   }
   .product__img img {
@@ -2122,7 +2125,7 @@ h6 {
   .info__container {
     margin-bottom: clamp(3.5rem ,1.0735294118rem + 10.7843137255vw ,6.25rem)
   }
-  .symptoms {
+  .products {
     padding-block: clamp(2.5rem ,.2941176471rem + 9.8039215686vw ,5rem)
   }
   .tabs__text {
