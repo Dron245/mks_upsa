@@ -18,7 +18,7 @@ EffectFade, Lazy, Manipulation
 
 //Стили Swiper
 //Базовые стили
-import "../../scss/base/swiper.scss";
+import '../../scss/base/swiper.scss';
 //Полный набор стилей с scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 //Полный набор стилей с node_modules
@@ -26,13 +26,15 @@ import "../../scss/base/swiper.scss";
 
 //Инициализация слайдеров
 function initSliders() {
-//Список слайдеров
-//Проверяем, есть ли слайдер на странице
-	if (document.querySelector('.products__slider')) { //Указываем класс нужного слайдера
-//Создаем слайдер
-		new Swiper('.products__slider', { //Указываем класс нужного слайдера
-            //Подключаем модули слайдера
-            //для конкретного случая
+	//Список слайдеров
+	//Проверяем, есть ли слайдер на странице
+	if (document.querySelector('.goods__slider')) {
+		//Указываем класс нужного слайдера
+		//Создаем слайдер
+		new Swiper('.goods__slider', {
+			//Указываем класс нужного слайдера
+			//Подключаем модули слайдера
+			//для конкретного случая
 			modules: [Navigation, Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
@@ -47,22 +49,19 @@ function initSliders() {
 			//preloadImages: false,
 			//lazy: true,
 
-			
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			
 
 			// Пагинация
-			
+
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-			
 
 			// Скроллбар
 			/*
@@ -74,8 +73,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.products__arrow-prew',
-				nextEl: '.products__arrow-next',
+				prevEl: '.goods__arrow-prew',
+				nextEl: '.goods__arrow-next',
 			},
 			/*
 			// Брейкпоинты
@@ -100,9 +99,7 @@ function initSliders() {
 			},
 			*/
 			// События
-			on: {
-
-			}
+			on: {},
 		});
 	}
 }
@@ -124,7 +121,7 @@ function initSlidersScroll() {
 				scrollbar: {
 					el: sliderScrollBar,
 					draggable: true,
-					snapOnRelease: false
+					snapOnRelease: false,
 				},
 				mousewheel: {
 					releaseOnEdges: true,
@@ -135,7 +132,7 @@ function initSlidersScroll() {
 	}
 }
 
-window.addEventListener("load", function (e) {
+window.addEventListener('load', function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
 	//Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)

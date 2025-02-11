@@ -5,6 +5,7 @@
 	font-size: 1rem;
 	cursor: pointer;
 	user-select: none;
+
 	&:not(:last-child) {
 		margin-bottom: toRem(12);
 	}
@@ -36,7 +37,7 @@
 	transform: translate(-50%, -50%);
 	width: 0.8125rem;
 	height: 0.6875rem;
-	background: url('@img/symptoms/check.svg') no-repeat center;
+	background: url('@img/products/check.svg') no-repeat center;
 	background-size: contain;
 	opacity: 0;
 	transition: opacity 0.2s;

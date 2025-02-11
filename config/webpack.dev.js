@@ -47,8 +47,8 @@ const config = {
 		publicPath: '/'
 	},
 	devServer: {
-		host: '192.168.0.59', // Принимает подключения со всех IP
-		// host: 'local-ip', // localhost
+		// host: '192.168.0.59', // Принимает подключения со всех IP
+		host: 'local-ip', // localhost
 		historyApiFallback: true,
 		static: paths.build,
 		open: true,
