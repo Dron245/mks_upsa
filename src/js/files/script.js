@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	document.addEventListener('click', documentActions);
 	function documentActions(e) {
 		const targetElement = e.target;
-		console.log(targetElement);
+		// console.log(targetElement);
 
 		//работа с селектами
 		if (targetElement.closest('.selects__item')) {

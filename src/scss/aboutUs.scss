@@ -4,7 +4,7 @@
 	&__container {
 		color: #fff;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 46.754386%);
 		column-gap: 6.491228%; /* 74/1140 */
 		@media (max-width: $mobile) {
 			grid-template-columns: repeat(1, 1fr);
@@ -76,11 +76,15 @@
 		flex-wrap: nowrap;
 		position: relative;
 		@media (min-width:$mobile){
-			  
 			margin-inline: 1.0938rem;
 		}
 		img {
-			@include adaptiveValue("width", 106, 70, 0, 1140, 360);
+			@media (min-width:$mobile){
+				@include adaptiveValue("width", 106, 75, 0, 1140, 768);
+			}
+			@media (max-width:$mobile){
+				@include adaptiveValue("width", 106, 70, 0, 768, 360);
+			}
 			aspect-ratio: 1/1;
 			&:not(:first-child) {
 				margin-left: -0.5rem;
