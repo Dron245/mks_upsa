@@ -951,7 +951,7 @@ h6 {
 .advantages__container {
   color: #fff;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2,46.754386%);
   -webkit-column-gap: 6.491228%;
   -moz-column-gap: 6.491228%;
   column-gap: 6.491228%
@@ -1200,6 +1200,9 @@ h6 {
   .doctor__container {
     padding-block: 5rem
   }
+  .galery-advantage__item img {
+    width: 6.625rem
+  }
 }
 @media (min-width:56.25em) {
   .doctor__title {
@@ -1260,9 +1263,6 @@ h6 {
   }
   .advantage {
     padding-block: 3.75rem
-  }
-  .galery-advantage__item img {
-    width: 6.625rem
   }
   .aspirations {
     margin-block: 5rem
@@ -1726,6 +1726,9 @@ h6 {
   .info__subtitle {
     margin-bottom: 1.875rem
   }
+  .galery-advantage__item img {
+    width: 4.375rem
+  }
   .contacts__title {
     margin-bottom: 1.5rem
   }
@@ -1923,9 +1926,6 @@ h6 {
   .advantage__text {
     font-size: 1rem
   }
-  .galery-advantage__item img {
-    width: 4.375rem
-  }
   .aspiration:not(:last-child) {
     margin-bottom: 2.5rem
   }
@@ -2055,6 +2055,9 @@ h6 {
   .info__subtitle {
     margin-bottom: 3.4375rem
   }
+  .galery-advantage__item img {
+    width: 6.625rem
+  }
   .contacts__title {
     margin-bottom: 2.5rem
   }
@@ -2085,6 +2088,9 @@ h6 {
   }
   .info__subtitle {
     margin-bottom: clamp(1.875rem ,.4963235294rem + 6.1274509804vw ,3.4375rem)
+  }
+  .galery-advantage__item img {
+    width: clamp(4.375rem ,2.3897058824rem + 8.8235294118vw ,6.625rem)
   }
   .contacts__title {
     margin-bottom: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
@@ -2275,9 +2281,6 @@ h6 {
   .recomendation__title {
     font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
   }
-  .galery-advantage__item img {
-    width: clamp(4.375rem ,3.3365384615rem + 4.6153846154vw ,6.625rem)
-  }
   .map {
     margin-block: clamp(2.5rem ,1.0576923077rem + 6.4102564103vw ,5.625rem)
   }
@@ -2318,6 +2321,16 @@ h6 {
 @media (max-width:42.5em)and (min-width:22.5em)and (max-width:42.5em) {
   .recomendation__img {
     width: clamp(11.25rem ,.0000000625rem + 50vw ,21.25rem)
+  }
+}
+@media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
+  .galery-advantage__item img {
+    width: clamp(4.6875rem ,.6875rem + 8.3333333333vw ,6.625rem)
+  }
+}
+@media (min-width:47.99875em)and (max-width:48em) {
+  .galery-advantage__item img {
+    width: 4.6875rem
   }
 }
 @media (hover:none) {

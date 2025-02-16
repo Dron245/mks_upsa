@@ -504,7 +504,7 @@
         while (elementsQueue.length > 0) {
             const elementToCheck = elementsQueue.shift();
             if (el === elementToCheck) return true;
-            elementsQueue.push(...elementToCheck.children, ...elementToCheck.shadowRoot?.children || [], ...elementToCheck.assignedElements?.() || []);
+            elementsQueue.push(...elementToCheck.children, ...elementToCheck.shadowRoot ? elementToCheck.shadowRoot.children : [], ...elementToCheck.assignedElements ? elementToCheck.assignedElements() : []);
         }
     }
     function elementIsChildOf(el, parent) {
@@ -4026,7 +4026,6 @@
         document.addEventListener("click", documentActions);
         function documentActions(e) {
             const targetElement = e.target;
-            console.log(targetElement);
             if (targetElement.closest(".selects__item")) {
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
