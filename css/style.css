@@ -489,9 +489,7 @@ h6 {
   place-items: center;
   background: #f4f5f6;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 18.75rem;
   z-index: 5;
   cursor: pointer
 }
@@ -512,18 +510,22 @@ h6 {
   height: auto
 }
 .product__content {
-  text-align: center
+  text-align: center;
+  margin: auto;
+  max-width: 87.719298%
 }
 .product__title {
   margin-top: 2.5rem;
   margin-bottom: 1.5rem
 }
 .product__info {
-  margin: auto;
-  max-width: 87.719298%
+  margin: auto
 }
 .product__info p {
   line-height: 1.62
+}
+.product__info p span {
+  font-weight: 700
 }
 .product__info p:not(:last-child) {
   margin-bottom: 1.5rem
@@ -1142,6 +1144,11 @@ h6 {
   .menu__button-wrapper {
     display: none
   }
+  .menu__link {
+    transition: -webkit-transform .3s ease 0s;
+    transition: transform .3s ease 0s;
+    transition: transform .3s ease 0s,-webkit-transform .3s ease 0s
+  }
   .menu__sub-list {
     position: absolute;
     left: 0;
@@ -1181,9 +1188,19 @@ h6 {
   }
 }
 @media (any-hover:hover)and (min-width:47.99875em) {
+  .menu__item:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+  .menu__item:hover .menu__link {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+  }
   .menu__item:hover .menu__link span {
-    font-weight: 700;
     color: #00a5e2
+  }
+  .menu__item:hover svg path {
+    fill: #00a5e2
   }
   .menu__item:hover .menu__sub-list {
     visibility: visible;
@@ -1214,7 +1231,7 @@ h6 {
     gap: 2rem
   }
   .footer__contraindications p {
-    font-size: 1.5rem
+    font-size: 1.375rem
   }
   .page__goods {
     margin-top: -8.4375rem
@@ -2270,7 +2287,7 @@ h6 {
 }
 @media (min-width:22.5em)and (max-width:71.25em) {
   .footer__contraindications p {
-    font-size: clamp(.875rem ,.5865384615rem + 1.2820512821vw ,1.5rem)
+    font-size: clamp(.875rem ,.6442307692rem + 1.0256410256vw ,1.375rem)
   }
   .selects {
     margin-top: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)

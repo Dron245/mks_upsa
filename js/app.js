@@ -3995,10 +3995,6 @@
             speed: 800,
             loop: true,
             effect: "fade",
-            autoplay: {
-                delay: 3e3,
-                disableOnInteraction: false
-            },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
