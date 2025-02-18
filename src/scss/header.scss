@@ -30,6 +30,7 @@
 	&__item {
 		position: relative;
 		cursor: pointer;
+		
 		svg {
 			@media (max-width: $mobile) {
 				path {
@@ -40,11 +41,16 @@
 		@media (any-hover: hover) {
 			@media (min-width:$mobile){
 				&:hover {
+					transform: scale(1.05);
+					.menu__link {
+						transform: scale(1.05);
+					}
 					.menu__link span {
-						font-weight: 700;
 						color: $therdColor;
 					}
-	
+					svg path {
+						fill: $therdColor;
+					}
 					.menu__sub-list {
 						visibility: visible;
 						opacity: 1;
@@ -56,6 +62,11 @@
 
 		& svg {
 			transition: transform 0.3s ease 0s;
+			@media (min-width:$mobile){
+				 path {
+					//  transition: fill 0.3s ease 0s;
+				 } 
+			}
 		}
 		&._active {
 			svg {
@@ -67,6 +78,9 @@
 	}
 
 	&__link {
+		@media (min-width:$mobile){
+			transition: transform 0.3s ease 0s; 
+		}
 	}
 
 	&__sub-list {

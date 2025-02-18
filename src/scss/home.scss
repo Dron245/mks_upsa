@@ -43,8 +43,8 @@
 		place-items: center;
 		background: #f4f5f6;
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 18.75rem;
+		// transform: translateY(-50%);
 		z-index: 5;
 		cursor: pointer;
 
@@ -68,7 +68,9 @@
 
 .swiper {}
 
-.swiper-wrapper {}
+.swiper-wrapper {
+	
+}
 
 .product {
 	&__img {
@@ -83,6 +85,8 @@
 
 	&__content {
 		text-align: center;
+		margin:auto;
+		max-width: 87.719298%;
 	}
 
 	&__title {
@@ -99,12 +103,13 @@
 
 	&__info {
 		margin: auto;
-		max-width: 87.719298%;
+		// max-width: 87.719298%;
 
-		/* 1000/1140 */
 		p {
 			line-height: 1.62;
-
+			span {
+				font-weight: 700;
+			}
 			@media (max-width: $mobileSmall) {
 				font-size: toRem(14);
 			}
@@ -122,7 +127,9 @@
 	&__link {}
 }
 
-.swiper-slide {}
+.swiper-slide {
+	
+}
 
 .text {}
 
