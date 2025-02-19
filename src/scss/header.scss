@@ -4,6 +4,24 @@
 		justify-content: space-between;
 		align-items: center;
 		@include adaptiveValue("padding-block", 24, 12,0,1140,768);
+		@media (max-width:toEm(768.02)){
+			&[class*='__container'][class] {
+					padding-block: 0.75rem;
+			}
+			&::after{
+					content:'';
+					position: fixed;
+					top: 0;
+				left: 0;
+				width: 101%;
+				height: 3.75rem;
+				background-color: #fff;
+				z-index: 3;
+				.scrolled-down & {
+					display: none;
+				}
+			}
+		}
 	}
 
 	&__logo {

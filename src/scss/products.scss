@@ -7,7 +7,6 @@
 
 		img {
 			transition: transform 0.3s ease 0s;
-
 			._select-open & {
 				transform: rotate(-180deg);
 			}
@@ -21,7 +20,11 @@
 		align-items: flex-start;
 		justify-content: center;
 		flex-wrap: wrap;
-		@include adaptiveValue("margin-bottom", 80, 24, 0, 1140, 360);
+
+		@media (min-width:$mobile){
+			@include adaptiveValue("margin-bottom", 80, 60, 0, 1140, 768);
+		}
+		margin-bottom: 4.5rem;
 		@include adaptiveValue("gap", 40, 20, 0, 1140, 768);
 
 		@media (max-width: toEm(650)) {
@@ -31,20 +34,17 @@
 
 	&__item {
 		cursor: pointer;
+		flex: 1;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		flex-wrap: wrap;
-		width: 22.5%;
+		// flex-wrap: wrap;
+		// width: 22.5%;
 		background: #f4f5f6;
 		border-radius: 0.3125rem;
 		padding: 0.8125rem 1rem;
 		font-weight: 600;
 		color: $secondColor;
-
-		@media (min-width: $mobileSmall) and (max-width: $mobile) {
-			width: 30%;
-		}
 
 		@media (max-width: toEm(650)) {
 			width: 100%;
@@ -69,14 +69,12 @@
 		display: grid;
 		gap: 5rem 2.5rem;
 		margin-bottom: toRem(80);
-
-		@media (max-width: $mobile) {
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: toEm(768.02)) {
+			grid-template-columns: repeat(1, 1fr);
 			margin-bottom: toRem(40);
-			grid-template-columns: 1fr;
 			gap: toRem(40);
 		}
-
-		grid-template-columns: repeat(2, 1fr);
 	}
 
 	&__result {}
@@ -112,7 +110,7 @@
 				max-width: 16.5rem;
 			}
 
-			max-width: 100%;
+			// max-width: 100%;
 		}
 	}
 
@@ -150,7 +148,7 @@
 .link-item {
 	background-color: #f4f5f6;
 	border-radius: 0.75rem;
-	padding: toRem(9) toRem(22);
+	padding: toRem(9) toRem(17.7);
 	display: inline-flex;
 	gap: toRem(10);
 	align-items: center;
@@ -201,10 +199,14 @@
 	background-color: $secondColor;
 	@include adaptiveValue("padding-block", 80, 40, 0, 768, 360);
 
-	&__container {}
+	&__container {
+		// @extend .title
+	}
 
 	&__title {
 		margin-bottom: toRem(40);
+		margin-inline: auto ;
+		max-width: 87%;
 	}
 
 	&__body {}
@@ -221,19 +223,19 @@
 
 	&__navigation {
 		padding: 0.625rem;
-		max-width: 50rem;
+		max-width: 806px;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: toRem(40);
-		column-gap: 100px;
-		@media (max-width: $tablet) and (min-width: $mobile) {
-			max-width: 43.75rem;
-		}
-
+		column-gap: 6.25rem;
 		@media (max-width: $mobile) {
+			& .tabs__title:first-child._tab-active {
+				padding-left: 0.625rem;
+			}
 			min-width: 44.5625rem;
+			column-gap: 4.4375rem;
 		}
 	}
 
@@ -274,8 +276,7 @@
 	._tab-active {
 		.tabs__active {
 			display: inline-block;
-
-			transform: scale(1.18);
+			transform: scale(1.1667);
 		}
 
 		.tabs__closed {
@@ -352,7 +353,9 @@
 		margin-left: 1.875rem;
 	}
 
-	&__contra {}
+	&__contra {
+		&:not(:last-child) {margin-bottom: toRem(24);}
+	}
 }
 
 .text {

@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			select.classList.toggle('_select-open');
 		}
 	}
-	//учёт высоты предупреждения для отступа у самого нижнего блока на странице 
+	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
 	const conditions = document.querySelector('.footer__contraindications');
 	const footerContainer = document.querySelector('.footer__container');
 	footerContainer.style.paddingBottom = `${conditions.offsetHeight + 50}px`;
@@ -56,5 +56,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		advantagesArray.slice(-2).forEach((el) => (el.style.borderBottom = 'none'));
 	}
 
-	document.addEventListener("touchend", function () {}, false);
+	document.addEventListener('touchend', function () {}, false);
+
+	//даю класс в зависимости от направления скролла.
+	let lastY = window.scrollY;
+	window.addEventListener('scroll', () => {
+		if (window.scrollY === lastY) {
+			return;
+		}
+		document.body.classList.toggle('scrolled-down', window.scrollY > lastY);
+		document.body.classList.toggle('scrolled-up', window.scrollY < lastY);
+		lastY = window.scrollY;
+	});
 });

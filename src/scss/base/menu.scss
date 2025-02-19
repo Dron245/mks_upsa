@@ -6,7 +6,7 @@
 	// .menu__body
 	&__body {
 		@media (max-width: toEm(768.02)) {
-			position: fixed;
+			position: absolute;
 			width: 100%;
 			height: 100%;
 			top: -100%;
@@ -14,24 +14,23 @@
 			z-index: 3;
 			background-color: $therdColor;
 			overflow: auto;
-			padding: toRem(280) toRem(15) toRem(15) toRem(16);
+			padding: toRem(280) toRem(16) toRem(15) toRem(16);
 			transition: top 0.3s;
 
 			&::before {
 				content: "";
-				position: fixed;
+				position: absolute;
 				width: 100%;
 				height: toRem(60);
 				top: -100%;
 				left: 0;
 				transition: top 0.3s;
-				z-index: 2;
+				z-index: 3;
 				background-color: #fff;
 			}
 
 			.menu-open & {
 				top: 0;
-
 				&::before {
 					top: 0;
 				}
