@@ -4046,7 +4046,7 @@
                 submenu.style.overflow = "hidden";
                 submenu.style.maxHeight = "0px";
                 link.addEventListener("click", (e => {
-                    if (window.innerWidth <= 768) {
+                    if (window.innerWidth <= 768.02) {
                         e.preventDefault();
                         toggleSubmenu(submenu, item);
                     }
