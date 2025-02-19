@@ -61,9 +61,14 @@
 .menu-footer {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
 	row-gap: 1rem;
+	@media (min-width:toEm(768.02)){
+		justify-content: center;
+		  flex-wrap: wrap;
+	}
+	@media (max-width: toEm(768.02)){
+		flex-direction: column;
+	}
 	&:not(:last-child) {
 		margin-bottom: toRem(32);
 	}
@@ -86,7 +91,6 @@
 		@media (min-width:$mobileSmall){
 			border-right: 0.0625rem solid $mainColor;
 			line-height: 1;
-			  
 		}
 	}
 }
@@ -99,7 +103,14 @@
 		margin-bottom: toRem(152);
 	}
 
-	&__text {}
+	&__text {
+		p {
+			&:not(:last-child) {margin-bottom: toRem(20);}
+			@media (max-width:$mobileSmall){
+				 &:not(:last-child) {margin-bottom: toRem(16);} 
+			}
+		}
+	}
 
 	&__link {}
 }

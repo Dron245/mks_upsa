@@ -3,22 +3,17 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-block: 1.5rem;
+		@include adaptiveValue("padding-block", 24, 12,0,1140,768);
 	}
 
 	&__logo {
 		position: relative;
 		z-index: 6;
-		width: 16.25rem;
 		margin-right: 1rem;
-
+		@include adaptiveValue("width", 261, 180,0,768,360);
 		img {
 			width: 100%;
 			height: auto;
-		}
-
-		@media (max-width: $tablet) {
-			width: 11.25rem;
 		}
 	}
 
@@ -32,14 +27,14 @@
 		cursor: pointer;
 		
 		svg {
-			@media (max-width: $mobile) {
+			@media (max-width: toEm(768.02)) {
 				path {
 					fill: #fff;
 				}
 			}
 		}
-		@media (any-hover: hover) {
-			@media (min-width:$mobile){
+		// @media (any-hover: hover) {
+			@media (min-width:toEm(768.02)){
 				&:hover {
 					transform: scale(1.05);
 					.menu__link {
@@ -58,19 +53,14 @@
 				}
 			}
 			
-		}
+		// }
 
 		& svg {
 			transition: transform 0.3s ease 0s;
-			@media (min-width:$mobile){
-				 path {
-					//  transition: fill 0.3s ease 0s;
-				 } 
-			}
 		}
 		&._active {
 			svg {
-				@media (max-width: $mobile) {
+				@media (max-width: toEm(768.02)) {
 					transform: rotate(180deg);
 				}
 			}
@@ -78,14 +68,14 @@
 	}
 
 	&__link {
-		@media (min-width:$mobile){
+		@media (min-width:toEm(768.02)){
 			transition: transform 0.3s ease 0s; 
 		}
 	}
 
 	&__sub-list {
 		padding-top: 1.25rem;
-		@media (min-width: $mobile) {
+		@media (min-width: toEm(768.02)) {
 			position: absolute;
 			left: 0;
 			top: 50%;
@@ -96,7 +86,7 @@
 			max-height: initial !important;
 			// min-width: 100%;
 		}
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			width: 100vw;
 			max-height: 0;
 			overflow: hidden;
@@ -110,7 +100,7 @@
 	&__sub-item {
 		padding: 1rem 1.5rem;
 		cursor: pointer;
-		@media (min-width:$mobile){
+		@media (min-width:toEm(768.02)){
 			 background-color: #fff; 
 		}
 		._active & {
@@ -119,7 +109,7 @@
 		}
 		@media (any-hover: hover){
 			&:hover {
-				@media (min-width: $mobile) {
+				@media (min-width: toEm(768.02)) {
 					background-color: $therdColor;
 					.menu__sub-link {
 						color: #fff;
@@ -141,11 +131,11 @@
 		text-transform: uppercase;
 		color: $therdColor;
 
-		@media (min-width: $mobile) {
+		@media (min-width: toEm(768.02)) {
 			text-wrap: nowrap;
 		}
 
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			width: 100%;
 			line-height: 1.5;
 			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);

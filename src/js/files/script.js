@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			submenu.style.maxHeight = '0px'; // Начальное состояние
 
 			link.addEventListener('click', (e) => {
-				if (window.innerWidth <= 768) {
+				if (window.innerWidth <= 768.02) {
 					e.preventDefault();
 					toggleSubmenu(submenu, item);
 				}

@@ -4,9 +4,23 @@
 }
 
 .main {
+	@media (max-width:toEm(768.02)){
+		 position: relative; 
+	}
 	img {
-		width: 100%;
-		height: auto;
+		@media (min-width:toEm(768.02)){
+			height: auto;
+			width: 100%;
+		}
+		@media (max-width:toEm(768.02)){
+			 position: absolute;
+			 top: 0;
+			 left: 0;
+			 z-index: 1;
+			 width: 100%;
+			 object-fit: cover;
+			 @include adaptiveValue("height", 476, 304,0,768,360); 
+		}
 	}
 }
 
@@ -14,9 +28,16 @@
 
 .page {
 	&__goods {
-		@include adaptiveValue("margin-top", -135, -76, 0, 1140, 768);
-		@include adaptiveValue("margin-top", -76, -40, 0, 768, 360);
-
+		@media (min-width:toEm(768.02)){
+			@include adaptiveValue("margin-top", -135, -76, 0, 1140, 768);
+			  
+		}
+		position: relative;
+    z-index: 2;
+	 @media (max-width: toEm(768.02)){
+		  
+		 @include adaptiveValue("margin-top", 383, 260, 0, 768, 360);
+	 }
 	}
 }
 
@@ -48,7 +69,7 @@
 		z-index: 5;
 		cursor: pointer;
 
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			display: none;
 		}
 	}
@@ -177,7 +198,7 @@
 		max-width: 43.75rem;
 		font-size: toRem(22);
 		text-wrap: balance;
-		margin-bottom: 6.25rem;
+		@include adaptiveValue("margin-bottom", 100, 56,0,768,360);
 	}
 
 	&__content {
@@ -186,15 +207,12 @@
 		text-align: center;
 		background: url("@img/home/bg-2.png") 0 0 no-repeat;
 		border-radius: 2rem;
-
+		@include adaptiveValue("padding-block", 107.5, 90, 0, 768, 360);
 		@media (min-width:$mobile) {
-			padding-inline: 4.75rem;
-			padding-block: 6.25rem;
-
+			padding-inline: 76px;
 		}
 
 		@media (max-width:$mobile) {
-			@include adaptiveValue("padding-block", 100, 80, 0, 768, 360);
 			@include adaptiveValue("padding-inline", 76, 10, 0, 768, 360);
 		}
 
@@ -206,7 +224,6 @@
 	&__title {
 		img {
 			width: 63.696809%;
-			/* 479/752 */
 		}
 
 		@media (min-width: $mobile) {
