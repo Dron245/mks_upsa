@@ -3995,6 +3995,10 @@
             speed: 800,
             loop: true,
             effect: "fade",
+            autoplay: {
+                delay: 3e3,
+                disableOnInteraction: false
+            },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
@@ -4057,6 +4061,13 @@
         const advantagesArray = Array.from(advantages);
         if (advantagesArray.length >= 2) advantagesArray.slice(-2).forEach((el => el.style.borderBottom = "none"));
         document.addEventListener("touchend", (function() {}), false);
+        let lastY = window.scrollY;
+        window.addEventListener("scroll", (() => {
+            if (window.scrollY === lastY) return;
+            document.body.classList.toggle("scrolled-down", window.scrollY > lastY);
+            document.body.classList.toggle("scrolled-up", window.scrollY < lastY);
+            lastY = window.scrollY;
+        }));
     }));
     window["FLS"] = true;
     menuInit();

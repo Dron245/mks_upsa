@@ -290,13 +290,17 @@ h6 {
 }
 .first__breadcrumbs {
   position: absolute;
+  top: 0;
   padding-inline: .625rem;
   padding-top: 1rem
 }
 .first__breadcrumbs:not(:last-child) {
   margin-bottom: 2.0625rem
 }
-.first__title:not(:last-child) {
+.first__title.title {
+  line-height: 1.3
+}
+.first__title.title:not(:last-child) {
   margin-bottom: 1rem
 }
 .first__subtitle {
@@ -614,15 +618,15 @@ h6 {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  margin-bottom: 4.5rem
 }
 .selects__item {
   cursor: pointer;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 22.5%;
   background: #f4f5f6;
   border-radius: .3125rem;
   padding: .8125rem 1rem;
@@ -662,9 +666,6 @@ h6 {
 .item__img:not(:last-child) {
   margin-bottom: 2rem
 }
-.item__img img {
-  max-width: 100%
-}
 .item__img img:first-child {
   max-width: 16.5rem
 }
@@ -689,7 +690,7 @@ h6 {
 .link-item {
   background-color: #f4f5f6;
   border-radius: .75rem;
-  padding: .5625rem 1.375rem;
+  padding: .5625rem 1.10625rem;
   display: inline-flex;
   gap: .625rem;
   align-items: center;
@@ -709,7 +710,9 @@ h6 {
   background-color: #2a5199
 }
 .products__title {
-  margin-bottom: 2.5rem
+  margin-bottom: 2.5rem;
+  margin-inline: auto;
+  max-width: 87%
 }
 .tabs {
   position: relative;
@@ -717,15 +720,15 @@ h6 {
 }
 .tabs__navigation {
   padding: .625rem;
-  max-width: 50rem;
+  max-width: 806px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.5rem;
-  -webkit-column-gap: 100px;
-  -moz-column-gap: 100px;
-  column-gap: 100px
+  -webkit-column-gap: 6.25rem;
+  -moz-column-gap: 6.25rem;
+  column-gap: 6.25rem
 }
 .tabs__title img {
   width: 100%;
@@ -755,8 +758,8 @@ h6 {
 }
 .tabs ._tab-active .tabs__active {
   display: inline-block;
-  -webkit-transform: scale(1.18);
-  transform: scale(1.18)
+  -webkit-transform: scale(1.1667);
+  transform: scale(1.1667)
 }
 .tabs ._tab-active .tabs__closed {
   display: none
@@ -799,6 +802,9 @@ h6 {
 .punkt__list-item {
   list-style-type: disc;
   margin-left: 1.875rem
+}
+.punkt__contra:not(:last-child) {
+  margin-bottom: 1.5rem
 }
 .text_underline:not(:last-child) {
   margin-bottom: 1rem
@@ -1109,11 +1115,6 @@ h6 {
 .swiper-button-lock {
   display: none!important
 }
-@media (min-width:22.5em) {
-  .first__subtitle {
-    font-size: 1.25rem
-  }
-}
 @media (min-width:29.99875em) {
   .menu-footer__link {
     border-right: .0625rem solid #7a7a7a;
@@ -1161,6 +1162,9 @@ h6 {
   }
 }
 @media (min-width:47.99875em)and (min-width:71.25em) {
+  .selects__body {
+    margin-bottom: 5rem
+  }
   .doctor__container {
     padding-block: 5rem
   }
@@ -1252,9 +1256,6 @@ h6 {
     margin-top: 5rem
   }
   .selects__body {
-    margin-bottom: 5rem
-  }
-  .selects__body {
     gap: 2.5rem
   }
   .manual {
@@ -1319,8 +1320,11 @@ h6 {
   .first__container {
     padding-block: 4.375rem
   }
-  .first__title {
-    font-size: 2.5rem
+  .first__title.title {
+    font-size: 3rem
+  }
+  .first__subtitle {
+    font-size: 1.25rem
   }
   .warning__text {
     font-size: 1.75rem
@@ -1528,14 +1532,9 @@ h6 {
     padding-block: 1rem
   }
 }
-@media (max-width:20em) {
-  .first__subtitle {
-    font-size: 1rem
-  }
-}
 @media (max-width:48.00125em) {
   .menu__body {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: -100%;
@@ -1543,18 +1542,18 @@ h6 {
     z-index: 3;
     background-color: #00a5e2;
     overflow: auto;
-    padding: 17.5rem .9375rem .9375rem 1rem;
+    padding: 17.5rem 1rem .9375rem 1rem;
     transition: top .3s
   }
   .menu__body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 3.75rem;
     top: -100%;
     left: 0;
     transition: top .3s;
-    z-index: 2;
+    z-index: 3;
     background-color: #fff
   }
   .menu-open .menu__body {
@@ -1636,6 +1635,22 @@ h6 {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
   }
+  .header__container[class*=__container][class] {
+    padding-block: .75rem
+  }
+  .header__container::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 3.75rem;
+    background-color: #fff;
+    z-index: 3
+  }
+  .scrolled-down .header__container::after {
+    display: none
+  }
   .menu__item svg path {
     fill: #fff
   }
@@ -1670,6 +1685,11 @@ h6 {
   }
   .goods__arrow {
     display: none
+  }
+  .selects__results {
+    grid-template-columns: repeat(1,1fr);
+    margin-bottom: 2.5rem;
+    gap: 2.5rem
   }
 }
 @media (max-width:48.00125em)and (max-width:22.5em) {
@@ -1714,11 +1734,6 @@ h6 {
   .info__subtitle {
     font-size: 1rem
   }
-  .selects__results {
-    margin-bottom: 2.5rem;
-    grid-template-columns: 1fr;
-    gap: 2.5rem
-  }
   .item__text {
     font-size: .875rem
   }
@@ -1726,7 +1741,13 @@ h6 {
     overflow-x: scroll
   }
   .tabs__navigation {
-    min-width: 44.5625rem
+    min-width: 44.5625rem;
+    -webkit-column-gap: 4.4375rem;
+    -moz-column-gap: 4.4375rem;
+    column-gap: 4.4375rem
+  }
+  .tabs__navigation .tabs__title:first-child._tab-active {
+    padding-left: .625rem
   }
   .description__bottom {
     flex-direction: column
@@ -1835,7 +1856,7 @@ h6 {
   p {
     font-size: .875rem
   }
-  .first__title:not(:last-child) {
+  .first__title.title:not(:last-child) {
     margin-bottom: .5rem
   }
   .footer__contraindications {
@@ -1873,8 +1894,11 @@ h6 {
   .first__container {
     padding-block: 2.5rem
   }
-  .first__title {
+  .first__title.title {
     font-size: 1.875rem
+  }
+  .first__subtitle {
+    font-size: 1rem
   }
   .warning__text {
     font-size: 1.25rem
@@ -1914,9 +1938,6 @@ h6 {
   }
   .selects {
     margin-top: 1.5rem
-  }
-  .selects__body {
-    margin-bottom: 1.5rem
   }
   .products {
     padding-block: 2.5rem
@@ -2117,6 +2138,11 @@ h6 {
     margin-top: clamp(16.25rem ,9.4669117647rem + 30.1470588235vw ,23.9375rem)
   }
 }
+@media (max-width:48.00125em)and (min-width:28.125em) {
+  [class*=__container][class] {
+    padding: 0 1rem
+  }
+}
 @media (min-width:22.5em)and (max-width:48em) {
   .title {
     font-size: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
@@ -2133,8 +2159,11 @@ h6 {
   .first__container {
     padding-block: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
   }
-  .first__title {
-    font-size: clamp(1.875rem ,1.3235294118rem + 2.4509803922vw ,2.5rem)
+  .first__title.title {
+    font-size: clamp(1.875rem ,.8823529412rem + 4.4117647059vw ,3rem)
+  }
+  .first__subtitle {
+    font-size: clamp(1rem ,.7794117647rem + .9803921569vw ,1.25rem)
   }
   .warning__text {
     font-size: clamp(1.25rem ,.8088235294rem + 1.9607843137vw ,1.75rem)
@@ -2290,20 +2319,12 @@ h6 {
     font-size: clamp(.875rem ,.5441176471rem + 1.4705882353vw ,1.25rem)
   }
 }
-@media (min-width:20em)and (max-width:22.5em) {
-  .first__subtitle {
-    font-size: clamp(1rem ,-1rem + 10vw ,1.25rem)
-  }
-}
 @media (min-width:22.5em)and (max-width:71.25em) {
   .footer__contraindications p {
     font-size: clamp(.875rem ,.6442307692rem + 1.0256410256vw ,1.375rem)
   }
   .selects {
     margin-top: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
-  }
-  .selects__body {
-    margin-bottom: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
   }
   .recomendation__title {
     font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
@@ -2372,14 +2393,20 @@ h6 {
     margin-bottom: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
   }
 }
-@media (min-width:29.99875em)and (max-width:47.99875em) {
-  .selects__item {
-    width: 30%
+@media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
+  .selects__body {
+    margin-bottom: clamp(3.75rem ,1.1693548387rem + 5.376344086vw ,5rem)
+  }
+  .galery-advantage__item img {
+    width: clamp(4.6875rem ,.6875rem + 8.3333333333vw ,6.625rem)
   }
 }
-@media (max-width:61.99875em)and (min-width:47.99875em) {
-  .tabs__navigation {
-    max-width: 43.75rem
+@media (min-width:47.99875em)and (max-width:48em) {
+  .selects__body {
+    margin-bottom: 3.75rem
+  }
+  .galery-advantage__item img {
+    width: 4.6875rem
   }
 }
 @media (min-width:30em)and (max-width:71.25em) {
@@ -2408,16 +2435,6 @@ h6 {
 @media (max-width:42.5em)and (min-width:22.5em)and (max-width:42.5em) {
   .recomendation__img {
     width: clamp(11.25rem ,.0000000625rem + 50vw ,21.25rem)
-  }
-}
-@media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
-  .galery-advantage__item img {
-    width: clamp(4.6875rem ,.6875rem + 8.3333333333vw ,6.625rem)
-  }
-}
-@media (min-width:47.99875em)and (max-width:48em) {
-  .galery-advantage__item img {
-    width: 4.6875rem
   }
 }
 @media (hover:none) {
