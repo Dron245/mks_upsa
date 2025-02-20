@@ -63,7 +63,6 @@ p {
 .page {
 	&__first {
 		background-color: $secondColor;
-		position: relative;
 		.cold & {
 			background-color: $fourColor;
 		}
@@ -75,8 +74,6 @@ p {
 
 .first {
 	&__breadcrumbs {
-		position: absolute;
-		top: 0;
 		padding-inline: 0.625rem;
 		padding-top: toRem(16);
 		&:not(:last-child) {
@@ -91,10 +88,18 @@ p {
 
 	&__container {
 		&:not(:has(.first__subtitle)) {
-			@include adaptiveValue("padding-block", 72, 20, 0, 768, 360);
+			 @include adaptiveValue("padding-block", 72, 20, 0, 768, 360);
+			@media (min-width:$mobile){
+				  padding-bottom: toRem(70);
+				  padding-top: toRem(0);
+			}
 
 		}
-		@include adaptiveValue("padding-block", 70, 40, 0, 768, 360);
+		 @include adaptiveValue("padding-block", 70, 40, 0, 768, 360);
+		@media (min-width:$mobile){
+			  padding-bottom: toRem(70);
+			  padding-top: toRem(0);
+		}
 
 	}
 

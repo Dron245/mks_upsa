@@ -24,6 +24,9 @@
 		background-color: $secondColor;
 		text-align: center;
 		padding: 1.5625rem toRem(30);
+		.menu-open & {
+			z-index: 1;
+		}
 		@media (max-width:$mobile){
 			 padding: 1.25rem toRem(24); 
 		}
@@ -97,14 +100,17 @@
 
 .info-footer {
 	text-align: center;
-	line-height: 1.57;
-
+	@media (min-width:$mobile){
+		line-height: 1.57;
+	}
+	
 	&:not(:last-child) {
 		margin-bottom: toRem(152);
 	}
 
 	&__text {
 		p {
+			@include adaptiveValue("font-size", 14, 12,0,768,360);
 			&:not(:last-child) {margin-bottom: toRem(20);}
 			@media (max-width:$mobileSmall){
 				 &:not(:last-child) {margin-bottom: toRem(16);} 

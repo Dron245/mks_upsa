@@ -7,6 +7,7 @@
 
 		img {
 			transition: transform 0.3s ease 0s;
+
 			._select-open & {
 				transform: rotate(-180deg);
 			}
@@ -21,9 +22,10 @@
 		justify-content: center;
 		flex-wrap: wrap;
 
-		@media (min-width:$mobile){
+		@media (min-width:$mobile) {
 			@include adaptiveValue("margin-bottom", 80, 60, 0, 1140, 768);
 		}
+
 		margin-bottom: 4.5rem;
 		@include adaptiveValue("gap", 40, 20, 0, 1140, 768);
 
@@ -70,6 +72,7 @@
 		gap: 5rem 2.5rem;
 		margin-bottom: toRem(80);
 		grid-template-columns: repeat(2, 1fr);
+
 		@media (max-width: toEm(768.02)) {
 			grid-template-columns: repeat(1, 1fr);
 			margin-bottom: toRem(40);
@@ -129,19 +132,20 @@
 	&__subtitle {
 		display: block;
 		margin-top: toRem(10);
+
 		&_two {
 			margin-bottom: toRem(10);
 		}
 	}
+
 	&__text {
 		margin-block: toRem(32);
 		font-size: toRem(13);
 		color: #5fa7af;
 		line-height: 1.71;
 
-		
-		span {
-		}
+
+		span {}
 
 		@media (max-width: $mobile) {
 			font-size: toRem(14);
@@ -205,12 +209,11 @@
 	background-color: $secondColor;
 	@include adaptiveValue("padding-block", 80, 40, 0, 768, 360);
 
-	&__container {
-	}
+	&__container {}
 
 	&__title {
 		margin-bottom: toRem(40);
-		margin-inline: auto ;
+		margin-inline: auto;
 		max-width: 87%;
 	}
 
@@ -222,6 +225,10 @@
 
 	@media (max-width: $mobile) {
 		overflow-x: scroll;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	margin-inline: -0.625rem;
@@ -235,10 +242,12 @@
 		align-items: center;
 		margin-bottom: toRem(40);
 		column-gap: 6.25rem;
+
 		@media (max-width: $mobile) {
 			& .tabs__title:first-child._tab-active {
 				padding-left: 0.625rem;
 			}
+
 			min-width: 44.5625rem;
 			column-gap: 4.4375rem;
 		}
@@ -249,6 +258,7 @@
 			width: 100%;
 			height: auto;
 		}
+
 		&:not(:last-child) {
 			position: relative;
 			z-index: 2;
@@ -272,7 +282,7 @@
 	}
 
 	&__active {
-		
+
 		:not(._tab-active) & {
 			display: none;
 		}
@@ -359,7 +369,9 @@
 	}
 
 	&__contra {
-		&:not(:last-child) {margin-bottom: toRem(24);}
+		&:not(:last-child) {
+			margin-bottom: toRem(24);
+		}
 	}
 }
 
@@ -373,6 +385,7 @@
 
 .video {
 	video {
+		aspect-ratio: 1440 / 811;
 		width: 100%;
 	}
 
