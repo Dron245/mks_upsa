@@ -677,15 +677,18 @@ h6 {
 .item__title:not(:last-child) {
   margin-bottom: 1rem
 }
+.item__subtitle {
+  display: block;
+  margin-top: .625rem
+}
+.item__subtitle_two {
+  margin-bottom: .625rem
+}
 .item__text {
   margin-block: 2rem;
   font-size: .8125rem;
   color: #5fa7af;
   line-height: 1.71
-}
-.item__text span {
-  display: block;
-  margin-block: 1rem
 }
 .link-item {
   background-color: #f4f5f6;
@@ -884,19 +887,37 @@ h6 {
   background: url(../img/cold/bg-cold.webp) 0 0/cover no-repeat;
   border-radius: 2rem;
   overflow: hidden;
-  display: flex
+  display: grid;
+  grid-template-columns: auto 64.561404%;
+  grid-template-rows: auto auto;
+  position: relative
 }
 .definition:not(:last-child) {
   margin-bottom: 1.25rem
 }
 .definition__img {
-  flex: 0 0 36.140351%;
-  position: relative;
-  align-self: flex-end
+  grid-row: 1/3;
+  grid-column: 1/2;
+  height: 100%;
+  align-self: flex-end;
+  position: absolute
 }
 .definition__img img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto
+  height: 32rem;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.definition__top {
+  grid-row: 1/2;
+  grid-column: 2/3
+}
+.definition__top span {
+  font-weight: 700;
+  text-decoration: underline
 }
 .definition__title {
   margin-bottom: 1rem
@@ -905,21 +926,30 @@ h6 {
   font-weight: 700;
   color: #484848
 }
+.definition__list {
+  grid-row: 2/3;
+  grid-column: 2/3
+}
 .definition__item {
-  display: flex;
-  align-items: flex-start;
+  position: relative;
   gap: .75rem;
   color: #954d86;
   line-height: 1.4
 }
 .definition__item img {
-  -webkit-transform: translateY(.375rem);
-  transform: translateY(.375rem)
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1/2
+}
+.definition__item span {
+  font-weight: 700;
+  text-decoration: underline
 }
 .doctor {
   background-color: #954d86
 }
-.doctor__container {
+.doctor__container[class].block {
   position: relative
 }
 .doctor__title {
@@ -1020,6 +1050,8 @@ h6 {
   margin-bottom: 1rem
 }
 .aspiration__main-text {
+  margin: auto;
+  max-width: 41.5rem;
   text-transform: uppercase;
   line-height: 1.2;
   font-weight: 700
@@ -1125,9 +1157,6 @@ h6 {
   .recomendations__item:nth-child(even) .recomendation__img {
     order: 2
   }
-  .recomendation__img {
-    flex: 0 0 47.017544%
-  }
 }
 @media (min-width:43.75em) {
   .doctor__text {
@@ -1157,16 +1186,10 @@ h6 {
   .galery-advantage__item {
     margin-inline: 1.0938rem
   }
-  .contacts__body {
-    margin-inline: 3.75rem
-  }
 }
 @media (min-width:47.99875em)and (min-width:71.25em) {
   .selects__body {
     margin-bottom: 5rem
-  }
-  .doctor__container {
-    padding-block: 5rem
   }
   .galery-advantage__item img {
     width: 6.625rem
@@ -1223,6 +1246,12 @@ h6 {
     height: auto;
     width: 100%
   }
+  .recomendation__img {
+    flex: 0 0 47.017544%
+  }
+  .contacts__body {
+    margin-inline: 3.75rem
+  }
 }
 @media (any-hover:hover)and (min-width:48.00125em) {
   .menu__sub-item:hover {
@@ -1235,6 +1264,16 @@ h6 {
 @media (min-width:48.00125em)and (min-width:71.25em) {
   .page__goods {
     margin-top: -8.4375rem
+  }
+  .definition__img {
+    width: 25.75rem
+  }
+  .definition__img img {
+    -o-object-position: .0000000625rem;
+    object-position: .0000000625rem
+  }
+  .definition__item:last-child {
+    margin-bottom: 4.875rem
   }
 }
 @media (min-width:56.25em) {
@@ -1279,6 +1318,9 @@ h6 {
   .articles__content {
     padding-block: 3.75rem
   }
+  .doctor__container[class].block {
+    padding-block: 5rem
+  }
   .doctor__img {
     width: 22.75rem
   }
@@ -1315,7 +1357,7 @@ h6 {
     margin-bottom: 4.375rem
   }
   .first__container:not(:has(.first__subtitle)) {
-    padding-block: 5.625rem
+    padding-block: 4.5rem
   }
   .first__container {
     padding-block: 4.375rem
@@ -1383,8 +1425,8 @@ h6 {
   .articles__sub-title {
     font-size: 1.75rem
   }
-  .definitions__item {
-    padding-top: 2rem
+  .definition__top {
+    margin-top: 1.75rem
   }
   .definition__text {
     margin-bottom: 1.5rem
@@ -1393,7 +1435,13 @@ h6 {
     font-size: 1rem
   }
   .definition__item {
+    padding-left: 1.875rem
+  }
+  .definition__item {
     font-size: 1rem
+  }
+  .definition__item img {
+    width: .9375rem
   }
   .definition__item:not(:last-child) {
     margin-bottom: 1.5rem
@@ -1412,6 +1460,9 @@ h6 {
   }
   .recomendation__text {
     font-size: 1.1875rem
+  }
+  .about .first__title.title[class] {
+    font-size: 3.75rem
   }
   .advantage>*:not(:last-child) {
     margin-bottom: .8125rem
@@ -1648,7 +1699,7 @@ h6 {
     background-color: #fff;
     z-index: 3
   }
-  .scrolled-down .header__container::after {
+  ._scrolled .header__container::after {
     display: none
   }
   .menu__item svg path {
@@ -1691,6 +1742,23 @@ h6 {
     margin-bottom: 2.5rem;
     gap: 2.5rem
   }
+  .definition__img {
+    grid-row: 2/3;
+    width: 16.5625rem
+  }
+  .definition__img img {
+    -o-object-position: right;
+    object-position: right
+  }
+  .definition__top {
+    grid-column: 1/3
+  }
+  .recomendation__img {
+    flex: 0 0 46.197%
+  }
+  .contacts__body {
+    flex-direction: column
+  }
 }
 @media (max-width:48.00125em)and (max-width:22.5em) {
   .menu__link {
@@ -1704,6 +1772,15 @@ h6 {
   }
   .page__goods {
     margin-top: 16.25rem
+  }
+  .definition__top {
+    padding-left: 1rem
+  }
+  .definition__item:last-child {
+    margin-bottom: 1.25rem
+  }
+  .contacts__title {
+    margin-bottom: 1.5rem
   }
 }
 @media (max-width:48.00125em)and (any-hover:none) {
@@ -1782,9 +1859,6 @@ h6 {
   .aspiration__main-text {
     line-height: 1
   }
-  .contacts__body {
-    flex-direction: column
-  }
 }
 @media (max-width:47.99875em)and (max-width:22.5em) {
   .info__content {
@@ -1807,18 +1881,18 @@ h6 {
   .galery-advantage__item img {
     width: 4.375rem
   }
-  .contacts__title {
-    margin-bottom: 1.5rem
-  }
 }
 @media (max-width:43.75em) {
   .definitions__item {
     padding: 1.25rem
   }
+  .definition {
+    grid-template-columns: 1fr
+  }
   .definition__img {
     display: none
   }
-  .doctor__container {
+  .doctor__container[class].block {
     padding-bottom: 0;
     display: flex;
     flex-direction: column
@@ -1889,7 +1963,7 @@ h6 {
     margin-bottom: 2.5rem
   }
   .first__container:not(:has(.first__subtitle)) {
-    padding-block: 2.5rem
+    padding-block: 1.25rem
   }
   .first__container {
     padding-block: 2.5rem
@@ -1963,8 +2037,8 @@ h6 {
   .articles__sub-title {
     font-size: 1rem
   }
-  .definitions__item {
-    padding-top: 1.25rem
+  .definition__top {
+    margin-top: 1.25rem
   }
   .definition__text {
     margin-bottom: 1rem
@@ -1973,10 +2047,19 @@ h6 {
     font-size: .875rem
   }
   .definition__item {
+    padding-left: 1.25rem
+  }
+  .definition__item {
     font-size: .875rem
+  }
+  .definition__item img {
+    width: .6875rem
   }
   .definition__item:not(:last-child) {
     margin-bottom: 1rem
+  }
+  .doctor__container[class].block {
+    padding-block: 1.5rem
   }
   .doctor__title {
     font-size: 1.875rem
@@ -1995,6 +2078,9 @@ h6 {
   }
   .recomendation__text {
     font-size: 1rem
+  }
+  .about .first__title.title[class] {
+    font-size: 1.875rem
   }
   .advantage>*:not(:last-child) {
     margin-bottom: 1.5rem
@@ -2123,6 +2209,15 @@ h6 {
   .page__goods {
     margin-top: 23.9375rem
   }
+  .definition__top {
+    padding-left: 2rem
+  }
+  .definition__item:last-child {
+    margin-bottom: 2rem
+  }
+  .contacts__title {
+    margin-bottom: 2.5rem
+  }
 }
 @media (max-width:48.00125em)and (min-width:22.5em)and (max-width:48em) {
   .menu__link {
@@ -2137,10 +2232,19 @@ h6 {
   .page__goods {
     margin-top: clamp(16.25rem ,9.4669117647rem + 30.1470588235vw ,23.9375rem)
   }
+  .definition__top {
+    padding-left: clamp(1rem ,.1176470588rem + 3.9215686275vw ,2rem)
+  }
+  .definition__item:last-child {
+    margin-bottom: clamp(1.25rem ,.5882352941rem + 2.9411764706vw ,2rem)
+  }
+  .contacts__title {
+    margin-bottom: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
+  }
 }
 @media (max-width:48.00125em)and (min-width:28.125em) {
   [class*=__container][class] {
-    padding: 0 1rem
+    padding-inline: 1rem
   }
 }
 @media (min-width:22.5em)and (max-width:48em) {
@@ -2154,7 +2258,7 @@ h6 {
     margin-bottom: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
   }
   .first__container:not(:has(.first__subtitle)) {
-    padding-block: clamp(2.5rem ,-.2573529412rem + 12.2549019608vw ,5.625rem)
+    padding-block: clamp(1.25rem ,-1.6176470588rem + 12.7450980392vw ,4.5rem)
   }
   .first__container {
     padding-block: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
@@ -2222,8 +2326,8 @@ h6 {
   .articles__sub-title {
     font-size: clamp(1rem ,.3382352941rem + 2.9411764706vw ,1.75rem)
   }
-  .definitions__item {
-    padding-top: clamp(1.25rem ,.5882352941rem + 2.9411764706vw ,2rem)
+  .definition__top {
+    margin-top: clamp(1.25rem ,.8088235294rem + 1.9607843137vw ,1.75rem)
   }
   .definition__text {
     margin-bottom: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
@@ -2232,7 +2336,13 @@ h6 {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
   }
   .definition__item {
+    padding-left: clamp(1.25rem ,.6985294118rem + 2.4509803922vw ,1.875rem)
+  }
+  .definition__item {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
+  }
+  .definition__item img {
+    width: clamp(.6875rem ,.4669117647rem + .9803921569vw ,.9375rem)
   }
   .definition__item:not(:last-child) {
     margin-bottom: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
@@ -2251,6 +2361,9 @@ h6 {
   }
   .recomendation__text {
     font-size: clamp(1rem ,.8345588235rem + .7352941176vw ,1.1875rem)
+  }
+  .about .first__title.title[class] {
+    font-size: clamp(1.875rem ,.2205882353rem + 7.3529411765vw ,3.75rem)
   }
   .advantage>*:not(:last-child) {
     margin-bottom: clamp(.8125rem ,2.1066176471rem + -2.6960784314vw ,1.5rem)
@@ -2326,6 +2439,9 @@ h6 {
   .selects {
     margin-top: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
   }
+  .doctor__container[class].block {
+    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
+  }
   .recomendation__title {
     font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
   }
@@ -2337,10 +2453,22 @@ h6 {
   .page__goods {
     margin-top: clamp(-8.4375rem ,2.8629032258rem + -15.8602150538vw ,-4.75rem)
   }
+  .definition__img {
+    width: clamp(17.5rem ,.4677419355rem + 35.4838709677vw ,25.75rem)
+  }
+  .definition__item:last-child {
+    margin-bottom: clamp(2rem ,-3.935483871rem + 12.3655913978vw ,4.875rem)
+  }
 }
 @media (min-width:48.00125em)and (max-width:48em) {
   .page__goods {
     margin-top: -4.75rem
+  }
+  .definition__img {
+    width: 17.5rem
+  }
+  .definition__item:last-child {
+    margin-bottom: 2rem
   }
 }
 @media (max-width:47.99875em)and (min-width:48em) {
@@ -2364,9 +2492,6 @@ h6 {
   .galery-advantage__item img {
     width: 6.625rem
   }
-  .contacts__title {
-    margin-bottom: 2.5rem
-  }
 }
 @media (max-width:47.99875em)and (min-width:22.5em)and (max-width:48em) {
   .info__content {
@@ -2388,9 +2513,6 @@ h6 {
   }
   .galery-advantage__item img {
     width: clamp(4.375rem ,2.3897058824rem + 8.8235294118vw ,6.625rem)
-  }
-  .contacts__title {
-    margin-bottom: clamp(1.5rem ,.6176470588rem + 3.9215686275vw ,2.5rem)
   }
 }
 @media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
@@ -2417,14 +2539,16 @@ h6 {
     padding-block: clamp(1rem ,-1rem + 6.6666666667vw ,3.75rem)
   }
 }
-@media (min-width:47.99875em)and (min-width:22.5em)and (max-width:71.25em) {
-  .doctor__container {
-    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
+@media (min-width:48.00125em)and (min-width:48.001875em)and (max-width:71.25em) {
+  .definition__img img {
+    -o-object-position: clamp(-8.5625rem ,-26.2420357771rem + 36.8309274942vw ,.0000000625rem);
+    object-position: clamp(-8.5625rem ,-26.2420357771rem + 36.8309274942vw ,.0000000625rem)
   }
 }
-@media (min-width:47.99875em)and (max-width:22.5em) {
-  .doctor__container {
-    padding-block: 1.5rem
+@media (min-width:48.00125em)and (max-width:48.001875em) {
+  .definition__img img {
+    -o-object-position: -8.5625rem;
+    object-position: -8.5625rem
   }
 }
 @media (max-width:42.5em)and (min-width:42.5em) {
