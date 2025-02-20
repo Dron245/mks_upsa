@@ -42,15 +42,21 @@
 	&__item {
 		flex: 0 1 50%;
 		display: flex;
-		align-items: flex-start;
+		// align-items: flex-start;
+		flex-direction: column;
 		gap: toRem(20);
+		position: relative;
+		padding-left: toRem(25);
 		@media (max-width: $mobile) {
 			gap: toRem(10);
 		}
 		img {
-			width: 100%;
-			transform: translateY(0.375rem);
-			flex: 0 0 0.8125rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			// width: 100%;
+			// transform: translateY(0.375rem);
+			flex: 0 0 15px;
 		}
 	}
 

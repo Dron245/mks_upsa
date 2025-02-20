@@ -86,7 +86,7 @@
 			font-weight: 700;
 			text-decoration: underline;
 		}
-		@media (max-width: toEm(768.02)){
+		@media (min-width: toEm(700)){
 			@include adaptiveValue("padding-left", 32, 16,0,768,360);
 		}
 	}
@@ -100,6 +100,9 @@
 		color: #484848;
 		@include adaptiveValue("margin-bottom", 24, 16, 0, 768, 360);
 		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
+		@media (max-width:$mobileSmall){
+			 line-height: 1.57; 
+		}
 	}
 
 	&__list {
@@ -116,11 +119,15 @@
 		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
 		img {
 			position: absolute;
-			top: 0;
+			top: -4px;
 			left: 0;
-			@include adaptiveValue("width", 15, 11,0,768,360);
+			width: 0.9375rem;
 			aspect-ratio: 1/2;
 			// transform: translateY(toRem(2));
+			@media (max-width:$mobileSmall){
+				 top: 0; 
+				 width: 11px;
+			}
 		}
 		color: $fourColor;
 		line-height: 1.4;
@@ -148,14 +155,20 @@
 	background-color: $fourColor;
 	&__container[class].block {
 		position: relative;
-		// @media (min-width:$mobile){
+		@media (min-width:toEm(768.02)){
 			  
-			@include adaptiveValue("padding-block", 80, 24, 0, 1140, 360);
-		// }
+			@include adaptiveValue("padding-block", 80, 40, 0, 1140, 768.02);
+		}
+		@media (max-width: toEm(768.02)){
+			  @include adaptiveValue("padding-block", 40, 24, 0, 768, 360);
+		}
 		@media (max-width: toEm(700)) {
-			padding-bottom: toRem(0);
-			display: flex;
-			flex-direction: column;
+			&[class] {
+
+				padding-bottom: toRem(0);
+				display: flex;
+				flex-direction: column;
+			}
 		}
 	}
 
