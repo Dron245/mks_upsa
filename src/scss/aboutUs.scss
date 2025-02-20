@@ -1,3 +1,8 @@
+.about {
+	.first__title.title[class] {
+		@include adaptiveValue("font-size", 60, 30,0,768,360);
+	}
+}
 .advantages {
 	background-color: $fiveColor;
 	@include adaptiveValue("padding-bottom", 40, 32, 0, 1140, 768);
@@ -145,6 +150,8 @@
 	}
 
 	&__main-text {
+		margin:auto;
+		max-width: 41.5rem;
 		text-transform: uppercase;
 		line-height: 1.2;
 		@media (max-width:$mobile){
@@ -167,11 +174,11 @@
 	&__body {
 		display: flex;
 		justify-content: space-between;
-		@media (min-width:$mobile){
+		@media (min-width:toEm(768.02)){
 			margin-inline: 3.75rem;
 			  
 		}
-		@media (max-width:$mobile){
+		@media (max-width:toEm(768.02)){
 			 flex-direction: column; 
 		}
 	}
@@ -179,7 +186,7 @@
 	&__title {
 		font-weight: 700;
 		@include adaptiveValue("font-size",30 ,20,0,768,360);
-		@media (max-width:$mobile){
+		@media (max-width:toEm(768.02)){
 			 @include adaptiveValue("margin-bottom", 40, 24, 0, 768, 360); 
 		}
 	}

@@ -17,7 +17,7 @@
 				height: 3.75rem;
 				background-color: #fff;
 				z-index: 3;
-				.scrolled-down & {
+				._scrolled & {
 					display: none;
 				}
 			}

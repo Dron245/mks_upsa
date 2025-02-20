@@ -126,15 +126,21 @@
 		}
 	}
 
+	&__subtitle {
+		display: block;
+		margin-top: toRem(10);
+		&_two {
+			margin-bottom: toRem(10);
+		}
+	}
 	&__text {
 		margin-block: toRem(32);
 		font-size: toRem(13);
 		color: #5fa7af;
 		line-height: 1.71;
 
+		
 		span {
-			display: block;
-			margin-block: toRem(16);
 		}
 
 		@media (max-width: $mobile) {
@@ -200,7 +206,6 @@
 	@include adaptiveValue("padding-block", 80, 40, 0, 768, 360);
 
 	&__container {
-		// @extend .title
 	}
 
 	&__title {

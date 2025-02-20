@@ -1,7 +1,7 @@
 // Заголовки, общие БЄМ блоки и прочее...
 [class*='__container'][class] {
 	@media (max-width: toEm(768.02)) and (min-width: toEm(450)){
-		padding:0 1rem;
+		padding-inline: 1rem;
 	}
 }
 .title {
@@ -91,7 +91,7 @@ p {
 
 	&__container {
 		&:not(:has(.first__subtitle)) {
-			@include adaptiveValue("padding-block", 90, 40, 0, 768, 360);
+			@include adaptiveValue("padding-block", 72, 20, 0, 768, 360);
 
 		}
 		@include adaptiveValue("padding-block", 70, 40, 0, 768, 360);
