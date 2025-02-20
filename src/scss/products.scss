@@ -254,6 +254,10 @@
 	}
 
 	&__title {
+		width: 120px;
+		&._tab-active {
+			width: 140px;
+		}
 		img {
 			width: 100%;
 			height: auto;
