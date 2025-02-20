@@ -3,10 +3,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		@include adaptiveValue("padding-block", 24, 12,0,1140,768);
+		@include adaptiveValue("padding-block", 24, 14,0,1140,768);
 		@media (max-width:toEm(768.02)){
 			&[class*='__container'][class] {
-					padding-block: 0.75rem;
+					padding-block: 0.875rem;
 			}
 			&::after{
 					content:'';
@@ -118,6 +118,11 @@
 	&__sub-item {
 		padding: 1rem 1.5rem;
 		cursor: pointer;
+		@media (min-width:toEm(768.02)){
+			  &:not(:first-child) {
+				transform: translateY(-0.0625rem);
+			  }
+		}
 		@media (min-width:toEm(768.02)){
 			 background-color: #fff; 
 		}

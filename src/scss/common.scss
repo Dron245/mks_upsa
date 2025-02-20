@@ -88,14 +88,20 @@ p {
 
 	&__container {
 		&:not(:has(.first__subtitle)) {
-			 @include adaptiveValue("padding-block", 72, 20, 0, 768, 360);
+			@media (max-width:$mobile){
+				  
+				@include adaptiveValue("padding-block", 72, 20, 0, 768, 360);
+			}
 			@media (min-width:$mobile){
 				  padding-bottom: toRem(70);
 				  padding-top: toRem(0);
 			}
 
 		}
-		 @include adaptiveValue("padding-block", 70, 40, 0, 768, 360);
+		@media (max-width:$mobile){
+			  
+			@include adaptiveValue("padding-block", 70, 40, 0, 768, 360);
+		}
 		@media (min-width:$mobile){
 			  padding-bottom: toRem(70);
 			  padding-top: toRem(0);

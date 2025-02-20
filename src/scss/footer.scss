@@ -9,6 +9,13 @@
 		font-size: toRem(14);
 	}
 
+	a {
+		transition: color 0.3s;
+
+		&:hover {
+			color: $therdColor;
+		}
+	}
 	&__links {}
 
 	&__menu {}
@@ -39,7 +46,13 @@
 			letter-spacing: -0.07em;
 			text-transform: uppercase;
 			color: #fff;
-			@include adaptiveValue("font-size", 22, 14,0,1140,360);
+			@media (min-width:toEm(768.02)){
+				  
+				@include adaptiveValue("font-size", 22, 20,0,1140,768);
+			}
+			@media (max-width: toEm(768.02)){
+				  @include adaptiveValue("font-size", 20, 14,0,768, 360);
+			}
 		}
 	}
 }

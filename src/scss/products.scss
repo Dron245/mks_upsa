@@ -388,6 +388,8 @@
 }
 
 .video {
+	display: flex;
+	align-items: flex-end;
 	video {
 		aspect-ratio: 1440 / 811;
 		width: 100%;

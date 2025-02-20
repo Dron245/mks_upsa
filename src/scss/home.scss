@@ -62,15 +62,24 @@
 		border-radius: 50%;
 		display: grid;
 		place-items: center;
-		background: #f4f5f6;
+		background-color: #f4f5f6;
 		position: absolute;
 		top: 18.75rem;
 		// transform: translateY(-50%);
 		z-index: 5;
 		cursor: pointer;
-
+		transition: background-color 0.3s ;
+		&:hover{
+			background-color: $therdColor;
+			svg path {
+				stroke: #fff;
+			}
+		}
 		@media (max-width: toEm(768.02)) {
 			display: none;
+		}
+		svg path {
+			transition: stroke 0.3s;
 		}
 	}
 
@@ -79,7 +88,7 @@
 	}
 
 	&__arrow-next {
-		img {
+		svg {
 			rotate: 180deg;
 		}
 
@@ -277,12 +286,18 @@
 			rotate: 180deg;
 			transform-origin: top;
 			background: linear-gradient(90deg, #2a5199 0%, rgba(42, 81, 153, 0) 100%);
+			@media (max-width:$mobileSmall){
+				 left: -0.5rem; 
+			}
 		}
 
 		&::after {
 			content: "";
 			right: 0.75rem;
 			background: linear-gradient(90deg, #2a5199 0%, rgba(42, 81, 153, 0) 100%);
+			@media (max-width:$mobileSmall){
+				 right: -0.5rem; 
+			}
 		}
 
 		@media (min-width: $mobile) {
