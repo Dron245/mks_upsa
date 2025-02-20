@@ -279,8 +279,7 @@ h6 {
   color: #484848
 }
 .page__first {
-  background-color: #2a5199;
-  position: relative
+  background-color: #2a5199
 }
 .cold .page__first {
   background-color: #954d86
@@ -289,8 +288,6 @@ h6 {
   background-color: #6db9c2
 }
 .first__breadcrumbs {
-  position: absolute;
-  top: 0;
   padding-inline: .625rem;
   padding-top: 1rem
 }
@@ -428,6 +425,9 @@ h6 {
   text-align: center;
   padding: 1.5625rem 1.875rem
 }
+.menu-open .footer__contraindications {
+  z-index: 1
+}
 .footer__contraindications p {
   line-height: 114%;
   letter-spacing: -.07em;
@@ -465,8 +465,7 @@ h6 {
   padding-inline: .625rem
 }
 .info-footer {
-  text-align: center;
-  line-height: 1.57
+  text-align: center
 }
 .info-footer:not(:last-child) {
   margin-bottom: 9.5rem
@@ -813,6 +812,7 @@ h6 {
   margin-bottom: 1rem
 }
 .video video {
+  aspect-ratio: 1440/811;
   width: 100%
 }
 .page__articles {
@@ -1169,6 +1169,17 @@ h6 {
   }
 }
 @media (min-width:47.99875em) {
+  .first__container:not(:has(.first__subtitle)) {
+    padding-bottom: 4.375rem;
+    padding-top: 0
+  }
+  .first__container {
+    padding-bottom: 4.375rem;
+    padding-top: 0
+  }
+  .info-footer {
+    line-height: 1.57
+  }
   .info__content {
     padding-inline: 76px
   }
@@ -1382,6 +1393,9 @@ h6 {
   }
   .footer {
     padding-top: 5rem
+  }
+  .info-footer__text p {
+    font-size: .875rem
   }
   .product__img img {
     width: 22.75rem
@@ -1760,6 +1774,11 @@ h6 {
     flex-direction: column
   }
 }
+@media (max-width:48.00125em)and (max-width:29.99875em) {
+  .menu__body {
+    padding-top: 11.25rem
+  }
+}
 @media (max-width:48.00125em)and (max-width:22.5em) {
   .menu__link {
     font-size: 1rem
@@ -1816,6 +1835,9 @@ h6 {
   }
   .tabs {
     overflow-x: scroll
+  }
+  .tabs::-webkit-scrollbar {
+    display: none
   }
   .tabs__navigation {
     min-width: 44.5625rem;
@@ -1991,6 +2013,9 @@ h6 {
   }
   .footer__contraindications p {
     font-size: .875rem
+  }
+  .info-footer__text p {
+    font-size: .75rem
   }
   .product__img img {
     width: 11.875rem
@@ -2283,6 +2308,9 @@ h6 {
   }
   .footer {
     padding-top: clamp(2.5rem ,.2941176471rem + 9.8039215686vw ,5rem)
+  }
+  .info-footer__text p {
+    font-size: clamp(.75rem ,.6397058824rem + .4901960784vw ,.875rem)
   }
   .product__img img {
     width: clamp(11.875rem ,2.2794117647rem + 42.6470588235vw ,22.75rem)
