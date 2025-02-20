@@ -732,6 +732,12 @@ h6 {
   -moz-column-gap: 6.25rem;
   column-gap: 6.25rem
 }
+.tabs__title {
+  width: 120px
+}
+.tabs__title._tab-active {
+  width: 140px
+}
 .tabs__title img {
   width: 100%;
   height: auto
