@@ -416,6 +416,12 @@ h6 {
   align-items: center;
   font-size: .875rem
 }
+.footer a {
+  transition: color .3s
+}
+.footer a:hover {
+  color: #00a5e2
+}
 .footer__contraindications {
   width: 100%;
   position: fixed;
@@ -489,11 +495,21 @@ h6 {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #f4f5f6;
+  background-color: #f4f5f6;
   position: absolute;
   top: 18.75rem;
   z-index: 5;
-  cursor: pointer
+  cursor: pointer;
+  transition: background-color .3s
+}
+.goods__arrow:hover {
+  background-color: #00a5e2
+}
+.goods__arrow:hover svg path {
+  stroke: #fff
+}
+.goods__arrow svg path {
+  transition: stroke .3s
 }
 .goods__arrow-prew {
   left: 0
@@ -501,7 +517,7 @@ h6 {
 .goods__arrow-next {
   right: 0
 }
-.goods__arrow-next img {
+.goods__arrow-next svg {
   rotate: 180deg
 }
 .product__img {
@@ -816,6 +832,10 @@ h6 {
 }
 .text_underline:not(:last-child) {
   margin-bottom: 1rem
+}
+.video {
+  display: flex;
+  align-items: flex-end
 }
 .video video {
   aspect-ratio: 1440/811;
@@ -1249,6 +1269,10 @@ h6 {
     overflow: initial!important;
     max-height: initial!important
   }
+  .menu__sub-item:not(:first-child) {
+    -webkit-transform: translateY(-.0625rem);
+    transform: translateY(-.0625rem)
+  }
   .menu__sub-item {
     background-color: #fff
   }
@@ -1279,6 +1303,9 @@ h6 {
   }
 }
 @media (min-width:48.00125em)and (min-width:71.25em) {
+  .footer__contraindications p {
+    font-size: 1.375rem
+  }
   .page__goods {
     margin-top: -8.4375rem
   }
@@ -1304,9 +1331,6 @@ h6 {
   }
   .header__container {
     padding-block: 1.5rem
-  }
-  .footer__contraindications p {
-    font-size: 1.375rem
   }
   .selects {
     margin-top: 5rem
@@ -1372,12 +1396,6 @@ h6 {
   }
   .first__breadcrumbs {
     margin-bottom: 4.375rem
-  }
-  .first__container:not(:has(.first__subtitle)) {
-    padding-block: 4.5rem
-  }
-  .first__container {
-    padding-block: 4.375rem
   }
   .first__title.title {
     font-size: 3rem
@@ -1556,7 +1574,7 @@ h6 {
     gap: .625rem
   }
   .header__container {
-    padding-block: .75rem
+    padding-block: .875rem
   }
   .selects__body {
     gap: 1.25rem
@@ -1707,7 +1725,7 @@ h6 {
     transform: rotate(45deg)
   }
   .header__container[class*=__container][class] {
-    padding-block: .75rem
+    padding-block: .875rem
   }
   .header__container::after {
     content: "";
@@ -1791,6 +1809,9 @@ h6 {
   }
   .menu__sub-link {
     font-size: 1rem
+  }
+  .footer__contraindications p {
+    font-size: .875rem
   }
   .main img {
     height: 19rem
@@ -1889,6 +1910,12 @@ h6 {
   }
 }
 @media (max-width:47.99875em)and (max-width:22.5em) {
+  .first__container:not(:has(.first__subtitle)) {
+    padding-block: 1.25rem
+  }
+  .first__container {
+    padding-block: 2.5rem
+  }
   .info__content {
     padding-inline: .625rem
   }
@@ -1973,6 +2000,12 @@ h6 {
   .info__content {
     padding-inline: 1rem
   }
+  .info__subtitle::before {
+    left: -.5rem
+  }
+  .info__subtitle::after {
+    right: -.5rem
+  }
   .item__img_last {
     flex-direction: column
   }
@@ -1989,12 +2022,6 @@ h6 {
   }
   .first__breadcrumbs {
     margin-bottom: 2.5rem
-  }
-  .first__container:not(:has(.first__subtitle)) {
-    padding-block: 1.25rem
-  }
-  .first__container {
-    padding-block: 2.5rem
   }
   .first__title.title {
     font-size: 1.875rem
@@ -2016,9 +2043,6 @@ h6 {
   }
   .footer {
     padding-top: 2.5rem
-  }
-  .footer__contraindications p {
-    font-size: .875rem
   }
   .info-footer__text p {
     font-size: .75rem
@@ -2188,7 +2212,7 @@ h6 {
     gap: clamp(.625rem ,-2.2137096774rem + 5.9139784946vw ,2rem)
   }
   .header__container {
-    padding-block: clamp(.75rem ,-.7983870968rem + 3.2258064516vw ,1.5rem)
+    padding-block: clamp(.875rem ,-.4153225806rem + 2.688172043vw ,1.5rem)
   }
   .selects__body {
     gap: clamp(1.25rem ,-1.3306451613rem + 5.376344086vw ,2.5rem)
@@ -2234,6 +2258,9 @@ h6 {
   .menu__sub-link {
     font-size: 1.5rem
   }
+  .footer__contraindications p {
+    font-size: 1.25rem
+  }
   .main img {
     height: 29.75rem
   }
@@ -2256,6 +2283,9 @@ h6 {
   }
   .menu__sub-link {
     font-size: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
+  }
+  .footer__contraindications p {
+    font-size: clamp(.875rem ,.5441176471rem + 1.4705882353vw ,1.25rem)
   }
   .main img {
     height: clamp(19rem ,9.5147058824rem + 42.1568627451vw ,29.75rem)
@@ -2287,12 +2317,6 @@ h6 {
   }
   .first__breadcrumbs {
     margin-bottom: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
-  }
-  .first__container:not(:has(.first__subtitle)) {
-    padding-block: clamp(1.25rem ,-1.6176470588rem + 12.7450980392vw ,4.5rem)
-  }
-  .first__container {
-    padding-block: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
   }
   .first__title.title {
     font-size: clamp(1.875rem ,.8823529412rem + 4.4117647059vw ,3rem)
@@ -2466,46 +2490,13 @@ h6 {
     font-size: clamp(.875rem ,.5441176471rem + 1.4705882353vw ,1.25rem)
   }
 }
-@media (min-width:22.5em)and (max-width:71.25em) {
-  .footer__contraindications p {
-    font-size: clamp(.875rem ,.6442307692rem + 1.0256410256vw ,1.375rem)
-  }
-  .selects {
-    margin-top: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
-  }
-  .doctor__container[class].block {
-    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
-  }
-  .recomendation__title {
-    font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
-  }
-  .map {
-    margin-block: clamp(2.5rem ,1.0576923077rem + 6.4102564103vw ,5.625rem)
-  }
-}
-@media (min-width:48.00125em)and (min-width:48em)and (max-width:71.25em) {
-  .page__goods {
-    margin-top: clamp(-8.4375rem ,2.8629032258rem + -15.8602150538vw ,-4.75rem)
-  }
-  .definition__img {
-    width: clamp(17.5rem ,.4677419355rem + 35.4838709677vw ,25.75rem)
-  }
-  .definition__item:last-child {
-    margin-bottom: clamp(2rem ,-3.935483871rem + 12.3655913978vw ,4.875rem)
-  }
-}
-@media (min-width:48.00125em)and (max-width:48em) {
-  .page__goods {
-    margin-top: -4.75rem
-  }
-  .definition__img {
-    width: 17.5rem
-  }
-  .definition__item:last-child {
-    margin-bottom: 2rem
-  }
-}
 @media (max-width:47.99875em)and (min-width:48em) {
+  .first__container:not(:has(.first__subtitle)) {
+    padding-block: 4.5rem
+  }
+  .first__container {
+    padding-block: 4.375rem
+  }
   .info__content {
     padding-inline: 4.75rem
   }
@@ -2528,6 +2519,12 @@ h6 {
   }
 }
 @media (max-width:47.99875em)and (min-width:22.5em)and (max-width:48em) {
+  .first__container:not(:has(.first__subtitle)) {
+    padding-block: clamp(1.25rem ,-1.6176470588rem + 12.7450980392vw ,4.5rem)
+  }
+  .first__container {
+    padding-block: clamp(2.5rem ,.8455882353rem + 7.3529411765vw ,4.375rem)
+  }
   .info__content {
     padding-inline: clamp(.625rem ,-3.0147058824rem + 16.1764705882vw ,4.75rem)
   }
@@ -2547,6 +2544,48 @@ h6 {
   }
   .galery-advantage__item img {
     width: clamp(4.375rem ,2.3897058824rem + 8.8235294118vw ,6.625rem)
+  }
+}
+@media (min-width:48.00125em)and (min-width:48em)and (max-width:71.25em) {
+  .footer__contraindications p {
+    font-size: clamp(1.25rem ,.9919354839rem + .5376344086vw ,1.375rem)
+  }
+  .page__goods {
+    margin-top: clamp(-8.4375rem ,2.8629032258rem + -15.8602150538vw ,-4.75rem)
+  }
+  .definition__img {
+    width: clamp(17.5rem ,.4677419355rem + 35.4838709677vw ,25.75rem)
+  }
+  .definition__item:last-child {
+    margin-bottom: clamp(2rem ,-3.935483871rem + 12.3655913978vw ,4.875rem)
+  }
+}
+@media (min-width:48.00125em)and (max-width:48em) {
+  .footer__contraindications p {
+    font-size: 1.25rem
+  }
+  .page__goods {
+    margin-top: -4.75rem
+  }
+  .definition__img {
+    width: 17.5rem
+  }
+  .definition__item:last-child {
+    margin-bottom: 2rem
+  }
+}
+@media (min-width:22.5em)and (max-width:71.25em) {
+  .selects {
+    margin-top: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
+  }
+  .doctor__container[class].block {
+    padding-block: clamp(1.5rem ,-.1153846154rem + 7.1794871795vw ,5rem)
+  }
+  .recomendation__title {
+    font-size: clamp(1.5rem ,.8942307692rem + 2.6923076923vw ,2.8125rem)
+  }
+  .map {
+    margin-block: clamp(2.5rem ,1.0576923077rem + 6.4102564103vw ,5.625rem)
   }
 }
 @media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
