@@ -633,12 +633,10 @@ h6 {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-wrap: wrap;
   margin-bottom: 4.5rem
 }
 .selects__item {
   cursor: pointer;
-  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -704,7 +702,7 @@ h6 {
   margin-block: 2rem;
   font-size: .8125rem;
   color: #5fa7af;
-  line-height: 1.71
+  line-height: 1.62
 }
 .link-item {
   background-color: #f4f5f6;
@@ -736,14 +734,14 @@ h6 {
 .tabs {
   position: relative;
   overflow-x: scroll;
-  margin-inline: -16px
+  margin-inline: -1rem
 }
 .tabs::-webkit-scrollbar {
   display: none
 }
 .tabs__navigation {
   padding: .625rem;
-  max-width: 806px;
+  max-width: 50.375rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -753,8 +751,11 @@ h6 {
   -moz-column-gap: 6.25rem;
   column-gap: 6.25rem
 }
+.tabs__navigation .tabs__title:first-child._tab-active {
+  margin-left: .625rem
+}
 .tabs__title {
-  flex: 0 0 120px
+  flex: 0 0 7.5rem
 }
 .tabs__title img {
   width: 100%;
@@ -861,21 +862,22 @@ h6 {
   gap: 1.25rem
 }
 .description__item {
-  flex: 0 1 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex: 1 1 49%;
+  position: relative
+}
+.description__text {
+  color: #2a5199;
   position: relative;
   padding-left: 1.5625rem
 }
-.description__item img {
+.description__text::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  flex: 0 0 15px
-}
-.description__text {
-  color: #2a5199
+  width: 100%;
+  height: 100%;
+  background: url(../img/fever/arrow-r-fever-blue.svg) 0 0 no-repeat
 }
 .articles {
   margin-bottom: 2.5rem
@@ -937,7 +939,7 @@ h6 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 32rem;
+  height: 30rem;
   -o-object-fit: cover;
   object-fit: cover
 }
@@ -966,12 +968,17 @@ h6 {
   color: #954d86;
   line-height: 1.4
 }
-.definition__item img {
+.definition__item p {
+  position: relative
+}
+.definition__item p::before {
+  content: "";
   position: absolute;
-  top: -4px;
+  top: 0;
   left: 0;
-  width: .9375rem;
-  aspect-ratio: 1/2
+  width: 100%;
+  height: 100%;
+  background: url(../img/cold/arrow-right-cold.svg) 0 0 no-repeat
 }
 .definition__item span {
   font-weight: 700;
@@ -1099,8 +1106,12 @@ h6 {
 }
 .items-contacts__link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem
+}
+.items-contacts__link img {
+  -webkit-transform: translateY(.375rem);
+  transform: translateY(.375rem)
 }
 .items-contacts__text {
   color: #2a5199
@@ -1184,6 +1195,11 @@ h6 {
     line-height: 1
   }
 }
+@media (min-width:40.625em)and (min-width:71.25em) {
+  .selects__item {
+    flex-basis: 16rem
+  }
+}
 @media (min-width:42.5em) {
   .recomendations__item:nth-child(even) .recomendation__img {
     order: 2
@@ -1200,7 +1216,7 @@ h6 {
   }
   .doctor__img {
     position: absolute;
-    right: 0;
+    right: 1rem;
     bottom: 0
   }
 }
@@ -1297,6 +1313,9 @@ h6 {
     height: auto;
     width: 100%
   }
+  .description__bottom {
+    flex-wrap: wrap
+  }
   .recomendation__img {
     flex: 0 0 47.017544%
   }
@@ -1323,8 +1342,8 @@ h6 {
     width: 25.75rem
   }
   .definition__img img {
-    -o-object-position: .0000000625rem;
-    object-position: .0000000625rem
+    -o-object-position: .625rem;
+    object-position: .625rem
   }
   .definition__item:last-child {
     margin-bottom: 4.875rem
@@ -1428,9 +1447,6 @@ h6 {
   .footer {
     padding-top: 5rem
   }
-  .info-footer__text p {
-    font-size: .875rem
-  }
   .product__img img {
     width: 22.75rem
   }
@@ -1483,10 +1499,10 @@ h6 {
     font-size: 1rem
   }
   .definition__item {
-    padding-left: 1.875rem
-  }
-  .definition__item {
     font-size: 1rem
+  }
+  .definition__item p {
+    padding-left: 1.875rem
   }
   .definition__item:not(:last-child) {
     margin-bottom: 1.5rem
@@ -1584,7 +1600,7 @@ h6 {
     padding-block: .875rem
   }
   .selects__body {
-    gap: 1.25rem
+    gap: 1rem
   }
   .manual {
     margin-block: 2.5rem
@@ -1787,9 +1803,15 @@ h6 {
     margin-bottom: 2.5rem;
     gap: 2.5rem
   }
+  .description__bottom {
+    flex-direction: column
+  }
+  .description__item {
+    gap: .625rem
+  }
   .definition__img {
     grid-row: 2/3;
-    width: 16.5625rem
+    width: 17.5625rem
   }
   .definition__img img {
     -o-object-position: right;
@@ -1797,6 +1819,10 @@ h6 {
   }
   .definition__top {
     grid-column: 1/3
+  }
+  .doctor__title {
+    line-height: 1.33;
+    max-width: 98%
   }
   .recomendation__img {
     flex: 0 0 46.197%
@@ -1873,20 +1899,8 @@ h6 {
     -moz-column-gap: 4.4375rem;
     column-gap: 4.4375rem
   }
-  .tabs__navigation .tabs__title:first-child._tab-active {
-    padding-left: .625rem
-  }
-  .description__bottom {
-    flex-direction: column
-  }
-  .description__item {
-    gap: .625rem
-  }
   .articles__item {
     border-radius: 1.5rem
-  }
-  .doctor__title {
-    line-height: 1.33
   }
   .recomendations__item:not(:last-child) {
     margin-bottom: 1.25rem
@@ -1992,6 +2006,9 @@ h6 {
   .footer__contraindications {
     padding: 1rem 1.25rem
   }
+  .info-footer__text p {
+    font-size: .75rem
+  }
   .info-footer__text p:not(:last-child) {
     margin-bottom: 1rem
   }
@@ -2015,10 +2032,6 @@ h6 {
   }
   .definition__text {
     line-height: 1.57
-  }
-  .definition__item img {
-    top: 0;
-    width: 11px
   }
 }
 @media (max-width:22.5em) {
@@ -2051,9 +2064,6 @@ h6 {
   }
   .footer {
     padding-top: 2.5rem
-  }
-  .info-footer__text p {
-    font-size: .75rem
   }
   .product__img img {
     width: 11.875rem
@@ -2110,10 +2120,10 @@ h6 {
     font-size: .875rem
   }
   .definition__item {
-    padding-left: 1.25rem
-  }
-  .definition__item {
     font-size: .875rem
+  }
+  .definition__item p {
+    padding-left: 1.25rem
   }
   .definition__item:not(:last-child) {
     margin-bottom: 1rem
@@ -2217,7 +2227,7 @@ h6 {
     padding-block: clamp(.875rem ,-.4153225806rem + 2.688172043vw ,1.5rem)
   }
   .selects__body {
-    gap: clamp(1.25rem ,-1.3306451613rem + 5.376344086vw ,2.5rem)
+    gap: clamp(1rem ,-2.0967741935rem + 6.4516129032vw ,2.5rem)
   }
   .manual {
     margin-block: clamp(2.5rem ,-2.6612903226rem + 10.752688172vw ,5rem)
@@ -2341,9 +2351,6 @@ h6 {
   .footer {
     padding-top: clamp(2.5rem ,.2941176471rem + 9.8039215686vw ,5rem)
   }
-  .info-footer__text p {
-    font-size: clamp(.75rem ,.6397058824rem + .4901960784vw ,.875rem)
-  }
   .product__img img {
     width: clamp(11.875rem ,2.2794117647rem + 42.6470588235vw ,22.75rem)
   }
@@ -2396,10 +2403,10 @@ h6 {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
   }
   .definition__item {
-    padding-left: clamp(1.25rem ,.6985294118rem + 2.4509803922vw ,1.875rem)
-  }
-  .definition__item {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
+  }
+  .definition__item p {
+    padding-left: clamp(1.25rem ,.6985294118rem + 2.4509803922vw ,1.875rem)
   }
   .definition__item:not(:last-child) {
     margin-bottom: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
@@ -2600,6 +2607,16 @@ h6 {
     width: 4.6875rem
   }
 }
+@media (min-width:40.625em)and (min-width:47.99875em)and (max-width:71.25em) {
+  .selects__item {
+    flex-basis: clamp(14.6875rem ,11.9780388151rem + 5.6448578033vw ,16rem)
+  }
+}
+@media (min-width:40.625em)and (max-width:47.99875em) {
+  .selects__item {
+    flex-basis: 14.6875rem
+  }
+}
 @media (min-width:30em)and (max-width:71.25em) {
   .articles__content {
     padding-inline: clamp(1rem ,-1.9090909091rem + 9.696969697vw ,5rem)
@@ -2610,14 +2627,14 @@ h6 {
 }
 @media (min-width:48.00125em)and (min-width:48.001875em)and (max-width:71.25em) {
   .definition__img img {
-    -o-object-position: clamp(-8.5625rem ,-26.2420357771rem + 36.8309274942vw ,.0000000625rem);
-    object-position: clamp(-8.5625rem ,-26.2420357771rem + 36.8309274942vw ,.0000000625rem)
+    -o-object-position: clamp(-6.5625rem ,-21.4029861279rem + 30.9164717585vw ,.625rem);
+    object-position: clamp(-6.5625rem ,-21.4029861279rem + 30.9164717585vw ,.625rem)
   }
 }
 @media (min-width:48.00125em)and (max-width:48.001875em) {
   .definition__img img {
-    -o-object-position: -8.5625rem;
-    object-position: -8.5625rem
+    -o-object-position: -6.5625rem;
+    object-position: -6.5625rem
   }
 }
 @media (min-width:43.75em)and (min-width:22.5em)and (max-width:48em) {
