@@ -211,12 +211,19 @@
 	background-color: $secondColor;
 	@include adaptiveValue("padding-block", 80, 40, 0, 768, 360);
 
-	&__container {}
+	&__container {
+		@media (min-width: toEm(768.02)) and (max-width: $tablet){
+			padding-inline: 1rem; 
+		}
+	}
 
 	&__title {
-		margin-bottom: toRem(40);
-		margin-inline: auto;
-		max-width: 87%;
+		@include adaptiveValue("margin-bottom", 30, 24, 0, 768, 360);
+		@media (min-width:toEm(768.02)){
+			margin-inline: auto;
+			max-width: 87%;
+			  
+		}
 	}
 
 	&__body {}
@@ -229,9 +236,7 @@
 	&::-webkit-scrollbar {
 		display: none;
 	}
-	@media (max-width: $mobile) {
-
-	}
+	
 
 	margin-inline: -1rem;
 	&:has(.tabs__title:last-child._tab-active) {
@@ -239,19 +244,25 @@
 	}
 
 	&__navigation {
-		padding: 0.625rem;
+		padding-inline: 2rem;
+		padding-top: 16px;
 		max-width: 50.375rem;
-		margin: auto;
+		margin-inline: auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: toRem(40);
-		column-gap: 6.25rem;
+		margin-bottom: 1.25rem;
+		@media (max-width:$mobileSmall){
+			 margin-bottom: 1.5rem;
+			 position: relative;
+			 @include adaptiveValue("left", 140, 90, 0, 479, 360);
+		}
+		// column-gap: 6.25rem;
 		&:has(.tabs__title:first-child._tab-active) {
 		// margin-left: 0.625rem;
 	}
 	& .tabs__title:first-child._tab-active {
-		margin-left: 0.625rem;
+		// margin-left: 0.625rem;
 	}
 		@media (max-width: $mobile) {
 
@@ -277,13 +288,13 @@
 			z-index: 2;
 
 			& span {
-				content: "";
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
 				border-top: 0.25rem dashed #fff;
-				right: -7.5rem;
+				// right: -120px;
 				width: 7.5rem;
+				width: 100%;
 				z-index: 0;
 			}
 		}
@@ -321,6 +332,7 @@
 		top: 0;
 		left: 0;
 		z-index: 10;
+		padding-inline: 7px;
 	}
 
 	&__body {}
@@ -340,7 +352,7 @@
 		@include adaptiveValue("font-size", 28, 18, 0, 768, 360);
 		max-width: 40.625rem;
 		margin: auto;
-		line-height: 125%;
+		line-height: 130%;
 		text-align: center;
 		color: #fff;
 	}

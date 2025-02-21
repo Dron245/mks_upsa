@@ -121,12 +121,9 @@
 
 	&__title {
 		margin-top: toRem(40);
-		margin-bottom: toRem(24);
-
-		@media (max-width: $mobile) {
-			margin-top: toRem(10);
-			margin-bottom: toRem(16);
-		}
+		font-weight: 600;
+		@include adaptiveValue("margin-top", 40, 25, 0, 768, 360);
+		@include adaptiveValue("margin-bottom", 24, 16,0,768,360);
 
 		@include adaptiveValue("font-size", 30, 20, 0, 768, 360);
 	}
