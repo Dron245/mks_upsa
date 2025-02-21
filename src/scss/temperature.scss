@@ -34,34 +34,36 @@
 		display: flex;
 		justify-content: space-between;
 		gap: toRem(20);
-		@media (max-width: $mobile) {
+		@media (min-width:toEm(768.02)){
+			 flex-wrap: wrap; 
+		}
+		@media (max-width: toEm(768.02)) {
 			flex-direction: column;
 		}
 	}
 
 	&__item {
-		flex: 0 1 50%;
-		display: flex;
-		// align-items: flex-start;
-		flex-direction: column;
-		gap: toRem(20);
+		flex: 1 1 49%;
 		position: relative;
-		padding-left: toRem(25);
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			gap: toRem(10);
 		}
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			// width: 100%;
-			// transform: translateY(0.375rem);
-			flex: 0 0 15px;
-		}
+		
 	}
 
 	&__text {
 		color: $secondColor;
+		position: relative;
+		padding-left: toRem(25);
+		&::before{
+			content:'';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('@img/fever/arrow-r-fever-blue.svg') 0 0 no-repeat;;
+		}
 		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
 	}
 }

@@ -38,7 +38,7 @@
 		height: 100%;
 		@media (max-width: toEm(768.02)){
 			  grid-row: 2/3;
-			  width: 16.5625rem;
+			  width: 17.5625rem;
 		}
 		// flex: 0 0 36.140351%; /* 412/1140 */
 		// position: relative;
@@ -59,16 +59,14 @@
 			left: 0;
 			width: 100%;
 			// height: 100%;
-			height: 32rem;
+			height: 30rem;
 			object-fit: cover;
-			// object-position: right;
 			@media (min-width:toEm(768.02)){
-				  @include adaptiveValue("object-position", 0, -137,0,1140,768.03);
+				  @include adaptiveValue("object-position", 10, -105,0,1140,768.03);
 			}
 			@media (max-width:toEm(768.02)){
 				  object-position: right;
 			}
-			// @include adaptiveValue("left", 0, -60,0,1140,768);
 		}
 		@media (max-width: toEm(700)) {
 			display: none;
@@ -111,22 +109,20 @@
 	}
 
 	&__item {
-		// display: flex;
-		// align-items: flex-start;
 		position: relative;
 		gap: toRem(12);
-		@include adaptiveValue("padding-left", 30, 20,0,768,360);
 		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
-		img {
-			position: absolute;
-			top: -4px;
-			left: 0;
-			width: 0.9375rem;
-			aspect-ratio: 1/2;
-			// transform: translateY(toRem(2));
-			@media (max-width:$mobileSmall){
-				 top: 0; 
-				 width: 11px;
+		p {
+			position: relative;
+			@include adaptiveValue("padding-left", 30, 20,0,768,360);
+			&::before{
+				content:'';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url('@img/cold/arrow-right-cold.svg') 0 0 no-repeat;
 			}
 		}
 		color: $fourColor;
@@ -185,8 +181,9 @@
 		@media (min-width: toEm(900)) {
 			max-width: 65.964912%; /* 752/1140 */
 		}
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			line-height: 1.33;
+			max-width: 98%;
 		}
 	}
 
@@ -205,7 +202,7 @@
 	&__img {
 		@media (min-width: toEm(700)) {
 			position: absolute;
-			right: 0;
+			right: 1rem;
 			bottom: 0;
 		}
 		@media (max-width: toEm(700)) {

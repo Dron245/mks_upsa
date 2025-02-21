@@ -20,14 +20,14 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		flex-wrap: wrap;
+		// flex-wrap: wrap;
 
 		@media (min-width:$mobile) {
 			@include adaptiveValue("margin-bottom", 80, 60, 0, 1140, 768);
 		}
 
 		margin-bottom: 4.5rem;
-		@include adaptiveValue("gap", 40, 20, 0, 1140, 768);
+		@include adaptiveValue("gap", 40, 16, 0, 1140, 768);
 
 		@media (max-width: toEm(650)) {
 			flex-direction: column;
@@ -36,7 +36,9 @@
 
 	&__item {
 		cursor: pointer;
-		flex: 1;
+		@media (min-width:toEm(650)){
+			@include adaptiveValue("flex-basis", 256, 235,0,1140,767.98);
+		}
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -142,7 +144,7 @@
 		margin-block: toRem(32);
 		font-size: toRem(13);
 		color: #5fa7af;
-		line-height: 1.71;
+		line-height: 1.62;
 
 
 		span {}
@@ -231,25 +233,27 @@
 
 	}
 
-	margin-inline: -16px;
+	margin-inline: -1rem;
 	&:has(.tabs__title:last-child._tab-active) {
 		// margin-right: 0;
 	}
 
 	&__navigation {
 		padding: 0.625rem;
-		max-width: 806px;
+		max-width: 50.375rem;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: toRem(40);
 		column-gap: 6.25rem;
-
+		&:has(.tabs__title:first-child._tab-active) {
+		// margin-left: 0.625rem;
+	}
+	& .tabs__title:first-child._tab-active {
+		margin-left: 0.625rem;
+	}
 		@media (max-width: $mobile) {
-			& .tabs__title:first-child._tab-active {
-				padding-left: 0.625rem;
-			}
 
 			min-width: 44.5625rem;
 			column-gap: 4.4375rem;
@@ -258,7 +262,7 @@
 
 	&__title {
 		// width: 120px;
-		flex: 0 0 120px;
+		flex: 0 0 7.5rem;
 		&._tab-active {
 			// width: 140px;
 			// flex: 0 0 140px;
