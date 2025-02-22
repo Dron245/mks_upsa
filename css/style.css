@@ -288,17 +288,18 @@ h6 {
   background-color: #6db9c2
 }
 .first__breadcrumbs {
-  padding-inline: .625rem;
+  position: absolute;
   line-height: 1.3;
-  padding-top: 1rem
-}
-.first__breadcrumbs:not(:last-child) {
-  margin-bottom: 2.0625rem
+  top: 1rem;
+  left: .625rem;
+  z-index: 10
 }
 .first__container {
+  position: relative;
   padding-inline: 0
 }
 .first__title.title {
+  text-wrap: auto;
   line-height: 1.3
 }
 .first__title.title:not(:last-child) {
@@ -329,7 +330,11 @@ h6 {
 .breadcrumbs__link {
   font-size: .75rem;
   line-height: 175%;
-  color: #fff
+  color: #fff;
+  transition: color .3s
+}
+.breadcrumbs__link:hover {
+  color: rgba(255,255,255,.6901960784)
 }
 .breadcrumbs__current {
   font-size: .75rem;
@@ -1229,14 +1234,18 @@ h6 {
     bottom: 0
   }
 }
-@media (min-width:47.99875em) {
+@media (min-width:47.99875em)and (min-width:71.25em) {
   .first__container:not(:has(.first__subtitle)) {
-    padding-top: 0
+    padding-block: 5.6875rem
   }
-  .first__container {
-    padding-bottom: 4.375rem;
-    padding-top: 0
+  .selects__body {
+    margin-bottom: 5rem
   }
+  .galery-advantage__item img {
+    width: 6.625rem
+  }
+}
+@media (min-width:47.99875em) {
   .info-footer {
     line-height: 1.57
   }
@@ -1256,20 +1265,6 @@ h6 {
   }
   .galery-advantage__item {
     margin-inline: 1.0938rem
-  }
-}
-@media (min-width:47.99875em)and (min-width:71.25em) {
-  .first__container:not(:has(.first__subtitle)) .first__breadcrumbs {
-    margin-bottom: 3.3125rem
-  }
-  .first__container:not(:has(.first__subtitle)) {
-    padding-bottom: 5.6875rem
-  }
-  .selects__body {
-    margin-bottom: 5rem
-  }
-  .galery-advantage__item img {
-    width: 6.625rem
   }
 }
 @media (min-width:48.00125em) {
@@ -1440,8 +1435,8 @@ h6 {
   .description-title {
     font-size: 2.375rem
   }
-  .first__breadcrumbs {
-    margin-bottom: 4.4375rem
+  .first__container {
+    padding-block: 4.40625rem
   }
   .first__title.title {
     font-size: 3rem
@@ -1939,7 +1934,7 @@ h6 {
   }
 }
 @media (max-width:47.99875em)and (max-width:22.5em) {
-  .first__container {
+  .first__container:not(:has(.first__subtitle)) {
     padding-block: 2.46875rem
   }
   .info__content {
@@ -2064,8 +2059,8 @@ h6 {
   .description-title {
     font-size: 1.25rem
   }
-  .first__breadcrumbs {
-    margin-bottom: 2.5rem
+  .first__container {
+    padding-block: 2.34375rem
   }
   .first__title.title {
     font-size: 1.875rem
@@ -2365,8 +2360,8 @@ h6 {
   .description-title {
     font-size: clamp(1.25rem ,.2573529412rem + 4.4117647059vw ,2.375rem)
   }
-  .first__breadcrumbs {
-    margin-bottom: clamp(2.5rem ,.7904411765rem + 7.5980392157vw ,4.4375rem)
+  .first__container {
+    padding-block: clamp(2.34375rem ,.5238970588rem + 8.0882352941vw ,4.40625rem)
   }
   .first__title.title {
     font-size: clamp(1.875rem ,.8823529412rem + 4.4117647059vw ,3rem)
@@ -2544,11 +2539,8 @@ h6 {
   }
 }
 @media (min-width:47.99875em)and (min-width:48em)and (max-width:71.25em) {
-  .first__container:not(:has(.first__subtitle)) .first__breadcrumbs {
-    margin-bottom: clamp(2.0625rem ,-.5181451613rem + 5.376344086vw ,3.3125rem)
-  }
   .first__container:not(:has(.first__subtitle)) {
-    padding-bottom: clamp(4.375rem ,1.6653225806rem + 5.6451612903vw ,5.6875rem)
+    padding-block: clamp(4.40625rem ,1.7610887097rem + 5.5107526882vw ,5.6875rem)
   }
   .selects__body {
     margin-bottom: clamp(3.75rem ,1.1693548387rem + 5.376344086vw ,5rem)
@@ -2558,11 +2550,8 @@ h6 {
   }
 }
 @media (min-width:47.99875em)and (max-width:48em) {
-  .first__container:not(:has(.first__subtitle)) .first__breadcrumbs {
-    margin-bottom: 2.0625rem
-  }
   .first__container:not(:has(.first__subtitle)) {
-    padding-bottom: 4.375rem
+    padding-block: 4.40625rem
   }
   .selects__body {
     margin-bottom: 3.75rem
@@ -2572,7 +2561,7 @@ h6 {
   }
 }
 @media (max-width:47.99875em)and (min-width:48em) {
-  .first__container {
+  .first__container:not(:has(.first__subtitle)) {
     padding-block: 4.375rem
   }
   .info__content {
@@ -2597,7 +2586,7 @@ h6 {
   }
 }
 @media (max-width:47.99875em)and (min-width:22.5em)and (max-width:48em) {
-  .first__container {
+  .first__container:not(:has(.first__subtitle)) {
     padding-block: clamp(2.46875rem ,.7867647059rem + 7.4754901961vw ,4.375rem)
   }
   .info__content {
