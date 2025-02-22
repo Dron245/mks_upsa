@@ -41,9 +41,9 @@
 
 .menu {
 	&__item {
-		position: relative;
 		cursor: pointer;
-		
+		position: relative;
+		z-index: 1;
 		svg {
 			@media (max-width: toEm(768.02)) {
 				path {
