@@ -87,7 +87,16 @@
 	}
 
 	&__content {
-		@include adaptiveValue("padding-inline", 80, 16, 0, 1140, 480);
+		@media (min-width:toEm(768.02)){
+			@include adaptiveValue("padding-inline", 80, 32, 0, 1140, 768);
+			.fever & {
+				@include adaptiveValue("padding-inline", 130, 32, 0, 1140, 768);
+			}
+		}
+		@media (max-width:toEm(768.02)){
+			@include adaptiveValue("padding-inline", 32, 16, 0, 768, 360);
+
+		}
 		@include adaptiveValue("padding-block", 60, 16, 0, 1140, 480);
 	}
 	&__img {
@@ -99,6 +108,7 @@
 
 	&__text {
 		padding-block: 1.5rem;
+		color: #484848;
 		.fever & {
 			padding: 2rem 0 0rem 0;
 		}
@@ -128,6 +138,7 @@
 
 	&__list {
 		margin-top: toRem(10);
+		color: #484848
 	}
 
 	&__list-item {

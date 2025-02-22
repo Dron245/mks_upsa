@@ -16,9 +16,6 @@
 			overflow: auto;
 			padding: toRem(280) toRem(16) toRem(15) toRem(16);
 			transition: top 0.3s;
-			@media (max-width:$mobileSmall){
-				 padding-top: toRem(180); 
-			}
 			&::before {
 				content: "";
 				position: absolute;

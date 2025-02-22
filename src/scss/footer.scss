@@ -78,12 +78,12 @@
 	display: flex;
 	align-items: center;
 	row-gap: 1rem;
-	@media (min-width:toEm(768.02)){
+	@media (min-width:$mobileSmall){
 		justify-content: center;
 		  flex-wrap: wrap;
 	}
-	@media (max-width: toEm(768.02)){
-		flex-direction: column;
+	@media (max-width:$mobileSmall){
+		 flex-direction: column; 
 	}
 	&:not(:last-child) {
 		margin-bottom: toRem(32);
