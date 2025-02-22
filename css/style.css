@@ -391,8 +391,9 @@ h6 {
   height: auto
 }
 .menu__item {
+  cursor: pointer;
   position: relative;
-  cursor: pointer
+  z-index: 1
 }
 .menu__item svg {
   transition: -webkit-transform .3s ease 0s;
