@@ -58,20 +58,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	document.addEventListener('touchend', function () {}, false);
 
-	//даю класс в зависимости от направления скролла.
-	// let lastY = window.scrollY;
+	//даю класс в зависимости от наличия скролла.
 	window.addEventListener('scroll', () => {
 		if (window.scrollY > 0) {
 			document.body.classList.add("_scrolled");
 	  } else {
 			document.body.classList.remove("_scrolled");
 	  }
-		// if (window.scrollY === lastY) {
-		// 	return;
-		// }
-
-		// document.body.classList.toggle('scrolled-down', window.scrollY > lastY);
-		// document.body.classList.toggle('scrolled-up', window.scrollY < lastY);
-		// lastY = window.scrollY;
 	});
 });
