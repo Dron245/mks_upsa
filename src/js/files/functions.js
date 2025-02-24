@@ -429,6 +429,7 @@ export function menuInit() {
 export function menuOpen() {
 	bodyLock();
 	document.documentElement.classList.add("menu-open");
+	history.pushState({ menuOpen: true }, "");
 }
 export function menuClose() {
 	bodyUnlock();

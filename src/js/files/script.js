@@ -67,3 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	  }
 	});
 });
+
+window.addEventListener("popstate", () => {
+	document.documentElement.classList.remove("menu-open");
+ });
