@@ -731,8 +731,8 @@ h6 {
   display: none
 }
 .tabs__navigation {
-  padding-inline: 2rem;
-  padding-top: 16px;
+  padding-inline: 1rem;
+  padding-top: 1rem;
   max-width: 50.375rem;
   margin-inline: auto;
   display: flex;
@@ -788,7 +788,7 @@ h6 {
   top: 0;
   left: 0;
   z-index: 10;
-  padding-inline: 7px
+  padding-inline: .4375rem
 }
 .tabs__text {
   font-weight: 600;
@@ -1649,6 +1649,11 @@ h6 {
     padding-block: 1rem
   }
 }
+@media (max-width:50.37625em) {
+  .tabs__navigation {
+    max-width: 46rem
+  }
+}
 @media (max-width:48.00125em) {
   .menu__body {
     position: absolute;
@@ -2027,6 +2032,9 @@ h6 {
     margin-bottom: 1.5rem;
     position: relative
   }
+  .tabs__title:last-child {
+    margin-right: 1rem
+  }
   .definition {
     border-radius: 1.5rem
   }
@@ -2036,7 +2044,7 @@ h6 {
 }
 @media (max-width:29.99875em)and (max-width:22.5em) {
   .tabs__navigation {
-    left: 5.625rem
+    left: 6.5625rem
   }
 }
 @media (max-width:22.5em) {
@@ -2665,12 +2673,12 @@ h6 {
 }
 @media (max-width:29.99875em)and (min-width:29.9375em) {
   .tabs__navigation {
-    left: 8.75rem
+    left: 10rem
   }
 }
 @media (max-width:29.99875em)and (min-width:22.5em)and (max-width:29.9375em) {
   .tabs__navigation {
-    left: clamp(5.625rem ,-3.8287815126rem + 42.0168067227vw ,8.75rem)
+    left: clamp(6.5625rem ,-3.8366596639rem + 46.218487395vw ,10rem)
   }
 }
 @media (min-width:30em)and (max-width:71.25em) {
