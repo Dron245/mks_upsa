@@ -13,6 +13,10 @@ window.addEventListener('DOMContentLoaded', () => {
 			const select = targetElement.closest('.selects__item');
 			select.classList.toggle('_select-open');
 		}
+
+		if(targetElement.closest('.menu__sub-link') && window.innerWidth <= 768.02 && document.documentElement.classList.contains('menu-open')) {
+			document.documentElement.classList.remove('lock', 'menu-open')
+		}
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
 	const conditions = document.querySelector('.footer__contraindications');
@@ -67,7 +71,3 @@ window.addEventListener('DOMContentLoaded', () => {
 	  }
 	});
 });
-
-window.addEventListener("popstate", () => {
-	document.documentElement.classList.remove("menu-open");
- });
