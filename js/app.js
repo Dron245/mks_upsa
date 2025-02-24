@@ -4030,6 +4030,7 @@
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
             }
+            if (targetElement.closest(".menu__sub-link") && window.innerWidth <= 768.02 && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
         }
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
@@ -4064,9 +4065,6 @@
         window.addEventListener("scroll", (() => {
             if (window.scrollY > 0) document.body.classList.add("_scrolled"); else document.body.classList.remove("_scrolled");
         }));
-    }));
-    window.addEventListener("popstate", (() => {
-        document.documentElement.classList.remove("menu-open");
     }));
     window["FLS"] = true;
     menuInit();
