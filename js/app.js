@@ -4065,6 +4065,9 @@
             if (window.scrollY > 0) document.body.classList.add("_scrolled"); else document.body.classList.remove("_scrolled");
         }));
     }));
+    window.addEventListener("popstate", (() => {
+        document.documentElement.classList.remove("menu-open");
+    }));
     window["FLS"] = true;
     menuInit();
     tabs();
