@@ -4030,7 +4030,7 @@
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
             }
-            if (targetElement.closest(".menu__sub-link") && window.innerWidth <= 768.02 && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
+            if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
         }
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
