@@ -14,8 +14,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			select.classList.toggle('_select-open');
 		}
 
-		if(targetElement.closest('.menu__sub-link') && window.innerWidth <= 768.02 && document.documentElement.classList.contains('menu-open')) {
-			document.documentElement.classList.remove('lock', 'menu-open')
+		// при возврате на предыдущую страницу меню закрывается
+		if (
+			targetElement.closest('.menu__sub-link') &&
+			document.documentElement.classList.contains('menu-open')
+		) {
+			document.documentElement.classList.remove('lock', 'menu-open');
 		}
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
@@ -65,9 +69,9 @@ window.addEventListener('DOMContentLoaded', () => {
 	//даю класс в зависимости от наличия скролла.
 	window.addEventListener('scroll', () => {
 		if (window.scrollY > 0) {
-			document.body.classList.add("_scrolled");
-	  } else {
-			document.body.classList.remove("_scrolled");
-	  }
+			document.body.classList.add('_scrolled');
+		} else {
+			document.body.classList.remove('_scrolled');
+		}
 	});
 });
