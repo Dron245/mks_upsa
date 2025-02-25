@@ -4012,9 +4012,7 @@
             on: {}
         });
     }
-    window.addEventListener("DOMContentLoaded", (function(e) {
-        initSliders();
-    }));
+    initSliders();
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4024,7 +4022,9 @@
             }));
         }
     }), 0);
+    document.querySelector(".goods__wrapper").style.opacity = 0;
     window.addEventListener("DOMContentLoaded", (() => {
+        document.querySelector(".goods__wrapper").style.opacity = 1;
         document.addEventListener("click", documentActions);
         function documentActions(e) {
             const targetElement = e.target;
