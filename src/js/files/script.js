@@ -25,6 +25,9 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.querySelectorAll('.menu__item').forEach((item) => {
 				item.classList.remove('_active');
 			})
+			document.querySelectorAll('.menu__sub-list').forEach((item) => {
+				item.style.maxHeight = '0px';
+			})
 		}
 		
 	}
