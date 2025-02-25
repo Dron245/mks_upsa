@@ -4010,9 +4010,7 @@
             on: {}
         });
     }
-    window.addEventListener("load", (function(e) {
-        initSliders();
-    }));
+    initSliders();
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4030,7 +4028,9 @@
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
             }
-            if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
+            window.addEventListener("pageshow", (() => {
+                document.documentElement.classList.remove("lock", "menu-open");
+            }));
         }
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
