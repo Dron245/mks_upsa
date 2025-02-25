@@ -4033,6 +4033,9 @@
             window.addEventListener("pageshow", (() => {
                 document.documentElement.classList.remove("lock", "menu-open");
             }));
+            if (document.querySelectorAll(".goods__slide").length > 0) document.querySelectorAll(".goods__slide").forEach(((slide, index) => {
+                slide.style.display = index === 0 ? "block" : "none";
+            }));
         }
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
@@ -4066,11 +4069,6 @@
         document.addEventListener("touchend", (function() {}), false);
         window.addEventListener("scroll", (() => {
             if (window.scrollY > 0) document.body.classList.add("_scrolled"); else document.body.classList.remove("_scrolled");
-        }));
-    }));
-    window.addEventListener("load", (() => {
-        if (document.querySelectorAll(".goods__slide").length > 0) document.querySelectorAll(".goods__slide").forEach(((slide, index) => {
-            slide.style.display = index === 0 ? "block" : "none";
         }));
     }));
     window["FLS"] = true;
