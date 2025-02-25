@@ -3995,6 +3995,7 @@
             speed: 800,
             initialSlide: 0,
             loop: true,
+            lazy: true,
             effect: "fade",
             autoplay: {
                 delay: 3e3,
@@ -4011,7 +4012,9 @@
             on: {}
         });
     }
-    initSliders();
+    window.addEventListener("DOMContentLoaded", (function(e) {
+        initSliders();
+    }));
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4032,9 +4035,6 @@
             if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
             window.addEventListener("pageshow", (() => {
                 document.documentElement.classList.remove("lock", "menu-open");
-            }));
-            if (document.querySelectorAll(".goods__slide").length > 0) document.querySelectorAll(".goods__slide").forEach(((slide, index) => {
-                slide.style.display = index === 0 ? "block" : "none";
             }));
         }
         const conditions = document.querySelector(".footer__contraindications");
