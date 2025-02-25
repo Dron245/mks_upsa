@@ -19,11 +19,18 @@ window.addEventListener('DOMContentLoaded', () => {
 			targetElement.closest('.menu__sub-link') &&
 			document.documentElement.classList.contains('menu-open')
 		) {
+			// document.querySelector('.menu__body').style.top='-100%';
 			document.documentElement.classList.remove('lock', 'menu-open');
 		}
 		window.addEventListener("pageshow", () => {
 			document.documentElement.classList.remove('lock', 'menu-open');
 		})
+		if (document.querySelectorAll(".swiper__slide").length > 1) {
+			document.querySelectorAll(".swiper__slide").forEach((slide, index) => {
+				slide.style.display = index === 0 ? "block" : "none";
+			 });
+		}
+		
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
 	const conditions = document.querySelector('.footer__contraindications');
