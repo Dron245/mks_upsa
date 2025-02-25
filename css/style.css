@@ -1731,7 +1731,7 @@ h6 {
   .icon-menu::after,
   .icon-menu::before {
     content: "";
-    transition: all .3s ease 0s;
+    transition: all var(--transition-duration,.3s) ease-in-out;
     right: 0;
     position: absolute;
     width: 100%;

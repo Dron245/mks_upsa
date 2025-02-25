@@ -4045,6 +4045,11 @@
                 document.querySelectorAll(".menu__sub-list").forEach((item => {
                     item.style.maxHeight = "0px";
                 }));
+                const burger = document.querySelector(".icon-menu");
+                burger.style.setProperty("--transition-duration", "0s");
+                setTimeout((() => {
+                    burger.style.setProperty("--transition-duration", "0.3s");
+                }), 100);
             }
         }
         const conditions = document.querySelector(".footer__contraindications");
