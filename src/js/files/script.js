@@ -19,7 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			targetElement.closest('.menu__sub-link') &&
 			document.documentElement.classList.contains('menu-open')
 		) {
-			// document.querySelector('.menu__body').style.top='-100%';
 			document.documentElement.classList.remove('lock', 'menu-open');
 			document.querySelector('.menu__body').style.transition = '0s';
 			document.querySelectorAll('.menu__item').forEach((item) => {
@@ -28,6 +27,16 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.querySelectorAll('.menu__sub-list').forEach((item) => {
 				item.style.maxHeight = '0px';
 			})
+
+			const burger = document.querySelector('.icon-menu');
+
+			// Отключаем transition
+			burger.style.setProperty('--transition-duration', '0s');
+			
+			//Включаем обратно через 100ms (если нужно)
+			setTimeout(() => {
+			    burger.style.setProperty('--transition-duration', '0.3s');
+			}, 100);
 		}
 		
 	}
@@ -35,6 +44,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	const conditions = document.querySelector('.footer__contraindications');
 	const footerContainer = document.querySelector('.footer__container');
 	footerContainer.style.paddingBottom = `${conditions.offsetHeight + 50}px`;
+
+
 
 	// плавное открытие саб меню в мобилке
 	function toggleSubmenu(submenu, item) {

@@ -134,7 +134,8 @@
 		&::before,
 		&::after {
 			content: "";
-			transition: all 0.3s ease 0s;
+			// transition: all 0.3s ease 0s;
+			transition: all var(--transition-duration, 0.3s) ease-in-out;
 			right: 0;
 			position: absolute;
 			width: 100%;
