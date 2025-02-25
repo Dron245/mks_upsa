@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			// Отключаем transition
 			burger.style.setProperty('--transition-duration', '0s');
 			
-			//Включаем обратно через 100ms (если нужно)
+			//Включаем обратно через 100ms
 			setTimeout(() => {
 			    burger.style.setProperty('--transition-duration', '0.3s');
 			}, 100);
@@ -98,6 +98,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener("pageshow", () => {
 	document.documentElement.classList.remove('lock', 'menu-open');
-	// console.log(2);
-	// document.querySelector('.menu__body').style.transition = '0s';
 })
