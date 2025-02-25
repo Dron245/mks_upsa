@@ -4039,6 +4039,9 @@
             if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) {
                 document.documentElement.classList.remove("lock", "menu-open");
                 document.querySelector(".menu__body").style.transition = "0s";
+                document.querySelectorAll(".menu__item").forEach((item => {
+                    item.classList.remove("_active");
+                }));
             }
         }
         const conditions = document.querySelector(".footer__contraindications");
