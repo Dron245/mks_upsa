@@ -26,7 +26,11 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('lock', 'menu-open');
 		})
 		
-		
+		if (document.querySelectorAll(".goods__slide").length > 0) {
+			document.querySelectorAll(".goods__slide").forEach((slide, index) => {
+				slide.style.display = index === 0 ? "block" : "none";
+			 });
+		}
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
 	const conditions = document.querySelector('.footer__contraindications');
@@ -82,10 +86,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-window.addEventListener('load', () => {
-	if (document.querySelectorAll(".goods__slide").length > 0) {
-		document.querySelectorAll(".goods__slide").forEach((slide, index) => {
-			slide.style.display = index === 0 ? "block" : "none";
-		 });
-	}
-});
+// window.addEventListener('load', () => {
+	
+// });
