@@ -25,11 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		window.addEventListener("pageshow", () => {
 			document.documentElement.classList.remove('lock', 'menu-open');
 		})
-		if (document.querySelectorAll(".swiper__slide").length > 1) {
-			document.querySelectorAll(".swiper__slide").forEach((slide, index) => {
-				slide.style.display = index === 0 ? "block" : "none";
-			 });
-		}
+		
 		
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
@@ -84,4 +80,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.remove('_scrolled');
 		}
 	});
+});
+
+window.addEventListener('load', () => {
+	if (document.querySelectorAll(".goods__slide").length > 0) {
+		document.querySelectorAll(".goods__slide").forEach((slide, index) => {
+			slide.style.display = index === 0 ? "block" : "none";
+		 });
+	}
 });
