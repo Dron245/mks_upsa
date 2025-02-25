@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 
 		// при возврате на предыдущую страницу меню закрывается
-		// if (
-		// 	targetElement.closest('.menu__sub-link') &&
-		// 	document.documentElement.classList.contains('menu-open')
-		// ) {
-		// 	document.documentElement.classList.remove('lock', 'menu-open');
-		// }
+		if (
+			targetElement.closest('.menu__sub-link') &&
+			document.documentElement.classList.contains('menu-open')
+		) {
+			document.documentElement.classList.remove('lock', 'menu-open');
+		}
 		window.addEventListener("pageshow", () => {
 			document.documentElement.classList.remove('lock', 'menu-open');
 		})
