@@ -133,9 +133,9 @@ function initSlidersScroll() {
 	}
 }
 
-window.addEventListener('DOMContentLoaded', function (e) {
+// window.addEventListener('DOMContentLoaded', function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
 	//Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 	//initSlidersScroll();
-});
+// });

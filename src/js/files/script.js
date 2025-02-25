@@ -2,7 +2,9 @@
 import { isMobile } from './functions.js';
 // Подключение списка активных модулей
 import { flsModules } from './modules.js';
+document.querySelector('.goods__wrapper').style.opacity = 0;
 window.addEventListener('DOMContentLoaded', () => {
+	document.querySelector('.goods__wrapper').style.opacity = 1;
 	document.addEventListener('click', documentActions);
 	function documentActions(e) {
 		const targetElement = e.target;
