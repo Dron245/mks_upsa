@@ -2,9 +2,7 @@
 import { isMobile } from './functions.js';
 // Подключение списка активных модулей
 import { flsModules } from './modules.js';
-document.querySelector('.goods__slider').style.display = 'none';
 window.addEventListener('DOMContentLoaded', () => {
-	document.querySelector('.goods__slider').style.display = 'block';
 	document.addEventListener('click', documentActions);
 	function documentActions(e) {
 		const targetElement = e.target;
