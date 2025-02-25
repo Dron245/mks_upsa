@@ -4036,10 +4036,10 @@
                 const select = targetElement.closest(".selects__item");
                 select.classList.toggle("_select-open");
             }
-            if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
-            window.addEventListener("pageshow", (() => {
+            if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) {
                 document.documentElement.classList.remove("lock", "menu-open");
-            }));
+                document.querySelector(".menu__body").style.transition = "0s";
+            }
         }
         const conditions = document.querySelector(".footer__contraindications");
         const footerContainer = document.querySelector(".footer__container");
@@ -4074,6 +4074,9 @@
         window.addEventListener("scroll", (() => {
             if (window.scrollY > 0) document.body.classList.add("_scrolled"); else document.body.classList.remove("_scrolled");
         }));
+    }));
+    window.addEventListener("pageshow", (() => {
+        document.documentElement.classList.remove("lock", "menu-open");
     }));
     window["FLS"] = true;
     menuInit();
