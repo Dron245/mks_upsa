@@ -22,6 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
 			// document.querySelector('.menu__body').style.top='-100%';
 			document.documentElement.classList.remove('lock', 'menu-open');
 			document.querySelector('.menu__body').style.transition = '0s';
+			document.querySelectorAll('.menu__item').forEach((item) => {
+				item.classList.remove('_active');
+			})
 		}
 		
 	}
