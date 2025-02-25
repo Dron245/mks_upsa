@@ -4022,9 +4022,9 @@
             }));
         }
     }), 0);
-    document.querySelector(".goods__wrapper").style.opacity = 0;
+    document.querySelector(".goods__slider").style.display = "none";
     window.addEventListener("DOMContentLoaded", (() => {
-        document.querySelector(".goods__wrapper").style.opacity = 1;
+        document.querySelector(".goods__slider").style.display = "block";
         document.addEventListener("click", documentActions);
         function documentActions(e) {
             const targetElement = e.target;
