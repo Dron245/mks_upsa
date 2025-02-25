@@ -4009,10 +4009,16 @@
                 prevEl: ".goods__arrow-prew",
                 nextEl: ".goods__arrow-next"
             },
-            on: {}
+            on: {
+                init: function() {
+                    document.querySelector(".swiper-wrapper").style.opacity = "1";
+                }
+            }
         });
     }
-    initSliders();
+    window.addEventListener("DOMContentLoaded", (function(e) {
+        initSliders();
+    }));
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -4022,9 +4028,7 @@
             }));
         }
     }), 0);
-    document.querySelector(".goods__slider").style.display = "none";
     window.addEventListener("DOMContentLoaded", (() => {
-        document.querySelector(".goods__slider").style.display = "block";
         document.addEventListener("click", documentActions);
         function documentActions(e) {
             const targetElement = e.target;

@@ -612,6 +612,9 @@ h6 {
   right: .75rem;
   background: linear-gradient(90deg,#2a5199 0,rgba(42,81,153,0) 100%)
 }
+.swiper-wrapper {
+  opacity: 0
+}
 .selects_arrow {
   display: flex;
   align-items: center
