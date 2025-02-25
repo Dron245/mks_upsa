@@ -21,16 +21,9 @@ window.addEventListener('DOMContentLoaded', () => {
 		) {
 			// document.querySelector('.menu__body').style.top='-100%';
 			document.documentElement.classList.remove('lock', 'menu-open');
+			document.querySelector('.menu__body').style.transition = '0s';
 		}
-		window.addEventListener("pageshow", () => {
-			document.documentElement.classList.remove('lock', 'menu-open');
-		})
 		
-		// if (document.querySelectorAll(".goods__slide").length > 0) {
-		// 	document.querySelectorAll(".goods__slide").forEach((slide, index) => {
-		// 		slide.style.display = index === 0 ? "block" : "none";
-		// 	 });
-		// }
 	}
 	//учёт высоты предупреждения для отступа у самого нижнего блока на странице
 	const conditions = document.querySelector('.footer__contraindications');
@@ -86,6 +79,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-// window.addEventListener('load', () => {
-	
-// });
+window.addEventListener("pageshow", () => {
+	document.documentElement.classList.remove('lock', 'menu-open');
+	// console.log(2);
+	// document.querySelector('.menu__body').style.transition = '0s';
+})

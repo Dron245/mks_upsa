@@ -29,6 +29,7 @@
 			}
 
 			.menu-open & {
+				transition: 0.3s !important;
 				top: 0;
 				&::before {
 					top: 0;
