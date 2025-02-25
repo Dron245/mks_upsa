@@ -3993,6 +3993,7 @@
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 800,
+            initialSlide: 0,
             loop: true,
             effect: "fade",
             autoplay: {
@@ -4031,6 +4032,9 @@
             if (targetElement.closest(".menu__sub-link") && document.documentElement.classList.contains("menu-open")) document.documentElement.classList.remove("lock", "menu-open");
             window.addEventListener("pageshow", (() => {
                 document.documentElement.classList.remove("lock", "menu-open");
+            }));
+            if (document.querySelectorAll(".swiper__slide").length > 1) document.querySelectorAll(".swiper__slide").forEach(((slide, index) => {
+                slide.style.display = index === 0 ? "block" : "none";
             }));
         }
         const conditions = document.querySelector(".footer__contraindications");
