@@ -12,11 +12,20 @@
 	a {
 		transition: color 0.3s;
 
-		&:hover {
-			color: $therdColor;
+		@media (any-hover: hover){
+			&:hover{
+				color: $therdColor;
+			}
+		}
+		@media (hover: none) {
+			&:active{
+				color: $therdColor;
+			}
 		}
 	}
-	&__links {}
+	&__links {
+		
+	}
 
 	&__menu {}
 
