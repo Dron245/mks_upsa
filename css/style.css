@@ -362,9 +362,6 @@ h6 {
 .note__list-item {
   line-height: 1.57
 }
-.note__list-item a {
-  transition: color .3s
-}
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -2738,18 +2735,7 @@ h6 {
     width: clamp(11.25rem ,.0000000625rem + 50vw ,21.25rem)
   }
 }
-@media (any-hover:hover) {
-  .note__list-item a:hover {
-    color: #00a5e2
-  }
-  .footer a:hover {
-    color: #00a5e2
-  }
-}
 @media (hover:none) {
-  .note__list-item a:active {
-    color: #00a5e2
-  }
   .menu__sub-item:active {
     color: #fff
   }
@@ -2762,6 +2748,11 @@ h6 {
   }
   .link-item:active svg path {
     fill: #fff
+  }
+}
+@media (any-hover:hover) {
+  .footer a:hover {
+    color: #00a5e2
   }
 }
 @media (hover:hover) {
