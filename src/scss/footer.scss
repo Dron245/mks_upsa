@@ -12,20 +12,11 @@
 	a {
 		transition: color 0.3s;
 
-		@media (any-hover: hover){
-			&:hover{
-				color: $therdColor;
-			}
-		}
-		@media (hover: none) {
-			&:active{
-				color: $therdColor;
-			}
+		&:hover {
+			color: $therdColor;
 		}
 	}
-	&__links {
-		
-	}
+	&__links {}
 
 	&__menu {}
 
@@ -57,10 +48,10 @@
 			color: #fff;
 			@media (min-width:toEm(768.02)){
 				  
-				@include adaptiveValue("font-size", 22, 20,0,1140,768);
+				@include adaptiveValue("font-size", 20, 18,0,1140,768);
 			}
 			@media (max-width: toEm(768.02)){
-				  @include adaptiveValue("font-size", 20, 14,0,768, 360);
+				  @include adaptiveValue("font-size", 18, 14,0,768, 360);
 			}
 		}
 	}
@@ -92,7 +83,8 @@
 		  flex-wrap: wrap;
 	}
 	@media (max-width:$mobileSmall){
-		 flex-direction: column; 
+		 flex-direction: column;
+		 row-gap: 0.6rem;
 	}
 	&:not(:last-child) {
 		margin-bottom: toRem(32);
@@ -135,10 +127,23 @@
 			@media (max-width:$mobileSmall){
 				 font-size: toRem(12); 
 			}
+			&:first-child{
+				margin-bottom: toRem(0);
+			}
 			&:not(:last-child) {margin-bottom: toRem(20);}
 			@media (max-width:$mobileSmall){
 				 &:not(:last-child) {margin-bottom: toRem(16);} 
 			}
+
+			&.info-footer__text-3 {
+				max-width: 95%
+			}
+		}
+		@media (max-width:$mobileSmall){
+			// max-width: 93.611111%; /* 337/360 */
+			margin:auto;
+			 br {display: none;}
+			 br.br-mobile {display: block;}
 		}
 	}
 

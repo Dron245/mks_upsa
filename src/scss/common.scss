@@ -239,9 +239,5 @@ p {
 	&__list-item {
 		@include adaptiveValue("font-size", 14, 12, 0, 768, 360);
 		line-height: 1.57;
-		
-		@media (max-width:$mobileSmall){
-			 line-height: 1.5; 
-		}
 	}
 }

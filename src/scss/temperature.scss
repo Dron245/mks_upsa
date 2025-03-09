@@ -119,29 +119,60 @@
 }
 
 .articles {
+	&__content {
+		.description-title {
+			font-weight: 600;
+			line-height: 126%;
+			color: #484848;
+			@include adaptiveValue("font-size", 38, 20, 0, 768, 360);
+		}
 
-	&__sub-content {
-		@include adaptiveValue("margin-top", 32, 24, 0, 768, 360);
+		&__sub-title,
+		h2, h3, h4, h5, h5, h6 {
+			color: #484848;
+			@include adaptiveValue("font-size", 28, 16, 0, 768, 360);
+			font-weight: 600;
+		}
+
+		p {
+			padding-top: 1rem;
+		}
+
+		&__list,
+		ul, ol {
+			margin-top: toRem(10);
+		}
+
+		&__list-item,
+		li {
+			@extend .punkt__list-item;
+
+			p {
+				padding-top: 0;
+			}
+		}
+
+		br, strong {
+			font-weight: 700;
+		}
+
+		&__sub-content,
+		div {
+			@include adaptiveValue("margin-top", 32, 24, 0, 768, 360);
+		}
+
+		hr {
+			height: 1px;
+			border: 0;
+			background: #484848;
+			margin-top: 1rem;
+		}
 	}
 
-	&__sub-title {
-		color: #484848;
-		@include adaptiveValue("font-size", 28, 16, 0, 768, 360);
-		font-weight: 600;
-	}
 
 	&__text {
 		.fever & {
 			padding-top: 1rem;
 		}
-	}
-
-	&__list {
-		margin-top: toRem(10);
-		color: #484848
-	}
-
-	&__list-item {
-		@extend .punkt__list-item;
 	}
 }
