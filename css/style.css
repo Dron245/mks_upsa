@@ -415,6 +415,9 @@ h6 {
 .footer a {
   transition: color .3s
 }
+.footer a:hover {
+  color: #00a5e2
+}
 .footer__contraindications {
   width: 100%;
   position: fixed;
@@ -469,8 +472,14 @@ h6 {
 .info-footer:not(:last-child) {
   margin-bottom: 9.5rem
 }
+.info-footer__text p:first-child {
+  margin-bottom: 0
+}
 .info-footer__text p:not(:last-child) {
   margin-bottom: 1.25rem
+}
+.info-footer__text p.info-footer__text-3 {
+  max-width: 95%
 }
 .page__goods {
   position: relative;
@@ -565,7 +574,6 @@ h6 {
   margin: auto;
   text-align: center;
   max-width: 43.75rem;
-  font-size: 1.375rem;
   text-wrap: balance
 }
 .info__content {
@@ -812,13 +820,15 @@ h6 {
 .punkt__product:not(:last-child) {
   margin-bottom: 1.5rem
 }
-.articles__list-item,
+.articles__content li,
+.articles__content__list-item,
 .map__item,
 .punkt__list-item {
   padding-left: 1.5625rem;
   position: relative
 }
-.articles__list-item::before,
+.articles__content li::before,
+.articles__content__list-item::before,
 .map__item::before,
 .punkt__list-item::before {
   content: "";
@@ -900,16 +910,45 @@ h6 {
 .fever .articles__text {
   padding: 2rem 0 0 0
 }
-.articles__sub-title {
+.articles__content .description-title {
+  font-weight: 600;
+  line-height: 126%;
+  color: #484848
+}
+.articles__content h2,
+.articles__content h3,
+.articles__content h4,
+.articles__content h5,
+.articles__content h5,
+.articles__content h6,
+.articles__content__sub-title {
   color: #484848;
   font-weight: 600
 }
-.fever .articles__text {
+.articles__content p {
   padding-top: 1rem
 }
-.articles__list {
-  margin-top: .625rem;
-  color: #484848
+.articles__content ol,
+.articles__content ul,
+.articles__content__list {
+  margin-top: .625rem
+}
+.articles__content li p,
+.articles__content__list-item p {
+  padding-top: 0
+}
+.articles__content br,
+.articles__content strong {
+  font-weight: 700
+}
+.articles__content hr {
+  height: 1px;
+  border: 0;
+  background: #484848;
+  margin-top: 1rem
+}
+.fever .articles__text {
+  padding-top: 1rem
 }
 .definitions {
   margin-block: 2.5rem
@@ -917,7 +956,8 @@ h6 {
 .definitions__item {
   padding-right: 1.5rem
 }
-.definition {
+.definitions__container .definition,
+.definitions__container article {
   background: url(../img/cold/bg-cold.webp) 0 0/cover no-repeat;
   border-radius: 2rem;
   overflow: hidden;
@@ -926,52 +966,73 @@ h6 {
   grid-template-rows: auto auto;
   position: relative
 }
-.definition:not(:last-child) {
+.definitions__container .definition:not(:last-child),
+.definitions__container article:not(:last-child) {
   margin-bottom: 1.25rem
 }
-.definition__img {
+.definitions__container .definition>:first-child,
+.definitions__container .definition__img,
+.definitions__container article>:first-child,
+.definitions__container article__img {
+  grid-row: 1/3;
+  grid-column: 1/2;
   height: 100%;
   align-self: flex-end;
   position: absolute
 }
-.definition__img img {
+.definitions__container .definition>:first-child img,
+.definitions__container .definition__img img,
+.definitions__container article>:first-child img,
+.definitions__container article__img img {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 32rem;
+  height: 30rem;
   -o-object-fit: cover;
   object-fit: cover
 }
-.definition__top {
+.definitions__container .definition>:nth-child(2),
+.definitions__container .definition__top,
+.definitions__container article>:nth-child(2),
+.definitions__container article__top {
   grid-row: 1/2;
   grid-column: 2/3
 }
-.definition__top span {
+.definitions__container .definition>:nth-child(2) span,
+.definitions__container .definition__top span,
+.definitions__container article>:nth-child(2) span,
+.definitions__container article__top span {
   font-weight: 700;
   text-decoration: underline
 }
-.definition__title {
-  margin-bottom: 1rem
-}
-.definition__text {
-  font-weight: 700;
-  color: #484848
-}
-.definition__list {
+.definitions__container .definition>:nth-child(3),
+.definitions__container .definition__list,
+.definitions__container article>:nth-child(3),
+.definitions__container article__list {
   grid-row: 2/3;
   grid-column: 2/3
 }
-.definition__item {
+.definitions__container .definition p,
+.definitions__container .definition__text,
+.definitions__container article p,
+.definitions__container article__text {
+  font-weight: 700;
+  color: #484848
+}
+.definitions__container .definition li,
+.definitions__container .definition__item,
+.definitions__container article li,
+.definitions__container article__item {
   position: relative;
   gap: .75rem;
   color: #954d86;
   line-height: 1.4
 }
-.definition__item p {
-  position: relative
-}
-.definition__item p::before {
+.definitions__container .definition li::before,
+.definitions__container .definition__item::before,
+.definitions__container article li::before,
+.definitions__container article__item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -980,9 +1041,45 @@ h6 {
   height: 100%;
   background: url(../img/cold/arrow-right-cold.svg) 0 0 no-repeat
 }
-.definition__item span {
+.definitions__container .definition li span,
+.definitions__container .definition__item span,
+.definitions__container article li span,
+.definitions__container article__item span {
   font-weight: 700;
   text-decoration: underline
+}
+.definitions__container .definition li p,
+.definitions__container .definition__item p,
+.definitions__container article li p,
+.definitions__container article__item p {
+  position: relative;
+  color: #954d86
+}
+.definitions__container .definition h2,
+.definitions__container .definition h3,
+.definitions__container .definition h4,
+.definitions__container .definition__title,
+.definitions__container article h2,
+.definitions__container article h3,
+.definitions__container article h4,
+.definitions__container article__title {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 126%;
+  color: #484848
+}
+.definitions__container .definition br,
+.definitions__container .definition strong,
+.definitions__container article br,
+.definitions__container article strong {
+  font-weight: 700
+}
+.definitions__container .definition hr,
+.definitions__container article hr {
+  height: 1px;
+  border: 0;
+  background: #484848;
+  margin-top: 1rem
 }
 .doctor {
   background-color: #954d86
@@ -1209,6 +1306,14 @@ h6 {
     order: 2
   }
 }
+@media (min-width:43.75em)and (min-width:48em) {
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
+    padding-left: 2rem
+  }
+}
 @media (min-width:43.75em) {
   .doctor__text {
     max-width: 25.375rem
@@ -1281,7 +1386,7 @@ h6 {
   }
   .menu__sub-list {
     position: absolute;
-    left: 0;
+    left: -.5rem;
     top: 50%;
     visibility: hidden;
     opacity: 0;
@@ -1327,7 +1432,7 @@ h6 {
 }
 @media (min-width:48.00125em)and (min-width:71.25em) {
   .footer__contraindications p {
-    font-size: 1.375rem
+    font-size: 1.25rem
   }
   .page__goods {
     margin-top: -8.4375rem
@@ -1338,14 +1443,23 @@ h6 {
   .fever .articles__content {
     padding-inline: 8.125rem
   }
-  .definition__img {
+  .definitions__container .definition>:first-child,
+  .definitions__container .definition__img,
+  .definitions__container article>:first-child,
+  .definitions__container article__img {
     width: 25.75rem
   }
-  .definition__img img {
-    -o-object-position: .0000000625rem;
-    object-position: .0000000625rem
+  .definitions__container .definition>:first-child img,
+  .definitions__container .definition__img img,
+  .definitions__container article>:first-child img,
+  .definitions__container article__img img {
+    -o-object-position: .625rem;
+    object-position: .625rem
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: 4.875rem
   }
   .doctor__container[class].block {
@@ -1463,6 +1577,9 @@ h6 {
     margin-bottom: 6.25rem
   }
   .info__text {
+    font-size: 1.375rem
+  }
+  .info__text {
     margin-bottom: 6.25rem
   }
   .info__content {
@@ -1489,29 +1606,67 @@ h6 {
   .description__text {
     font-size: 1rem
   }
-  .articles__sub-content {
-    margin-top: 2rem
+  .articles__content .description-title {
+    font-size: 2.375rem
   }
-  .articles__sub-title {
+  .articles__content h2,
+  .articles__content h3,
+  .articles__content h4,
+  .articles__content h5,
+  .articles__content h5,
+  .articles__content h6,
+  .articles__content__sub-title {
     font-size: 1.75rem
   }
-  .definition__top {
+  .articles__content div,
+  .articles__content__sub-content {
+    margin-top: 2rem
+  }
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     margin-top: 1.75rem
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     margin-bottom: 1.5rem
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     font-size: 1rem
   }
-  .definition__item {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     font-size: 1rem
   }
-  .definition__item p {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     padding-left: 1.875rem
   }
-  .definition__item:not(:last-child) {
+  .definitions__container .definition li:not(:last-child),
+  .definitions__container .definition__item:not(:last-child),
+  .definitions__container article li:not(:last-child),
+  .definitions__container article__item:not(:last-child) {
     margin-bottom: 1.5rem
+  }
+  .definitions__container .definition h2,
+  .definitions__container .definition h3,
+  .definitions__container .definition h4,
+  .definitions__container .definition__title,
+  .definitions__container article h2,
+  .definitions__container article h3,
+  .definitions__container article h4,
+  .definitions__container article__title {
+    font-size: 2.375rem
   }
   .doctor__title {
     font-size: 3.75rem
@@ -1713,7 +1868,7 @@ h6 {
     place-items: center;
     background-color: #f4f5f6;
     border-radius: .375rem;
-    padding: .5rem 1rem
+    padding: .5rem .625rem
   }
   .icon-menu {
     display: block;
@@ -1815,15 +1970,24 @@ h6 {
   .description__item {
     gap: .625rem
   }
-  .definition__img {
+  .definitions__container .definition>:first-child,
+  .definitions__container .definition__img,
+  .definitions__container article>:first-child,
+  .definitions__container article__img {
+    grid-row: 2/3;
     width: 17.5625rem
   }
-  .definition__img img {
+  .definitions__container .definition>:first-child img,
+  .definitions__container .definition__img img,
+  .definitions__container article>:first-child img,
+  .definitions__container article__img img {
     -o-object-position: right;
-    object-position: right;
-    height: 30rem
+    object-position: right
   }
-  .definition__top {
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     grid-column: 1/3
   }
   .doctor__title {
@@ -1856,7 +2020,10 @@ h6 {
   .articles__content {
     padding-inline: 1rem
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: 1.25rem
   }
   .doctor__container[class].block {
@@ -1953,10 +2120,14 @@ h6 {
   .definitions__item {
     padding: 1.25rem
   }
-  .definition {
+  .definitions__container .definition,
+  .definitions__container article {
     grid-template-columns: 1fr
   }
-  .definition__img {
+  .definitions__container .definition>:first-child,
+  .definitions__container .definition__img,
+  .definitions__container article>:first-child,
+  .definitions__container article__img {
     display: none
   }
   .doctor__container[class].block[class] {
@@ -2000,20 +2171,27 @@ h6 {
   .first__title.title:not(:last-child) {
     margin-bottom: .5rem
   }
-  .note__list-item {
-    line-height: 1.5
-  }
   .footer__contraindications {
     padding: 1rem 1.25rem
   }
   .menu-footer {
-    flex-direction: column
+    flex-direction: column;
+    row-gap: .6rem
   }
   .info-footer__text p {
     font-size: .75rem
   }
   .info-footer__text p:not(:last-child) {
     margin-bottom: 1rem
+  }
+  .info-footer__text {
+    margin: auto
+  }
+  .info-footer__text br {
+    display: none
+  }
+  .info-footer__text br.br-mobile {
+    display: block
   }
   .product__info p {
     font-size: .875rem
@@ -2037,10 +2215,14 @@ h6 {
   .tabs__title:last-child {
     margin-right: 1rem
   }
-  .definition {
+  .definitions__container .definition,
+  .definitions__container article {
     border-radius: 1.5rem
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     line-height: 1.57
   }
 }
@@ -2099,6 +2281,9 @@ h6 {
     margin-bottom: 3.5rem
   }
   .info__text {
+    font-size: 1.125rem
+  }
+  .info__text {
     margin-bottom: 3.5rem
   }
   .info__content {
@@ -2128,29 +2313,67 @@ h6 {
   .description__text {
     font-size: .875rem
   }
-  .articles__sub-content {
-    margin-top: 1.5rem
+  .articles__content .description-title {
+    font-size: 1.25rem
   }
-  .articles__sub-title {
+  .articles__content h2,
+  .articles__content h3,
+  .articles__content h4,
+  .articles__content h5,
+  .articles__content h5,
+  .articles__content h6,
+  .articles__content__sub-title {
     font-size: 1rem
   }
-  .definition__top {
+  .articles__content div,
+  .articles__content__sub-content {
+    margin-top: 1.5rem
+  }
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     margin-top: 1.25rem
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     margin-bottom: 1rem
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     font-size: .875rem
   }
-  .definition__item {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     font-size: .875rem
   }
-  .definition__item p {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     padding-left: 1.25rem
   }
-  .definition__item:not(:last-child) {
+  .definitions__container .definition li:not(:last-child),
+  .definitions__container .definition__item:not(:last-child),
+  .definitions__container article li:not(:last-child),
+  .definitions__container article__item:not(:last-child) {
     margin-bottom: 1rem
+  }
+  .definitions__container .definition h2,
+  .definitions__container .definition h3,
+  .definitions__container .definition h4,
+  .definitions__container .definition__title,
+  .definitions__container article h2,
+  .definitions__container article h3,
+  .definitions__container article h4,
+  .definitions__container article__title {
+    font-size: 1.25rem
   }
   .doctor__title {
     font-size: 1.875rem
@@ -2295,7 +2518,7 @@ h6 {
     font-size: 1.5rem
   }
   .footer__contraindications p {
-    font-size: 1.25rem
+    font-size: 1.125rem
   }
   .main img {
     height: 29.75rem
@@ -2306,7 +2529,10 @@ h6 {
   .articles__content {
     padding-inline: 2rem
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: 2rem
   }
   .doctor__container[class].block {
@@ -2324,7 +2550,7 @@ h6 {
     font-size: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
   }
   .footer__contraindications p {
-    font-size: clamp(.875rem ,.5441176471rem + 1.4705882353vw ,1.25rem)
+    font-size: clamp(.875rem ,.6544117647rem + .9803921569vw ,1.125rem)
   }
   .main img {
     height: clamp(19rem ,9.5147058824rem + 42.1568627451vw ,29.75rem)
@@ -2335,7 +2561,10 @@ h6 {
   .articles__content {
     padding-inline: clamp(1rem ,.1176470588rem + 3.9215686275vw ,2rem)
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: clamp(1.25rem ,.5882352941rem + 2.9411764706vw ,2rem)
   }
   .doctor__container[class].block {
@@ -2400,6 +2629,9 @@ h6 {
     margin-bottom: clamp(3.5rem ,1.0735294118rem + 10.7843137255vw ,6.25rem)
   }
   .info__text {
+    font-size: clamp(1.125rem ,.9044117647rem + .9803921569vw ,1.375rem)
+  }
+  .info__text {
     margin-bottom: clamp(3.5rem ,1.0735294118rem + 10.7843137255vw ,6.25rem)
   }
   .info__content {
@@ -2426,29 +2658,67 @@ h6 {
   .description__text {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
   }
-  .articles__sub-content {
-    margin-top: clamp(1.5rem ,1.0588235294rem + 1.9607843137vw ,2rem)
+  .articles__content .description-title {
+    font-size: clamp(1.25rem ,.2573529412rem + 4.4117647059vw ,2.375rem)
   }
-  .articles__sub-title {
+  .articles__content h2,
+  .articles__content h3,
+  .articles__content h4,
+  .articles__content h5,
+  .articles__content h5,
+  .articles__content h6,
+  .articles__content__sub-title {
     font-size: clamp(1rem ,.3382352941rem + 2.9411764706vw ,1.75rem)
   }
-  .definition__top {
+  .articles__content div,
+  .articles__content__sub-content {
+    margin-top: clamp(1.5rem ,1.0588235294rem + 1.9607843137vw ,2rem)
+  }
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     margin-top: clamp(1.25rem ,.8088235294rem + 1.9607843137vw ,1.75rem)
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     margin-bottom: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
   }
-  .definition__text {
+  .definitions__container .definition p,
+  .definitions__container .definition__text,
+  .definitions__container article p,
+  .definitions__container article__text {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
   }
-  .definition__item {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     font-size: clamp(.875rem ,.7647058824rem + .4901960784vw ,1rem)
   }
-  .definition__item p {
+  .definitions__container .definition li,
+  .definitions__container .definition__item,
+  .definitions__container article li,
+  .definitions__container article__item {
     padding-left: clamp(1.25rem ,.6985294118rem + 2.4509803922vw ,1.875rem)
   }
-  .definition__item:not(:last-child) {
+  .definitions__container .definition li:not(:last-child),
+  .definitions__container .definition__item:not(:last-child),
+  .definitions__container article li:not(:last-child),
+  .definitions__container article__item:not(:last-child) {
     margin-bottom: clamp(1rem ,.5588235294rem + 1.9607843137vw ,1.5rem)
+  }
+  .definitions__container .definition h2,
+  .definitions__container .definition h3,
+  .definitions__container .definition h4,
+  .definitions__container .definition__title,
+  .definitions__container article h2,
+  .definitions__container article h3,
+  .definitions__container article h4,
+  .definitions__container article__title {
+    font-size: clamp(1.25rem ,.2573529412rem + 4.4117647059vw ,2.375rem)
   }
   .doctor__title {
     font-size: clamp(1.875rem ,.2205882353rem + 7.3529411765vw ,3.75rem)
@@ -2609,7 +2879,7 @@ h6 {
 }
 @media (min-width:48.00125em)and (min-width:48em)and (max-width:71.25em) {
   .footer__contraindications p {
-    font-size: clamp(1.25rem ,.9919354839rem + .5376344086vw ,1.375rem)
+    font-size: clamp(1.125rem ,.8669354839rem + .5376344086vw ,1.25rem)
   }
   .page__goods {
     margin-top: clamp(-8.4375rem ,2.8629032258rem + -15.8602150538vw ,-4.75rem)
@@ -2620,16 +2890,22 @@ h6 {
   .fever .articles__content {
     padding-inline: clamp(2rem ,-10.6451612903rem + 26.3440860215vw ,8.125rem)
   }
-  .definition__img {
+  .definitions__container .definition>:first-child,
+  .definitions__container .definition__img,
+  .definitions__container article>:first-child,
+  .definitions__container article__img {
     width: clamp(17.5rem ,.4677419355rem + 35.4838709677vw ,25.75rem)
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: clamp(2rem ,-3.935483871rem + 12.3655913978vw ,4.875rem)
   }
 }
 @media (min-width:48.00125em)and (max-width:48em) {
   .footer__contraindications p {
-    font-size: 1.25rem
+    font-size: 1.125rem
   }
   .page__goods {
     margin-top: -4.75rem
@@ -2640,10 +2916,16 @@ h6 {
   .fever .articles__content {
     padding-inline: 2rem
   }
-  .definition__img {
+  .definitions__container .definition>:first-child,
+  .definitions__container .definition__img,
+  .definitions__container article>:first-child,
+  .definitions__container article__img {
     width: 17.5rem
   }
-  .definition__item:last-child {
+  .definitions__container .definition li:last-child,
+  .definitions__container .definition__item:last-child,
+  .definitions__container article li:last-child,
+  .definitions__container article__item:last-child {
     margin-bottom: 2rem
   }
 }
@@ -2689,29 +2971,36 @@ h6 {
   }
 }
 @media (min-width:48.00125em)and (min-width:48.001875em)and (max-width:71.25em) {
-  .definition__img img {
-    -o-object-position: clamp(-8.125rem ,-24.9012018389rem + 34.9490553002vw ,.0000000625rem);
-    object-position: clamp(-8.125rem ,-24.9012018389rem + 34.9490553002vw ,.0000000625rem)
+  .definitions__container .definition>:first-child img,
+  .definitions__container .definition__img img,
+  .definitions__container article>:first-child img,
+  .definitions__container article__img img {
+    -o-object-position: clamp(-6.5625rem ,-21.4029861279rem + 30.9164717585vw ,.625rem);
+    object-position: clamp(-6.5625rem ,-21.4029861279rem + 30.9164717585vw ,.625rem)
   }
 }
 @media (min-width:48.00125em)and (max-width:48.001875em) {
-  .definition__img img {
-    -o-object-position: -8.125rem;
-    object-position: -8.125rem
+  .definitions__container .definition>:first-child img,
+  .definitions__container .definition__img img,
+  .definitions__container article>:first-child img,
+  .definitions__container article__img img {
+    -o-object-position: -6.5625rem;
+    object-position: -6.5625rem
   }
 }
-@media (min-width:43.75em)and (max-width:48.00125em)and (min-width:48em) {
-  .definition__top {
-    padding-left: 2rem
-  }
-}
-@media (min-width:43.75em)and (max-width:48.00125em)and (min-width:22.5em)and (max-width:48em) {
-  .definition__top {
+@media (min-width:43.75em)and (min-width:22.5em)and (max-width:48em) {
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     padding-left: clamp(1rem ,.1176470588rem + 3.9215686275vw ,2rem)
   }
 }
-@media (min-width:43.75em)and (max-width:48.00125em)and (max-width:22.5em) {
-  .definition__top {
+@media (min-width:43.75em)and (max-width:22.5em) {
+  .definitions__container .definition>:nth-child(2),
+  .definitions__container .definition__top,
+  .definitions__container article>:nth-child(2),
+  .definitions__container article__top {
     padding-left: 1rem
   }
 }
@@ -2739,20 +3028,12 @@ h6 {
   .menu__sub-item:active {
     color: #fff
   }
-  .footer a:active {
-    color: #00a5e2
-  }
   .link-item:active {
     background-color: #2a5199;
     color: #fff
   }
   .link-item:active svg path {
     fill: #fff
-  }
-}
-@media (any-hover:hover) {
-  .footer a:hover {
-    color: #00a5e2
   }
 }
 @media (hover:hover) {
