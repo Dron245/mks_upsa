@@ -13,6 +13,7 @@ margin-top: 8.125rem;
 
 		&__title {
 			color: #484848;
+			line-height: 1;
 			font-weight: 600;
 			@include adaptiveValue("font-size", 100, 64, 0, 768, 360);
 			&:not(:last-child) {

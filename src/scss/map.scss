@@ -28,15 +28,43 @@
 		&__list {
 			padding-block: 0.625rem;
 			padding-left: toRem(24);
-			border-left: 0.1875rem solid $secondColor
+			border-left: 0.1875rem solid $secondColor;
+			@media (max-width: toEm(768.02)){
+				padding-left: toRem(16);
+			}
+			@media (max-width:$mobileSmall){
+				 padding-left: toRem(22); 
+			}
 		}
 
 		&__item {
-			@extend .punkt__list-item;
-			@include adaptiveValue("font-size", 20, 14,0,768,360);
+			// @extend .punkt__list-item;
+			position: relative;
+			padding-left: toRem(30);
+			// @include adaptiveValue("font-size", 20, 14,0,768,360);
+			font-size: toRem(20);
 			font-weight: 700;
+			@media (max-width:$mobileSmall){
+				 font-size: toRem(14); 
+			}
 			&:not(:last-child) {
 				@include adaptiveValue("margin-bottom", 24, 16,0,768,360);
+			}
+			&::after{
+				content:'';
+				display: block;
+				width: 6px;
+				height: 7px;
+				background-color: $secondColor;
+				border-radius: 50%;
+				position: absolute;
+				left: 12px;
+				top: 12px;
+				@media (max-width:$mobileSmall){
+					top: 9px;
+					width: 4px;
+					height: 4.5px;
+				}
 			}
 		}
 
