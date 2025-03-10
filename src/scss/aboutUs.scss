@@ -9,8 +9,10 @@
 	&__container {
 		color: #fff;
 		display: grid;
-		grid-template-columns: repeat(2, 46.754386%);
-		column-gap: 6.491228%; /* 74/1140 */
+		// grid-template-columns: repeat(2, 46.754386%);
+		grid-template-columns: repeat(2, 49%);
+		// column-gap: 6.491228%; /* 74/1140 */
+		@include adaptiveValue("column-gap", 74, 16,0,1140,768);
 		@media (max-width: $mobile) {
 			grid-template-columns: repeat(1, 1fr);
 		}
@@ -35,12 +37,22 @@
 	border-bottom: 0.125rem solid #5fa7af;
 
 	&_one {
+		.advantage__text {
+			// @media (min-width:toEm(768.02)){
+				letter-spacing: -0.03em;
+			// }
+		}
 	}
 
 	&_two {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		.advantage__text {
+			// @media (min-width:toEm(768.02)){
+				// letter-spacing: -0.03em;
+			// }
+		}
 	}
 
 	&__decimal {
@@ -60,6 +72,15 @@
 	}
 
 	&__text {
+		.br-mobile {
+			@media (min-width:768.02){
+				display: none; 
+			}
+		}
+		@media (max-width: toEm(768.02)){
+			//   letter-spacing: -0.02em;
+		}
+		text-wrap: balance;
 		@include adaptiveValue("font-size", 22, 16, 0, 768, 360);
 	}
 
@@ -145,6 +166,7 @@
 		margin:auto;
 		text-transform: uppercase;
 		font-weight: 700;
+		text-wrap: balance;
 		font-size: toRem(20);
 		&:not(:last-child) {margin-bottom: toRem(16);}
 	}
@@ -173,6 +195,7 @@
 
 	&__body {
 		display: flex;
+		gap: 0.625rem;
 		justify-content: space-between;
 		@media (min-width:toEm(768.02)){
 			margin-inline: 3.75rem;
@@ -184,8 +207,9 @@
 	}
 	
 	&__title {
+		text-transform: uppercase;
 		font-weight: 700;
-		@include adaptiveValue("font-size",30 ,20,0,768,360);
+		@include adaptiveValue("font-size",28.5 ,20,0,768,360);
 		@media (max-width:toEm(768.02)){
 			 @include adaptiveValue("margin-bottom", 40, 24, 0, 768, 360); 
 		}
@@ -213,6 +237,6 @@
 
 	&__text {
 		color: $secondColor;
-		@include adaptiveValue("font-size", 22, 16,0,768,360);
+		@include adaptiveValue("font-size", 21, 16,0,768,360);
 	}
 }

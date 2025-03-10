@@ -1,3 +1,13 @@
+.title-products[class], .subtitle-products[class]{
+	@media (max-width: toEm(768.02)){
+		  text-wrap: balance;
+	}
+} 
+.title-products.title.first__title[class]{
+	@media (max-width:$mobileSmall){
+		 text-wrap: auto; 
+	}
+}
 .selects {
 	@include adaptiveValue("margin-top", 80, 24, 0, 1140, 360);
 
@@ -283,6 +293,13 @@
 	&__title {
 		// width: 120px;
 		flex: 0 0 7.5rem;
+		&:nth-last-child(2) {
+			.tabs__decor {
+				@media (max-width:$tablet){
+					width: 70%;
+				}
+			}
+		}
 		&:last-child{
 			@media (max-width:$mobileSmall){
 				 margin-right: 1rem; 
@@ -353,7 +370,7 @@
 
 	&__text {
 		font-weight: 600;
-		@include adaptiveValue("font-size", 34, 24, 0, 768, 360);
+		@include adaptiveValue("font-size", 34, 20, 0, 768, 360);
 
 		line-height: 150%;
 		text-transform: uppercase;
@@ -385,12 +402,13 @@
 }
 
 .punkt {
-	& .text {
+	& .text:not(:last-child) {
+		margin-bottom: toRem(12);
 		@include adaptiveValue("font-size", 16, 14, 0, 768, 360);
 
 		b {
 			display: block;
-			margin-bottom: 0.75rem;
+			// margin-bottom: 0.75rem;
 		}
 	}
 
@@ -400,7 +418,11 @@
 		}
 	}
 
-	&__product-list {}
+	&__product-list {
+		&:not(:last-child) {
+		margin-bottom: toRem(12);
+		}
+	}
 
 	&__list-item {
 		padding-left: 1.5625rem;
