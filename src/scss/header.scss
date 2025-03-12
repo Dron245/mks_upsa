@@ -14,11 +14,12 @@
 					top: 0;
 				left: 0;
 				width: 101%;
-				height: 3.75rem;
+				height: var(--height, 4rem);
 				background-color: #fff;
 				z-index: 3;
 				._scrolled & {
 					display: none;
+					// visibility: hidden;
 				}
 			}
 		}
@@ -92,8 +93,8 @@
 	}
 
 	&__sub-list {
-		padding-top: 1.25rem;
 		@media (min-width: toEm(768.02)) {
+			padding-top: 2rem;
 			position: absolute;
 			left: -0.5rem;
 			top: 50%;
@@ -105,30 +106,40 @@
 			// min-width: 100%;
 		}
 		@media (max-width: toEm(768.02)) {
+			._active & {
+				@include adaptiveValue("margin-top", 34, 18, 0, 768, 360);
+				// margin-bottom: toRem(50);
+			}
+
 			width: 100vw;
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 0.3s ease-in-out;
 		}
 		._active & {
-			max-height: 6.25rem; /* Укажите максимальную высоту */
+			max-height: 6.25rem;
 		}
 	}
 
 	&__sub-item {
-		padding: 1rem 1.5rem;
 		cursor: pointer;
+		padding: 1rem 1.5rem;
+		@media (max-width: toEm(768.02)) {
+			padding: 1rem 1.5rem 1rem 3.5rem;
+		}
 		@media (min-width:toEm(768.02)){
 			  &:not(:first-child) {
 				transform: translateY(-0.0625rem);
 			  }
+		}
+		@media (max-width:$mobileSmall){
+			 padding-inline: 1.5rem; 
 		}
 		@media (min-width:toEm(768.02)){
 			 background-color: #fff; 
 		}
 		._active & {
 			background-color: #fff;
-			
 		}
 		@media (any-hover: hover){
 			&:hover {
@@ -161,7 +172,10 @@
 		@media (max-width: toEm(768.02)) {
 			width: 100%;
 			line-height: 1.5;
-			@include adaptiveValue("font-size", 24, 16, 0, 768, 360);
+			@include adaptiveValue("font-size", 24, 14, 0, 768, 360);
+		}
+		@media (max-width:$mobileSmall){
+			 letter-spacing: -0.03em; 
 		}
 	}
 }

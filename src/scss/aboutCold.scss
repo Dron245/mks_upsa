@@ -251,7 +251,9 @@
 		}
 		@media (max-width:$mobile){
 			@include adaptiveValue("width", 238, 201, 0, 768, 360);
-
+		}
+		@media (min-width:43.75rem) and (max-width:45rem){
+			width: 10.25rem;
 		}
 	}
 }

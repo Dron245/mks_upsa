@@ -38,20 +38,24 @@
 			 padding: 1.25rem toRem(24); 
 		}
 		@media (max-width:$mobileSmall){
-			 padding: 1rem toRem(20); 
+			 padding: 1rem toRem(15); 
 		}
 		p {
-			
 			line-height: 114%;
 			letter-spacing: -0.07em;
 			text-transform: uppercase;
 			color: #fff;
 			@media (min-width:toEm(768.02)){
-				  
 				@include adaptiveValue("font-size", 20, 18,0,1140,768);
 			}
 			@media (max-width: toEm(768.02)){
 				  @include adaptiveValue("font-size", 18, 14,0,768, 360);
+			}
+			br {
+				display: none;
+				@media (min-width: $mobileSmall) and (max-width: $tablet){
+					display: block; 
+				}
 			}
 		}
 	}
@@ -127,7 +131,7 @@
 			@media (max-width:$mobileSmall){
 				 font-size: toRem(12); 
 			}
-			&:first-child{
+			&:first-child.info-footer__text-1 {
 				margin-bottom: toRem(0);
 			}
 			&:not(:last-child) {margin-bottom: toRem(20);}

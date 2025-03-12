@@ -99,3 +99,26 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener("pageshow", () => {
 	document.documentElement.classList.remove('lock', 'menu-open');
 })
+
+
+// учёт высоты админ панели WP
+// const referenceElement = document.getElementById("wpadminbar");
+// const headerContainer = document.querySelector(".header__container");
+
+// if (referenceElement && headerContainer) {
+// 	const height = referenceElement.getBoundingClientRect().height;
+// 	console.log(referenceElement);
+// 	headerContainer.style.setProperty("--height", `${60 + height}px`);
+// }
+
+const observer = new MutationObserver(() => {
+	const referenceElement = document.getElementById("wpadminbar");
+	const headerContainer = document.querySelector(".header__container");
+	if (referenceElement && headerContainer) {
+		 const height = referenceElement.getBoundingClientRect().height;
+		 console.log(height);
+		 headerContainer.style.setProperty("--height", `${64+height}px`);
+	}
+});
+
+observer.observe(document.body, { childList: true, subtree: true });

@@ -82,7 +82,7 @@ p {
 		left: 0.625rem;
 		z-index: 10;
 
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(768.02)) {
 			display: none;
 		}
 	}
